@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频类作品集 | 传媒人展示</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Base Variables & General Styles */
+        :root {
+            --primary-color: #1A2E3D; /* Deep Charcoal Blue */
+            --secondary-color: #D4AF37; /* Rich Gold */
+            --accent-color: #7A8D9E; /* Muted Grey-Blue */
+            --light-color: #F8F8F8; /* Off-White Background */
+            --highlight-color: #E94560; /* Accent Red (less used, for specific highlights) */
+            --text-color: #333333; /* Dark Grey for Body Text */
+            --text-light: #555555; /* Slightly Lighter Grey */
+            --english-color: #6A7B8C; /* Softer Blue-Grey for English */
+            --gold-light: rgba(212, 175, 55, 0.03); /* Very Light Gold for Gradients (more subtle) */
+            --gold-medium: rgba(212, 175, 55, 0.08); /* Medium Gold for Gradients (more subtle) */
+            --gold-dark: rgba(212, 175, 55, 0.2); /* Darker Gold for Gradients (more subtle) */
+            --shadow-light: rgba(0, 0, 0, 0.03); /* Lighter shadow */
+            --shadow-medium: rgba(0, 0, 0, 0.08); /* Lighter shadow */
+            --shadow-heavy: rgba(0, 0, 0, 0.15); /* Lighter shadow */
+        }
+
+        /* Utility for fade-in effect on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Global Body & Container */
+        body {
+            font-family: 'Noto Serif SC', 'Microsoft YaHei', serif;
+            line-height: 1.7; /* Adjusted for better readability */
+            color: var(--text-color);
+            max-width: 1300px; /* Adjusted max-width for better content flow */
+            margin: 0 auto;
+            padding: 0;
+            background-color: var(--light-color);
+            position: relative;
+            overflow-x: hidden;
+            background-image:
+                linear-gradient(to bottom, rgba(248,248,248,0.98) 0%, rgba(248,248,248,0.98) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="5" y="45" font-family="Playfair Display" font-weight="700" font-size="10" fill="rgba(26,46,61,0.01)">PRESS</text><text x="55" y="75" font-family="Playfair Display" font-weight="400" font-size="8" fill="rgba(26,46,61,0.005)">NEWS</text></svg>'); /* More subtle, themed background */
+            background-repeat: repeat;
+            background-attachment: fixed;
+        }
+
+        body:before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 15% 25%, var(--gold-medium) 0%, transparent 35%),
+                        radial-gradient(circle at 85% 75%, var(--gold-light) 0%, transparent 30%);
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.5; /* Reduced opacity */
+        }
+
+        .page-container {
+            padding: 0 40px 60px; /* Adjusted padding */
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin: 0 0 70px; /* More space below header */
+            padding: 60px 0 50px; /* More padding */
+            border-bottom: 1px solid rgba(26, 26, 46, 0.08); /* Lighter border */
+            position: relative;
+            background: linear-gradient(to right, rgba(255,255,255,0.98), rgba(255,255,255,0.98));
+            background-attachment: fixed;
+            box-shadow: 0 5px 20px var(--shadow-light); /* Soft shadow for depth */
+        }
+
+        header:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px; /* Thicker accent line */
+            background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            z-index: 2;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 4rem; /* Adjusted font size */
+            margin: 0 0 20px;
+            font-weight: 700;
+            letter-spacing: 2px; /* Reduced letter-spacing */
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1); /* Softer shadow */
+            animation: textReveal 1.5s ease-out forwards;
+        }
+
+        @keyframes textReveal {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        h1:after {
+            content: "";
+            position: absolute;
+            bottom: -12px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px; /* Adjusted width */
+            height: 4px; /* Thicker underline */
+            background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+            border-radius: 3px;
+            animation: underlineGrow 1.5s ease-out forwards 0.5s;
+        }
+
+        @keyframes underlineGrow {
+            0% { width: 0; opacity: 0; }
+            100% { width: 100px; opacity: 1; }
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.4rem; /* Adjusted font size */
+            font-weight: 300;
+            letter-spacing: 1.5px; /* Reduced letter-spacing */
+            margin-top: 25px;
+            position: relative;
+            display: inline-block;
+            line-height: 1.5; /* Adjusted line height */
+            animation: fadeIn 2s ease-out forwards 0.8s;
+        }
+
+        .subtitle span.english {
+            display: block; /* Ensure English text is on a new line */
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--english-color);
+            margin-top: 8px; /* Space between Chinese and English */
+            font-style: italic;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .subtitle:before, .subtitle:after {
+            content: "◆"; /* More refined bullet */
+            color: var(--secondary-color);
+            font-size: 1rem; /* Adjusted font size */
+            margin: 0 15px; /* Adjusted margin */
+            position: relative;
+            top: 1px;
+            opacity: 0.7; /* Reduced opacity */
+        }
+
+        .press-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 25px; /* Adjusted padding */
+            border-radius: 30px; /* Adjusted border-radius */
+            font-size: 1rem; /* Adjusted font size */
+            margin-top: 25px;
+            font-weight: 500;
+            letter-spacing: 1.5px; /* Reduced letter-spacing */
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--secondary-color); /* Lighter border */
+            box-shadow: 0 5px 15px var(--shadow-medium); /* Softer shadow */
+            transition: all 0.4s ease;
+            cursor: default;
+            animation: fadeIn 2s ease-out forwards 1.2s;
+        }
+
+        .press-badge:hover {
+            transform: translateY(-2px) scale(1.01); /* Softer lift */
+            box-shadow: 0 8px 20px var(--shadow-heavy); /* Softer shadow */
+        }
+
+        .press-badge:before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2) 50%, transparent 100%); /* Softer shimmer */
+            transform: rotate(45deg);
+            transition: 0.8s ease-in-out;
+            opacity: 0.7; /* Reduced opacity */
+        }
+
+        .press-badge:hover:before {
+            left: 100%;
+            top: 100%;
+        }
+
+        /* Section Headings */
+        h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem; /* Adjusted font size */
+            margin: 80px 0 50px; /* Adjusted spacing */
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--secondary-color); /* Thinner accent line */
+            font-weight: 600;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px; /* Reduced letter-spacing */
+            text-align: center;
+        }
+
+        h2:before {
+            content: "❝";
+            position: absolute;
+            left: 50%;
+            top: -25px; /* Adjusted position */
+            transform: translateX(-50%);
+            color: var(--secondary-color);
+            font-size: 3rem; /* Adjusted font size */
+            opacity: 0.5; /* Reduced opacity */
+        }
+
+        h3 {
+            color: var(--primary-color);
+            font-size: 2rem; /* Adjusted font size */
+            margin: 60px 0 35px; /* Adjusted spacing */
+            font-weight: 600;
+            position: relative;
+            padding-left: 35px; /* Adjusted padding */
+            line-height: 1.3;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h3:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 15px; /* Adjusted position */
+            width: 30px; /* Adjusted width */
+            height: 4px; /* Thinner line */
+            background-color: var(--secondary-color);
+        }
+
+        h4 {
+            font-size: 1.5rem; /* Slightly smaller H4 for document style */
+            color: var(--primary-color);
+            margin: 2em 0 0.8em; /* Adjusted vertical space */
+            padding-bottom: 0.4em; /* Adjusted padding */
+            border-bottom: 1px solid rgba(26, 26, 46, 0.08); /* Lighter border */
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.4px;
+        }
+
+        h4:after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 70px; /* Adjusted width */
+            height: 2px; /* Thinner line */
+            background-color: var(--secondary-color);
+        }
+
+        h5 {
+            font-size: 1.3rem; /* H5 for sub-sections */
+            color: var(--primary-color);
+            margin: 1.2em 0 0.7em; /* Adjusted spacing */
+            font-weight: 500;
+            font-family: 'Noto Serif SC', serif;
+            letter-spacing: 0.1px;
+        }
+
+        h6 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin: 0.8em 0 0.4em;
+            font-weight: 500;
+            font-family: 'Noto Serif SC', serif;
+            letter-spacing: 0.1px;
+        }
+
+        /* Project Card Styles */
+        .project {
+            background-color: white;
+            padding: 50px; /* Adjusted padding */
+            margin-bottom: 70px; /* Adjusted space between projects */
+            border-radius: 10px; /* Adjusted rounded corners */
+            box-shadow: 0 15px 50px var(--shadow-medium); /* Softer shadow */
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+            border-top: 6px solid var(--secondary-color); /* Thinner, more prominent top border */
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0.99), rgba(255,255,255,0.99));
+            background-attachment: fixed;
+            animation: scaleIn 0.8s ease-out forwards;
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0.97); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .project:hover {
+            transform: translateY(-10px); /* Softer lift */
+            box-shadow: 0 25px 70px var(--shadow-heavy); /* Softer shadow */
+            border-top-color: var(--primary-color);
+        }
+
+        .project:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px; /* Adjusted size */
+            height: 100px;
+            background-color: var(--secondary-color);
+            clip-path: polygon(0 0, 100% 100%, 100% 0);
+            opacity: 0.05; /* Reduced opacity for yellow box */
+        }
+
+        .project-intro {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed rgba(26, 26, 46, 0.1); /* Lighter dashed line */
+            position: relative;
+        }
+
+        .project-intro:after {
+            content: "✦";
+            position: absolute;
+            bottom: -15px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--secondary-color);
+            font-size: 1.5rem; /* Adjusted font size */
+            background-color: white;
+            padding: 0 20px; /* Adjusted padding */
+            z-index: 1;
+        }
+
+        /* Adjust paragraph spacing for document-like appearance */
+        .project-intro p, .project p {
+            margin: 0.8em 0; /* Standard paragraph margin, equivalent to 16px top/bottom */
+            color: var(--text-light);
+            font-size: 1.1rem; /* Consistent body text size */
+            line-height: 1.7; /* Standard line height for readability */
+        }
+        .project-intro p br, .project p br {
+            line-height: 1.2; /* Tighter line height for explicit breaks */
+            display: block; /* Ensure line break */
+            margin-bottom: 0.5em; /* Add some space after the break */
+        }
+
+
+        .highlight {
+            font-weight: 600;
+            color: var(--secondary-color);
+            display: inline-block;
+            min-width: 90px; /* Adjusted width */
+            position: relative;
+            font-size: 1.15rem; /* Adjusted font size */
+            letter-spacing: 0.5px; /* Reduced letter-spacing */
+            padding-right: 5px;
+        }
+
+        .highlight:after {
+            content: "";
+            position: absolute;
+            bottom: -3px; /* Adjusted position */
+            left: 0;
+            width: 100%;
+            height: 2px; /* Thinner underline */
+            background-color: var(--secondary-color);
+            transform: scaleX(0);
+            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transform-origin: right;
+            border-radius: 2px;
+        }
+
+        .project:hover .highlight:after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* Process Timeline */
+        .process {
+            margin-top: 45px;
+            position: relative;
+            padding-left: 40px; /* Adjusted left padding */
+        }
+
+        .process:before {
+            content: "";
+            position: absolute;
+            left: 25px; /* Adjusted position */
+            top: 0;
+            bottom: 0;
+            width: 3px; /* Thinner line */
+            background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+            z-index: 1;
+            border-radius: 3px;
+        }
+
+        .process-item {
+            margin-bottom: 40px; /* Adjusted space between items */
+            position: relative;
+            padding-left: 70px; /* Adjusted padding */
+            z-index: 2;
+        }
+
+        .process-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-item:before {
+            content: "";
+            position: absolute;
+            left: 10px; /* Adjusted position */
+            top: 8px; /* Adjusted position */
+            width: 20px; /* Adjusted circle size */
+            height: 20px;
+            background-color: white;
+            border: 3px solid var(--secondary-color); /* Thinner border */
+            border-radius: 50%;
+            z-index: 3;
+            box-shadow: 0 0 0 5px white; /* Softer halo */
+            transition: all 0.3s ease;
+        }
+
+        .process-item:after {
+            content: "";
+            position: absolute;
+            left: 20px; /* Adjusted position */
+            top: 17px; /* Adjusted position */
+            width: 6px; /* Adjusted inner dot size */
+            height: 6px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            z-index: 4;
+            opacity: 0.7; /* Reduced opacity */
+        }
+
+        .process-item:hover:before {
+            background-color: var(--secondary-color);
+            border-color: var(--primary-color);
+        }
+
+        .process-item:hover:after {
+            background-color: white;
+        }
+
+        .process-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.4rem; /* Adjusted font size */
+            letter-spacing: 0.5px; /* Reduced letter-spacing */
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            padding-bottom: 12px;
+        }
+
+        .process-title:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px; /* Adjusted width */
+            height: 3px; /* Thinner line */
+            background-color: var(--secondary-color);
+            border-radius: 3px;
+        }
+
+        .process-item p {
+            font-size: 1.05rem; /* Adjusted text size */
+            line-height: 1.9; /* Adjusted line height */
+            color: var(--text-light);
+            margin: 15px 0;
+            position: relative;
+        }
+
+        .english-translation {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--english-color);
+    font-size: 1rem;
+    line-height: 1.8; /* 增加行高 */
+    padding: 15px 0 15px 25px;
+    margin-top: 15px; /* 增加与中文的间距 */
+    margin-bottom: 25px;
+    position: relative;
+    background-color: transparent;
+    border-radius: 0;
+    border-left: 3px solid rgba(212, 175, 55, 0.3);
+    box-shadow: none;
+    letter-spacing: 0.3px; /* 增加字母间距 */
+}
+
+        /* Role Section */
+        .role {
+            margin-top: 50px;
+            padding-top: 35px;
+            border-top: 1px dashed rgba(26, 26, 46, 0.1); /* Lighter dashed line */
+            position: relative;
+            background-color: rgba(248,248,248,0.5); /* Softer background */
+            padding: 30px; /* Adjusted padding */
+            border-radius: 7px;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.05); /* Softer inner shadow */
+            border: 1px solid rgba(212, 175, 55, 0.08); /* Softer border */
+        }
+
+        .role:before {
+            content: "我的角色 / My Role";
+            position: absolute;
+            top: -15px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: 0 20px; /* Adjusted padding */
+            color: var(--secondary-color);
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.1rem; /* Adjusted font size */
+            letter-spacing: 1px; /* Reduced letter-spacing */
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 0 10px var(--shadow-light); /* Softer shadow */
+            border-radius: 30px; /* Adjusted border-radius */
+        }
+
+        /* Styling for the role list items */
+        .role ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-left: 3px solid var(--secondary-color); /* Thinner border on the left */
+            padding-left: 25px; /* Adjusted padding for the markers */
+        }
+
+        .role li {
+            position: relative;
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 1.05rem; /* Adjusted text size */
+            line-height: 1.5; /* Adjusted line height for list items */
+            margin-bottom: 12px; /* Adjusted space between list items */
+            padding-left: 18px; /* Adjusted space for the custom marker */
+        }
+        .role li span.english-text {
+            display: block; /* Ensure English text is on a new line */
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--english-color);
+            margin-top: 8px; /* Increased space between Chinese and English */
+            font-style: italic;
+        }
+
+        .role li:last-child {
+            margin-bottom: 0;
+        }
+
+        .role li:before {
+            content: "★";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--secondary-color);
+            font-size: 0.8rem; /* Adjusted marker size */
+            margin-right: 8px;
+            line-height: 1.5; /* Align with text line height */
+        }
+
+        /* Separator for Chinese/English roles */
+        .role-separator {
+            list-style: none;
+            height: 1px;
+            margin: 20px 0; /* Adjusted vertical space */
+            padding: 0;
+            border-top: 1px dashed var(--secondary-color); /* Thinner, colored dashed line */
+            position: relative;
+            opacity: 0.7; /* Reduced transparency */
+        }
+
+        .role-separator:before,
+        .role-separator:after {
+            content: none;
+        }
+
+        .role-separator span {
+            display: none;
+        }
+
+        /* Project Showcase */
+        .project-showcase {
+            margin-top: 60px;
+            text-align: center;
+            position: relative;
+            padding-top: 25px;
+        }
+
+        .project-showcase:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px; /* Thinner line */
+            background: linear-gradient(90deg, transparent, var(--secondary-color) 20%, var(--secondary-color) 80%, transparent);
+        }
+
+        .project-image-container {
+            margin: 0 auto 40px;
+            max-width: 800px; /* Adjusted max width for images */
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 60px var(--shadow-medium); /* Softer shadow */
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2); /* Softer border */
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background-color: white;
+        }
+
+        .project-image-container:hover {
+            transform: translateY(-6px) scale(1.005); /* Softer lift and slight scale */
+            box-shadow: 0 30px 80px var(--shadow-heavy); /* Softer shadow */
+        }
+
+        .project-showcase img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .project-image-container:hover img {
+            transform: scale(1.03); /* Softer zoom */
+        }
+
+        .project-image-container:before {
+            content: " "; /* Content removed, dots will suffice */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 35px; /* Adjusted bar height */
+            background: linear-gradient(to right, #2c3e50, #4a6a80);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 15px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.8px;
+            z-index: 2;
+        }
+
+        .project-image-container:after {
+            content: "";
+            position: absolute;
+            top: 12px; /* Adjusted position */
+            left: 12px; /* Adjusted position */
+            width: 12px; /* Adjusted dots size */
+            height: 12px;
+            background-color: #ff5f57;
+            border-radius: 50%;
+            box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #28ca42; /* Adjusted dots spacing */
+            z-index: 3;
+        }
+
+        .project-link-container {
+            margin-top: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 40px; /* Adjusted padding */
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px; /* Adjusted border-radius */
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-size: 1.2rem; /* Adjusted font size */
+            box-shadow: 0 10px 30px var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--secondary-color); /* Thinner border */
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1.2px; /* Reduced letter-spacing */
+            text-transform: uppercase;
+        }
+
+        .project-link:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -120%; /* Adjusted start position */
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3) 50%, transparent); /* Softer shimmer */
+            transition: 0.8s ease-in-out;
+            transform: skewX(-15deg); /* Softer skew */
+        }
+
+        .project-link:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-6px) scale(1.01); /* Softer lift */
+            box-shadow: 0 15px 40px var(--shadow-heavy); /* Softer shadow */
+            color: var(--primary-color);
+        }
+
+        .project-link:hover:before {
+            left: 120%; /* Adjusted end position */
+        }
+
+        .project-link i {
+            margin-right: 12px;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .project-link:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            margin-top: 120px;
+            padding: 60px 0;
+            border-top: 1px solid rgba(26, 26, 46, 0.08); /* Lighter border */
+            color: var(--text-light);
+            font-size: 1rem;
+            position: relative;
+            background-image: linear-gradient(to bottom, rgba(248,248,248,0.95), rgba(248,248,248,0.95));
+            background-attachment: fixed;
+            box-shadow: 0 -5px 20px var(--shadow-light); /* Softer shadow */
+        }
+
+        footer:before {
+            content: "";
+            position: absolute;
+            top: -40px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* Adjusted width */
+            height: 1px; /* Thinner line */
+            background: linear-gradient(90deg, transparent, var(--secondary-color) 20%, var(--secondary-color) 80%, transparent);
+        }
+
+        .footer-quote {
+            max-width: 700px; /* Adjusted max-width */
+            margin: 0 auto 30px;
+            font-style: italic;
+            color: var(--primary-color);
+            font-size: 1.4rem; /* Adjusted font size */
+            position: relative;
+            line-height: 2; /* Adjusted line height */
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.4px;
+        }
+
+        .footer-quote:before, .footer-quote:after {
+            content: '“';
+            color: var(--secondary-color);
+            font-size: 3rem; /* Adjusted font size */
+            line-height: 0;
+            position: relative;
+            top: 1.2rem; /* Adjusted position */
+            opacity: 0.7; /* Reduced opacity */
+        }
+
+        .footer-quote:before {
+            margin-right: 10px;
+            left: -10px; /* Adjusted offset */
+        }
+
+        .footer-quote:after {
+            content: '”';
+            margin-left: 10px;
+            right: -10px; /* Adjusted offset */
+        }
+
+        .copyright {
+            margin-top: 40px;
+            font-size: 1rem;
+            letter-spacing: 1px; /* Reduced letter-spacing */
+            color: var(--accent-color);
+        }
+
+        .back-to-home {
+            position: absolute;
+            top: 30px; /* Adjusted position */
+            right: 40px; /* Adjusted position */
+        }
+
+        .home-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 25px; /* Adjusted padding */
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1rem; /* Adjusted font size */
+            transition: all 0.4s ease;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px var(--shadow-light);
+            border: 1px solid rgba(212, 175, 55, 0.2); /* Softer border */
+            text-transform: uppercase;
+        }
+
+        .home-link:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px) scale(1.01); /* Softer lift */
+            box-shadow: 0 8px 20px var(--shadow-medium);
+            color: var(--primary-color);
+        }
+
+        .home-link i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .home-link:hover i {
+            transform: translateX(-2px);
+        }
+
+        /* Floating decoration elements */
+        .floating-element {
+            position: fixed;
+            opacity: 0.03; /* More subtle */
+            z-index: -1;
+            pointer-events: none;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .fe-1 {
+            top: 10%; /* Adjusted position */
+            left: 2%; /* Adjusted position */
+            font-size: 10rem; /* Adjusted size */
+            color: var(--secondary-color);
+            transform: rotate(8deg); /* Softer rotation */
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .fe-2 {
+            bottom: 8%; /* Adjusted position */
+            right: 2%; /* Adjusted position */
+            font-size: 8rem; /* Adjusted size */
+            color: var(--primary-color);
+            transform: rotate(-8deg); /* Softer rotation */
+            animation: float 12s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(4deg); } /* Softer float */
+        }
+
+        /* Scroll indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px; /* Thinner bar */
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            z-index: 1000;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 5px var(--secondary-color); /* Softer glow */
+        }
+
+        /* Additional Cool Effects */
+        /* Dynamic Background Texture for Header/Footer */
+        header:after, footer:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="p" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="1" height="1" fill="%23D4AF37"/><rect x="4" y="4" width="1" height="1" fill="%23D4AF37"/></pattern></defs><rect x="0" y="0" width="100" height="100" fill="url(%23p)"/></svg>') repeat; /* Smaller pattern */
+            background-size: 16px 16px; /* Smaller background size */
+            opacity: 0.005; /* Very subtle */
+            pointer-events: none;
+            z-index: 0;
+            animation: subtlePan 60s linear infinite;
+        }
+
+        footer:after {
+            opacity: 0.003; /* Even more subtle for footer */
+        }
+
+        @keyframes subtlePan {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        /* Animated Title Glow */
+        h1 {
+            animation: textReveal 1.5s ease-out forwards, textGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 1px 1px 3px rgba(0,0,0,0.1), 0 0 3px var(--secondary-color); }
+            50% { text-shadow: 1px 1px 6px rgba(0,0,0,0.15), 0 0 15px var(--secondary-color), 0 0 25px rgba(212, 175, 55, 0.4); } /* Softer glow */
+            100% { text-shadow: 1px 1px 3px rgba(0,0,0,0.1), 0 0 3px var(--secondary-color); }
+        }
+
+        /* More Dynamic Project Card Hover */
+        .project:hover {
+            transform: translateY(-10px) rotateX(1deg) scale(1.002); /* Softer rotation and scale */
+            box-shadow: 0 30px 80px var(--shadow-heavy), 0 0 30px rgba(212, 175, 55, 0.2); /* Softer golden glow */
+        }
+
+        /* Pulsing dot animation for Process Items */
+        .process-item:after {
+            animation: pulseDot 1.5s infinite alternate;
+        }
+
+        @keyframes pulseDot {
+            0% { transform: scale(1); opacity: 0.7; }
+            100% { transform: scale(1.1); opacity: 0.9; } /* Softer pulse */
+        }
+
+        /* Subtle ripple effect on Project Links */
+        .project-link:active {
+            transform: translateY(-4px) scale(0.99); /* Softer active state */
+        }
+
+        .project-link:active:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.3); /* Softer ripple */
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ripple 0.6s ease-out forwards;
+        }
+
+        @keyframes ripple {
+            to {
+                width: 180%; /* Adjusted ripple size */
+                height: 180%;
+                opacity: 0;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .page-container {
+                padding: 0 15px 30px; /* Adjusted padding */
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            .subtitle span.english {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+                margin: 50px 0 30px;
+            }
+
+            h3 {
+                font-size: 1.6rem;
+                padding-left: 20px;
+                margin: 40px 0 25px;
+            }
+
+            h3:before {
+                width: 20px;
+                top: 12px;
+            }
+
+            .project {
+                padding: 25px;
+                margin-bottom: 50px;
+            }
+
+            .project-intro p, .project p {
+                font-size: 0.95rem;
+            }
+
+            .process {
+                padding-left: 20px;
+            }
+
+            .process-item {
+                padding-left: 50px;
+                margin-bottom: 25px;
+            }
+
+            .process-item:before {
+                left: 0;
+                width: 18px;
+                height: 18px;
+                border-width: 2px;
+            }
+
+            .process-item:after {
+                left: 7px;
+                top: 15px;
+                width: 5px;
+                height: 5px;
+            }
+
+            .process-title {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+
+            .process-item p {
+                font-size: 0.95rem;
+            }
+
+            .role {
+                padding: 20px;
+            }
+
+            .role:before {
+                font-size: 0.9rem;
+                top: -12px;
+            }
+
+            .role li {
+                font-size: 0.95rem;
+            }
+            .role li span.english-text {
+                font-size: 0.9rem;
+            }
+
+            .project-link {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+
+            .project-link i {
+                font-size: 1rem;
+            }
+
+            .footer-quote {
+                font-size: 1.1rem;
+            }
+
+            .footer-quote:before, .footer-quote:after {
+                font-size: 2rem;
+            }
+        }
+
+        /* Custom styles for video embedding and image */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin-top: 15px;
+            margin-bottom: 25px; /* Adjusted spacing below video */
+            border-radius: 7px; /* Adjusted rounded corners for video container */
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08); /* Softer shadow for videos */
+            background-color: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-container p {
+            margin-top: 12px; /* Adjusted space between video and button */
+            text-align: center;
+            line-height: normal;
+        }
+
+        .video-container .project-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 25px; /* Adjusted padding */
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px; /* Adjusted border-radius */
+            font-size: 0.9rem; /* Adjusted font size */
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px var(--shadow-medium);
+            border: 1px solid var(--secondary-color);
+            font-family: 'Noto Serif SC', serif;
+            letter-spacing: 0.5px;
+            text-transform: none;
+        }
+
+        .video-container .project-link:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px var(--shadow-heavy);
+        }
+
+        .video-container .project-link i {
+            margin-right: 6px;
+            font-size: 0.9rem;
+        }
+
+        /* Enhanced styling for emphasized paragraph */
+        .emphasized-paragraph {
+            font-family: 'Playfair Display', serif; /* Elegant font */
+            font-size: 1.2rem; /* Slightly larger */
+            color: var(--primary-color); /* Primary color for main text */
+            font-weight: 500; /* Semi-bold for emphasis */
+            line-height: 1.8; /* Improved readability */
+            letter-spacing: 0.6px; /* Slight letter spacing */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03); /* Subtle shadow */
+            margin: 1.2em 0 2.5em 0; /* Adjust vertical spacing, more space below */
+            padding: 20px 30px;
+            border-left: 5px solid var(--secondary-color); /* Accent border */
+            background-color: rgba(212, 175, 55, 0.05); /* Very light gold background */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Subtle shadow */
+            text-align: justify; /* Justify text for a clean look */
+        }
+        .emphasized-paragraph .english-translation {
+            display: block;
+            font-size: 1rem;
+            color: var(--english-color);
+            font-style: italic;
+            margin-top: 15px; /* Increased margin-top for English translation */
+            line-height: 1.7;
+            padding-left: 0; /* Remove extra padding from parent class if any */
+            border-left: none; /* Remove border from parent class if any */
+            background-color: transparent; /* Ensure no background for translation itself */
+        }
+
+        /* Improved image container */
+        .image-container {
+            text-align: center;
+            margin: 30px auto;
+            max-width: 50%; /* Adjusted max-width to shrink images */
+            border: 3px solid var(--secondary-color); /* More prominent border */
+            border-radius: 15px; /* More rounded corners */
+            box-shadow: 0 15px 45px rgba(0,0,0,0.2); /* Stronger shadow */
+            overflow: hidden; /* Ensures image corners respect border-radius */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative; /* For button positioning */
+            background-color: white; /* Background for padding around image */
+            padding: 15px; /* Add padding inside the container so the image doesn't touch the border */
+        }
+
+        .image-container:hover {
+            box-shadow: 0 20px 55px rgba(0,0,0,0.25); /* More prominent shadow on hover */
+            transform: translateY(-5px);
+        }
+
+        .content-image {
+            max-width: 100%; /* Image fills its container */
+            height: auto;
+            display: block;
+            margin: 0; /* Remove default image margin */
+            border-radius: 10px; /* Rounded corners for the image itself */
+            cursor: zoom-in;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content-image:hover {
+            transform: scale(1.02); /* Slight zoom on hover */
+        }
+
+        .image-button-container {
+            text-align: center;
+            margin-top: 18px; /* Space between image and button */
+        }
+
+        /* Enhanced "View Original" button */
+        .image-view-original-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 28px; /* Adjusted padding */
+            background-color: var(--primary-color);
+            color: var(--secondary-color); /* Gold text */
+            text-decoration: none;
+            border-radius: 50px; /* More rounded */
+            font-size: 0.95rem; /* Slightly larger */
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid var(--secondary-color); /* Gold border */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .image-view-original-link:hover {
+            background-color: var(--secondary-color); /* Gold background on hover */
+            color: var(--primary-color); /* Dark text on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0,0,0,0.15);
+        }
+
+        .image-view-original-link i {
+            margin-right: 10px;
+            color: inherit; /* Inherit color from link */
+        }
+
+
+        /* Table specific styles for "分镜头剧本" */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0; /* Adjusted spacing */
+            font-size: 0.95rem; /* Base font size for table */
+            text-align: left;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06); /* Softer shadow */
+            border-radius: 7px; /* Adjusted rounded corners for the table */
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px; /* Adjusted padding for cells */
+            border-bottom: 1px solid #eee; /* Lighter grey bottom border */
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.4px; /* Reduced letter-spacing */
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fcfcfc; /* Very light grey for even rows */
+        }
+
+        tr:hover {
+            background-color: #f5f5f5; /* Slightly darker grey on hover */
+            transition: background-color 0.2s ease;
+        }
+
+        table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Specific styles for lists in project section */
+        .project ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 12px;
+            margin-bottom: 15px;
+        }
+
+        .project ul li {
+            position: relative;
+            padding-left: 25px; /* Adjusted space for custom bullet */
+            margin-bottom: 8px; /* Adjusted space between list items */
+            font-size: 1.05rem; /* Adjusted font size for list items */
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        .project ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .project ul li:before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--secondary-color);
+            font-size: 0.7rem; /* Adjusted font size */
+            line-height: 1.7;
+        }
+
+        /* Specific style for ordered lists in project section */
+        .project ol {
+            list-style: decimal;
+            padding-left: 20px; /* Adjusted indentation for ordered list */
+            margin-top: 12px;
+            margin-bottom: 15px;
+        }
+
+        .project ol li {
+            margin-bottom: 8px; /* Adjusted space between list items */
+            font-size: 1.05rem; /* Consistent font size */
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+    </style>
+    <link rel="stylesheet" href="portfolio-refresh.css">
+</head>
+<body class="trend-page video-trend">
+    <div class="scroll-progress"></div>
+    <nav class="trend-nav" aria-label="作品分类导航">
+        <a class="brand" href="index.html"><i class="fas fa-play"></i><span>CDL Portfolio</span></a>
+        <div class="links">
+            <a href="index.html">首页</a>
+            <a href="text.html">文字</a>
+            <a href="design.html">设计</a>
+            <a class="active" href="video.html">视频</a>
+        </div>
+    </nav>
+    <div class="page-container">
+        <header>
+            <div class="back-to-home">
+                <a href="index.html" class="home-link">
+                    <i class="fas fa-home"></i> 返回首页 / <span class="english-text">Home</span>
+                </a>
+            </div>
+            <h1>视频作品集</h1>
+            <div class="press-badge">VIDEO PORTFOLIO</div>
+            <p class="subtitle">
+                用影像定格瞬间 · 用镜头传递思想<br>
+                <span class="english">Capturing Moments through Film · Conveying Ideas through Lens</span>
+            </p>
+        </header>
+
+        <section class="content-section">
+            <h2 class="fade-in">视频类作品 / Video Works</h2>
+            <p class="emphasized-paragraph fade-in">
+                在自媒体领域持有个人账号，专注于抖音平台短视频内容的策划、制作与运营，通过优质内容实现账号增长。发布内容累计收获逾300万次播放及6.5万余次点赞，积累了具备一定价值的用户资产及商业潜力。<br>
+                <span class="english-translation">Holding a personal account in the self-media field, specializing in the planning, production, and operation of short video content on the TikTok platform, achieving account growth through high-quality content. Published content has accumulated over 3 million views and 65,000 likes, building user assets and commercial potential of considerable value.</span>
+            </p>
+            <div class="image-container fade-in">
+                <img class="content-image" src="https://user4170.cn.imgto.link/public/20260311/20250714211920.avif" alt="自媒体数据概览">
+                <div class="image-button-container">
+                    <a href="https://user4170.cn.imgto.link/public/20260311/20250714211920.avif" target="_blank" class="image-view-original-link">
+                        <i class="fas fa-external-link-alt"></i> 查看原图 / <span class="english-text">View Original</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project fade-in">
+                <h3>项目1：电影翻拍《绿皮书》</h3>
+                <p>★项目名称：电影翻拍《绿皮书》<br><br><span class="english-translation">Project Name: Film Remake "Green Book"</span></p>
+                <p>★时长：3分38秒 | 类型：剧情短片<br><br><span class="english-translation">Duration: 3 minutes 38 seconds | Type: Drama Short Film</span></p>
+                <p>★技术工具/Technical Tools:</p>
+                <ul>
+                    <li>拍摄设备：Nikon zfc + DJI RS4 Pro<br><br><span class="english-translation">Shooting Equipment: Nikon zfc + DJI RS4 Pro</span></li>
+                    <li>后期软件：Adobe Premiere Pro<br><br><span class="english-translation">Post-production Software: Adobe Premiere Pro</span></li>
+                </ul>
+                <p>★我的角色/My Role:</p>
+                <ul>
+                    <li>导演/编剧：主导叙事结构设计，撰写详细分镜脚本，规划场景过渡和角色互动<br><br><span class="english-translation">Director/Screenwriter: Led narrative structure design, wrote detailed storyboard, planned scene transitions and character interactions</span></li>
+                    <li>电影拍摄：采用固定机位结合镜头移动方式拍摄，精确还原电影效果，处理构图和动态调整<br><br><span class="english-translation">Filming: Used fixed camera positions combined with moving shots to accurately reproduce film effects, handled composition and dynamic adjustments</span></li>
+                </ul>
+                <p>★项目亮点/Project Highlights:</p>
+                <ul>
+                    <li>忠实还原电影《绿皮书》的片段，在环境布景上模拟原片氛围，光线处理上优化自然光效，配乐上融入个人改编元素，提升情感深度<br><br><span class="english-translation">Faithfully recreated clips from the film "Green Book", simulated the original film's atmosphere in environmental staging, optimized natural lighting, and incorporated personal adaptations in the soundtrack to enhance emotional depth.</span></li>
+                    <li>作为课程设计作品，获得92分高分，赢得专业课老师的专业认可和正面反馈<br><br><span class="english-translation">As a course design project, it received a high score of 92, earning professional recognition and positive feedback from the specialized course instructor.</span></li>
+                </ul>
+                <h4>项目展示/Project Showcase</h4>
+                <h5>影片介绍/Film Introduction:</h6>
+                <ul>
+                    <li>类型：剧情片（翻拍）<br><span class="english-text">Genre: Drama (Remake)</span></li>
+                    <li>原电影片段：《绿皮书》中写信的片段<br><span class="english-text">Original Film Segment: The letter-writing scene from "Green Book"</span></li>
+                    <li>片长：3分38秒<br><span class="english-text">Duration: 3 minutes 38 seconds</span></li>
+                    <li>主题：反种族歧视<br><span class="english-text">Theme: Anti-racism</span></li>
+                    <li>主旨：通过白人与黑人在写信过程中发生的有趣对话，表现出二人的相处逐渐和谐，同时以小见大，体现了白人的种族歧视观念不断改变，黑人用自己渊博的学识和优雅的风度征服了白人的心。<br><span class="english-text">Synopsis: Through interesting conversations between a white man and a black man during letter writing, it shows their gradually harmonious relationship. It also broadly illustrates the changing racial discrimination views of the white man, as the black man's profound knowledge and elegant demeanor win over his heart.</span></li>
+                </ul>
+                <h5>拍摄准备/Shooting Preparation:</h5>
+                <p>★拍摄地点：河南省安阳市一座公园中一处树林前的座位，与原电影中环境相似，体现写信时的静，更好的突出人物对话与动作；一处复古的室内环境，与原电影中环境相似，光线更好的体现白人妻子读信后的欣喜与感动。<br><br><span class="english-translation">Shooting Location: A seat in front of a grove in a park in Anyang City, Henan Province, similar to the original film's setting, reflecting the tranquility of letter writing to better highlight character dialogue and actions; a retro indoor environment, similar to the original film's setting, where light better reflects the white wife's joy and emotion after reading the letter.</span></p>
+                <p>★设备：微单相机，备用电池，三脚架，补光灯，复古灯。<br><br><span class="english-translation">Equipment: Mirrorless camera, spare batteries, tripod, fill light, retro lamp.</span></p>
+                <p>★人物：饰演白人的演员穿着较朴素，喜欢抽烟，可以更好的表现其文化水平一般，性格大大咧咧的人物特征，饰演黑人的演员身着黑色的衣服，表现出高于白人的审美水平和风度等。二人风格，性格不同能更好体现出反差，对比更强烈。<br><br><span class="english-translation">Characters: The actor playing the white man is dressed simply and smokes, better showcasing his average cultural level and carefree personality. The actor playing the black man is dressed in black clothes, demonstrating a higher aesthetic taste and demeanor than the white man. The differences in their styles and personalities better highlight the contrast, making it more pronounced.</span></p>
+                <p>★配一段优美的音乐配合影片剧情的推进。<br><br><span class="english-translation">Accompanied by beautiful music to enhance the film's progression.</span></p>
+                <h5>后期剪辑/Post-production Editing:</h5>
+                <ol>
+                    <li>画面更注重人物表情动作等特写来表现主题。<br><span class="english-text">The footage focuses more on close-ups of character expressions and actions to convey the theme.</span></li>
+                    <li>画面切换时简洁有力，表现出双方对话的有趣场景。<br><span class="english-text">Scene transitions are concise and powerful, depicting interesting dialogue scenes between the two parties.</span></li>
+                    <li>画面色调的统一以及画面的整洁干净。<br><span class="english-text">Uniformity of footage tones and clean, tidy visuals.</span></li>
+                    <li>在白人妻子读信的片段以及片尾加入音乐配合剧情推进。<br><span class="english-text">Music is added to the scene where the white wife reads the letter and at the end of the film to complement the plot's progression.</span></li>
+                    <li>在片头片片尾加入说明性字幕。<br><span class="english-text">Explanatory subtitles are added at the beginning and end of the film.</span></li>
+                    <li>控制影片时长在合理的范围内。<br><span class="english-text">Controlling the film's duration within a reasonable range.</span></li>
+                </ol>
+
+                <h4>分镜头剧本/Storyboard:</span></h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>镜头<br><span class="english-text">Shot</span></th>
+                            <th>景别<br><span class="english-text">Shot Type</span></th>
+                            <th>光影<br><span class="english-text">Lighting</span></th>
+                            <th>机位<br><span class="english-text">Camera Position</span></th>
+                            <th>画面<br><span class="english-text">Frame</span></th>
+                            <th>音效<br><span class="english-text">Sound Effects</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定机位<br><span class="english-text">Fixed Position</span></td><td>黑人在看着白人写信，白人为虚焦<br><span class="english-text">Black man watches white man write, white man out of focus</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span></td></tr>
+                        <tr><td>2</td><td>特写<br><span class="english-text">Extreme Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定机位<br><span class="english-text">Fixed Position</span></td><td>白人所写的信的画面，信上勾勾画画很脏乱<br><span class="english-text">Shot of the letter written by the white man, scribbled and messy</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>手擦过纸的声音<br><span class="english-text">Sound of hand brushing paper</span></td></tr>
+                        <tr><td>3</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人用近乎嘲讽的语气对白人写的信做出评价。然后黑人询问白人能否把信给他看看。<br><span class="english-text">Black man evaluates the white man's letter with a nearly mocking tone. Then the black man asks if he can see the letter.</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人物对话<br><span class="english-text">Dialogue</span></td></tr>
+                        <tr><td>4</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>白人将信递了过去，此时黑人为虚焦<br><span class="english-text">White man hands over the letter, black man out of focus</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span></td></tr>
+                        <tr><td>5</td><td>中景<br><span class="english-text">Medium Shot</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>白人将信递给黑人<br><span class="english-text">White man hands the letter to black man</span></td><td>黑人甩纸声<br><span class="english-text">Black man's paper rustle</span></td></tr>
+                        <tr><td>6</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人开始读白人的信，并给他纠正错误<br><span class="english-text">Black man begins reading the white man's letter and corrects him</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span></td></tr>
+                        <tr><td>7</td><td>小全景<br><span class="english-text">Small Full Shot</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>车和便利店出现在画面中，两个人对话场景靠右，黑人在朗读的信<br><span class="english-text">Car and convenience store appear, two people talking on the right, black man reading the letter</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>黑人朗读信声<br><span class="english-text">Black man's reading voice</span></td></tr>
+                        <tr><td>8</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人朗读白人的信并纠正错误，白人为虚焦<br><span class="english-text">Black man reads white man's letter and corrects errors, white man out of focus</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>9</td><td>中景<br><span class="english-text">Medium Shot</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人朗读白人信中的废话，双方在画面中对称<br><span class="english-text">Black man reads nonsense from white man's letter, both symmetrical in frame</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>10</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人朗读信的结尾，并提出信写的很糟糕白人为虚焦<br><span class="english-text">Black man reads the end of the letter, states it's terrible, white man out of focus</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>11</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人询问白人究竟想表达什么，白人回答。黑人为虚焦<br><span class="english-text">Black man asks what white man wants to express, white man answers. Black man out of focus</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>12</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人开始指导白人写信并把信还给白人，白人为虚焦，黑人为主体<br><span class="english-text">Black man starts instructing white man to write and returns letter, white man out of focus, black man is main subject</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>13</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人思考，白人虚焦<br><span class="english-text">Black man thinks, white man out of focus</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span></td></tr>
+                        <tr><td>14</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人开始创作信的开头，白人重新换了一张纸，黑人提醒其单词别写错了。两人对称画面<br><span class="english-text">Black man starts writing letter's beginning, white man changes paper, black man reminds him not to misspell. Both symmetrical in frame</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>15</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>白人询问什么飞机？黑人进行解释，并要求白人就按他说的写画面由白人实焦切黑人实焦再切白人实焦<br><span class="english-text">White man asks what plane? Black man explains, instructs white man to write as told, focus shifts from white man to black man then back to white man</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>16</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人继续进行创作，白人虚焦黑人主体切白人实焦白人主体<br><span class="english-text">Black man continues writing, white man out of focus, black man main subject then focus shifts to white man as main subject</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>17</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人继续叙述信的内容，黑人实焦，白人虚焦“爱上你不费吹灰之力”<br><span class="english-text">Black man continues narrating letter's content, black man in focus, white man out of focus "Falling for you was effortless"</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>18</td><td>小全景<br><span class="english-text">Small Full Shot</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>双方在画面中对称而坐，白人把手中的烟扔掉了，继续写信。<br><span class="english-text">Both sit symmetrically in frame, white man throws away his cigarette and continues writing.</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span></td></tr>
+                        <tr><td>19</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人继续叙述信的内容，黑人实焦，白人虚焦<br><span class="english-text">Black man continues narrating letter's content, black man in focus, white man out of focus</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>20</td><td>特写<br><span class="english-text">Extreme Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>白人复述黑人的话，并做出了评价<br><span class="english-text">White man repeats black man's words and comments</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>21</td><td>特写<br><span class="english-text">Extreme Close-up</span></td><td>侧逆光<br><span class="english-text">Side Backlight</span></td><td>前移<br><span class="english-text">Dolly In</span></td><td>白人妻子读信后深感欣喜和感动的场景，镜不断贴近演员<br><span class="english-text">White wife feels joy and emotion after reading letter, camera constantly moves closer to actor</span></td><td>音乐声<br><span class="english-text">Music</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>22</td><td>中景<br><span class="english-text">Medium Shot</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>画面中双方对称而坐，白人提问能不能在结尾加上附加“亲亲孩子”<br><span class="english-text">Both sit symmetrically in frame, white man asks if "kiss the children" can be added at the end</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span></td></tr>
+                        <tr><td>23</td><td>近景<br><span class="english-text">Close-up</span></td><td>顺光<br><span class="english-text">Front Light</span></td><td>固定<br><span class="english-text">Fixed</span></td><td>黑人与白人一段有趣的对话后，黑人表示：那是完美的<br><span class="english-text">After an interesting dialogue with the white man, the black man says: That's perfect</span></td><td>鸟鸣声<br><span class="english-text">Bird chirping</span><br>人声<br><span class="english-text">Human voice</span><br>结尾音乐声<br><span class="english-text">Ending music</span></td></tr>
+                    </tbody>
+                </table>
+                <div class="video-container fade-in">
+                    <iframe src="https://player.bilibili.com/player.html?bvid=BV1h3MXzNEK5&page=1" scrolling="no" allowfullscreen="true"></iframe>
+                    <p><a class="project-link" href="https://www.bilibili.com/video/BV1h3MXzNEK5/" target="_blank"><i class="fas fa-external-link-alt"></i> 查看原视频 / <span class="english-text">View Original Video</span></a></p>
+                </div>
+            </div>
+
+            <div class="project fade-in">
+                <h3>项目2：游戏及电影剪辑作品</h3>
+                <p>★项目名称：《女武神》——基于经典游戏素材创作的创意短片<br><br><span class="english-translation">Project Name: "Valkyrie" - Creative Short Film Based on Classic Game Footage</span></p>
+                <p>★时长：1分28秒 | 类型：剪辑短片<br><br><span class="english-translation">Duration: 1 minute 28 seconds | Type: Edited Short Film</span></p>
+                <p>★技术工具/Technical Tools:</p>
+                <ul>
+                    <li>剪辑软件：Adobe Premiere Pro——用于视频剪辑、时间线编辑和基础特效处理。<br><span class="english-text">Editing Software: Adobe Premiere Pro - for video editing, timeline editing, and basic special effects processing.</span></li>
+                </ul>
+                <p>★项目亮点/Project Highlights:</span></p>
+                <p>
+                    通过精确的卡点技术，将动作片段与背景音乐节奏完美同步，实现流畅的内容衔接和视觉冲击力；
+                    同时，利用动态转场和色彩分级，进一步增强沉浸感和观看体验，突出作品的艺术表现力。<br><br>
+                    <span class="english-translation">
+                        Through precise beat-matching techniques, action sequences are perfectly synchronized with the background music rhythm, achieving smooth content transitions and visual impact;
+                        Additionally, dynamic transitions and color grading are used to further enhance immersion and viewing experience, highlighting the artistic expression of the work.
+                    </span>
+                </p>
+                <div class="video-container fade-in">
+                    <iframe src="https://player.bilibili.com/player.html?bvid=BV19puqzvEmq&page=1&vd_source=59b441d2b1e2f1532d42b441c8c4d11a" scrolling="no" allowfullscreen="true"></iframe>
+                    <p><a class="project-link" href="https://www.bilibili.com/video/BV19puqzvEmq/?vd_source=59b441d2b1e2f1532d42b441c8c4d11a" target="_blank"><i class="fas fa-external-link-alt"></i> 查看原视频 / <span class="english-text">View Original Video</span></a></p>
+                </div>
+            </div>
+
+            <div class="project fade-in">
+                <h3>项目3：城市风景视频剪辑作品</h3>
+                <p>★项目名称：《昆明风光：航拍下的昆明美景》<br><br><span class="english-translation">Project Name: "Kunming Scenery: Beautiful Views of Kunming from Aerial Photography"</span></p>
+                <p>★时长：1分27秒<br><br><span class="english-translation">Duration: 1 minute 27 seconds</span></p>
+                <p>★类型：剪辑短片<br><br><span class="english-translation">Type: Edited Short Film</span></p>
+                <p>★项目背景：该项目通过航拍技术捕捉昆明市的城市景观，旨在展现其独特的城市风景和人文风貌，适用于旅游宣传或城市形象展示。<br><br><span class="english-translation">Project Background: This project captures the urban landscape of Kunming City through aerial photography, aiming to showcase its unique urban scenery and humanistic charm, suitable for tourism promotion or urban image display.</span></p>
+                <p>★技术工具/Technical Tools:</p>
+                <ul>
+                    <li>剪辑软件：Adobe Premiere Pro（用于主要剪辑、音视频同步及时间线管理）<br><span class="english-text">Editing Software: Adobe Premiere Pro (for main editing, audio-video synchronization, and timeline management)</span></li>
+                    <li>辅助工具：Lumetri Color进行画面调色，确保视觉效果生动<br><span class="english-text">Auxiliary Tool: Lumetri Color for color grading to ensure vivid visual effects</span></li>
+                </ul>
+                <p>★项目亮点/Project Highlights:</p>
+                <ul>
+                    <li>卡点剪辑精准配合城市风景转场，实现节奏感强的画面切换<br><span class="english-text">Precise beat-matching for scene transitions, achieving rhythmic screen changes</span></li>
+                    <li>融入动态镜头运动，如俯冲和环绕拍摄，增强视觉冲击力<br><span class="english-text">Incorporated dynamic camera movements, such as dive and orbit shots, to enhance visual impact</span></li>
+                    <li>音乐与场景的同步设计，提升整体观赏流畅度和情感表达<br><span class="english-text">Synchronized music and scene design to improve overall viewing fluidity and emotional expression</span></li>
+                </ul>
+                <div class="video-container fade-in">
+                    <iframe src="https://player.bilibili.com/player.html?bvid=BV1QVu6zMEqh&page=1" scrolling="no" allowfullscreen="true"></iframe>
+                    <p><a class="project-link" href="https://www.bilibili.com/video/BV1QVu6zMEqh/" target="_blank"><i class="fas fa-external-link-alt"></i> 查看原视频 / <span class="english-text">View Original Video</span></a></p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p class="footer-quote">
+                以帧帧匠心，刻视听之魂；以镜头为笔，书荧幕史诗。<br>
+                <span class="english-translation">With frame-by-frame craftsmanship, we carve the soul of audiovisual art;
+Through the lens as our pen, we compose epic stories on screen.</span>
+            </p>
+            <p class="copyright">
+                © 2025 传媒人作品集. <span class="english-text">All Rights Reserved.</span>
+            </p>
+        </footer>
+    </div>
+    <div class="floating-element fe-1">MEDIA</div>
+    <div class="floating-element fe-2">CREATIVE</div>
+
+    <script>
+        // Scroll progress bar
+        window.onscroll = function() {
+            const docElem = document.documentElement;
+            const scrollPercent = (docElem.scrollTop / (docElem.scrollHeight - docElem.clientHeight)) * 100;
+            document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
+        };
+
+        // Fade-in on scroll effect for relevant sections
+        const elementsToAnimate = document.querySelectorAll('.project, .content-section h2, .emphasized-paragraph, .image-container, .video-container');
+
+        const observerOptions = {
+            root: null, // relative to the viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of the item visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('appear');
+                    // observer.unobserve(entry.target); // Optional: stop observing once it appears
+                }
+            });
+        }, observerOptions);
+
+        elementsToAnimate.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Initial check for fade-in elements on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            elementsToAnimate.forEach(element => {
+                if (element.getBoundingClientRect().top < window.innerHeight * 0.8) {
+                    element.classList.add('appear');
+                }
+            });
+        });
+
+        // This fetch call seems specific to local testing with ngrok and might not be needed for general deployment.
+        // It's kept for consistency with previous user-provided code, but can be removed if not applicable.
+        fetch(location.href,{headers:{"ngrok-skip-browser-warning":"1"}});
+    </script>
+</body>
+</html>

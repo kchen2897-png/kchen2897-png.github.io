@@ -1,0 +1,2810 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字类作品集 | 传媒人展示</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Base Variables & General Styles */
+        :root {
+            --primary-color: #1A2E3D; /* Deep Charcoal Blue */
+            --secondary-color: #D4AF37; /* Rich Gold */
+            --accent-color: #7A8D9E; /* Muted Grey-Blue */
+            --light-color: #F8F8F8; /* Off-White Background */
+            --highlight-color: #E94560; /* Accent Red (less used, for specific highlights) */
+            --text-color: #333333; /* Dark Grey for Body Text */
+            --text-light: #555555; /* Slightly Lighter Grey */
+            --english-color: #6A7B8C; /* Softer Blue-Grey for English */
+            --gold-light: rgba(212, 175, 55, 0.05); /* Very Light Gold for Gradients */
+            --gold-medium: rgba(212, 175, 55, 0.15); /* Medium Gold for Gradients */
+            --gold-dark: rgba(212, 175, 55, 0.4); /* Darker Gold for Gradients */
+            --shadow-light: rgba(0, 0, 0, 0.05);
+            --shadow-medium: rgba(0, 0, 0, 0.12);
+            --shadow-heavy: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Utility for fade-in effect on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Global Body & Container */
+        body {
+            font-family: 'Noto Serif SC', 'Microsoft YaHei', serif;
+            line-height: 1.8; /* Slightly adjusted for better readability */
+            color: var(--text-color);
+            max-width: 1400px; /* Increased max-width for grander feel */
+            margin: 0 auto;
+            padding: 0;
+            background-color: var(--light-color);
+            position: relative;
+            overflow-x: hidden;
+            background-image:
+                linear-gradient(to bottom, rgba(248,248,248,0.98) 0%, rgba(248,248,248,0.98) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 100 100"><text x="10" y="50" font-family="Playfair Display" font-weight="700" font-size="12" fill="rgba(26,46,61,0.02)">PRESS</text><text x="60" y="80" font-family="Playfair Display" font-weight="400" font-size="10" fill="rgba(26,46,61,0.01)">NEWS</text></svg>'); /* More subtle, themed background */
+            background-repeat: repeat;
+            background-attachment: fixed;
+        }
+
+        body:before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 15% 25%, var(--gold-medium) 0%, transparent 35%),
+                        radial-gradient(circle at 85% 75%, var(--gold-light) 0%, transparent 30%);
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .page-container {
+            padding: 0 60px 60px; /* More generous padding */
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin: 0 0 80px; /* More space below header */
+            padding: 80px 0 60px; /* More padding */
+            border-bottom: 1px solid rgba(26, 26, 46, 0.1);
+            position: relative;
+            background: linear-gradient(to right, rgba(255,255,255,0.98), rgba(255,255,255,0.98));
+            background-attachment: fixed;
+            box-shadow: 0 5px 25px var(--shadow-light); /* Soft shadow for depth */
+        }
+
+        header:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8px; /* Thicker accent line */
+            background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            z-index: 2;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 4.5rem; /* Larger, more impactful */
+            margin: 0 0 25px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+            animation: textReveal 1.5s ease-out forwards; /* Text reveal animation */
+        }
+
+        @keyframes textReveal {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        h1:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px; /* Wider underline */
+            height: 5px; /* Thicker underline */
+            background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+            border-radius: 3px;
+            animation: underlineGrow 1.5s ease-out forwards 0.5s; /* Animated underline */
+        }
+
+        @keyframes underlineGrow {
+            0% { width: 0; opacity: 0; }
+            100% { width: 120px; opacity: 1; }
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.6rem; /* Larger subtitle */
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-top: 30px;
+            position: relative;
+            display: inline-block;
+            line-height: 1.6;
+            animation: fadeIn 2s ease-out forwards 0.8s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .subtitle:before, .subtitle:after {
+            content: "◆"; /* More refined bullet */
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 0 20px;
+            position: relative;
+            top: 2px;
+            opacity: 0.8;
+        }
+
+        .press-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 30px; /* Larger badge */
+            border-radius: 40px;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--secondary-color); /* More prominent border */
+            box-shadow: 0 8px 20px var(--shadow-medium);
+            transition: all 0.4s ease;
+            cursor: default;
+            animation: fadeIn 2s ease-out forwards 1.2s;
+        }
+
+        .press-badge:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px var(--shadow-heavy);
+        }
+
+        .press-badge:before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3) 50%, transparent 100%);
+            transform: rotate(45deg);
+            transition: 0.8s ease-in-out;
+            opacity: 0.8;
+        }
+
+        .press-badge:hover:before {
+            left: 100%;
+            top: 100%;
+        }
+
+        /* Section Headings */
+        h2 {
+            color: var(--primary-color);
+            font-size: 3rem; /* Larger H2 */
+            margin: 100px 0 60px; /* More spacing */
+            padding-bottom: 25px;
+            border-bottom: 3px solid var(--secondary-color); /* Thicker accent line */
+            font-weight: 600;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1.5px;
+            text-align: center;
+        }
+
+        h2:before {
+            content: "❝";
+            position: absolute;
+            left: 50%;
+            top: -30px; /* Adjusted position */
+            transform: translateX(-50%);
+            color: var(--secondary-color);
+            font-size: 3.5rem; /* Larger quote mark */
+            opacity: 0.7;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            font-size: 2.5rem; /* Larger H3 */
+            margin: 70px 0 40px;
+            font-weight: 600;
+            position: relative;
+            padding-left: 45px; /* More padding */
+            line-height: 1.4;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h3:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 20px; /* Adjusted position */
+            width: 35px; /* Wider line */
+            height: 5px; /* Thicker line */
+            background-color: var(--secondary-color);
+        }
+
+        .english-subtitle {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem; /* Larger English subtitle */
+            color: var(--english-color);
+            margin-top: 15px;
+            font-weight: 400;
+            letter-spacing: 1.2px;
+            font-style: italic;
+            position: relative;
+            opacity: 0.9;
+        }
+
+        .english-subtitle:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 120px; /* Wider line */
+            height: 2px; /* Thicker line */
+            background-color: var(--english-color);
+            opacity: 0.4;
+        }
+
+        /* Project Card Styles */
+        .project {
+            background-color: white;
+            padding: 60px; /* More padding */
+            margin-bottom: 90px; /* More space between projects */
+            border-radius: 12px; /* More rounded corners */
+            box-shadow: 0 20px 60px var(--shadow-medium); /* Deeper shadow */
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+            position: relative;
+            overflow: hidden;
+            border-top: 8px solid var(--secondary-color); /* Thicker, more prominent top border */
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0.99), rgba(255,255,255,0.99));
+            background-attachment: fixed;
+            animation: scaleIn 0.8s ease-out forwards; /* Initial scale-in animation */
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .project:hover {
+            transform: translateY(-12px); /* More pronounced lift */
+            box-shadow: 0 30px 80px var(--shadow-heavy); /* Even deeper shadow on hover */
+            border-top-color: var(--primary-color); /* Change border color on hover */
+        }
+
+        .project:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px; /* Larger corner decor */
+            height: 120px;
+            background-color: var(--secondary-color);
+            clip-path: polygon(0 0, 100% 100%, 100% 0);
+            opacity: 0.08;
+        }
+
+        .project-intro {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 2px dashed rgba(26, 26, 46, 0.1); /* Thicker dashed line */
+            position: relative;
+        }
+
+        .project-intro:after {
+            content: "✦"; /* More elegant divider */
+            position: absolute;
+            bottom: -20px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--secondary-color);
+            font-size: 1.8rem; /* Larger icon */
+            background-color: white;
+            padding: 0 25px; /* More padding */
+            z-index: 1;
+        }
+
+        .project-intro p {
+            margin: 20px 0;
+            color: var(--text-light);
+            font-size: 1.2rem; /* Larger paragraph text */
+            line-height: 2.1;
+        }
+
+        .project-intro h4 {
+            font-size: 1.8rem; /* Larger H4 */
+            color: var(--primary-color);
+            margin: 50px 0 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(26, 26, 46, 0.1);
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
+
+        .project-intro h4:after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100px; /* Wider line */
+            height: 3px; /* Thicker line */
+            background-color: var(--secondary-color);
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: var(--secondary-color);
+            display: inline-block;
+            min-width: 100px; /* Slightly wider */
+            position: relative;
+            font-size: 1.2rem;
+            letter-spacing: 0.7px;
+            padding-right: 5px; /* Add some space */
+        }
+
+        .highlight:after {
+            content: "";
+            position: absolute;
+            bottom: -5px; /* Adjusted position */
+            left: 0;
+            width: 100%;
+            height: 3px; /* Thicker underline */
+            background-color: var(--secondary-color);
+            transform: scaleX(0);
+            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transform-origin: right;
+            border-radius: 2px;
+        }
+
+        .project:hover .highlight:after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* Process Timeline */
+        .process {
+            margin-top: 55px;
+            position: relative;
+            padding-left: 50px; /* More left padding */
+        }
+
+        .process:before {
+            content: "";
+            position: absolute;
+            left: 30px; /* Adjusted position */
+            top: 0;
+            bottom: 0;
+            width: 4px; /* Thicker line */
+            background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .process-item {
+            margin-bottom: 50px; /* More space between items */
+            position: relative;
+            padding-left: 80px; /* More padding */
+            z-index: 2;
+        }
+
+        .process-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-item:before {
+            content: "";
+            position: absolute;
+            left: 15px; /* Adjusted position */
+            top: 10px; /* Adjusted position */
+            width: 24px; /* Larger circle */
+            height: 24px;
+            background-color: white;
+            border: 4px solid var(--secondary-color); /* Thicker border */
+            border-radius: 50%;
+            z-index: 3;
+            box-shadow: 0 0 0 6px white; /* More prominent halo */
+            transition: all 0.3s ease;
+        }
+
+        .process-item:after {
+            content: "";
+            position: absolute;
+            left: 27px; /* Adjusted position */
+            top: 22px; /* Adjusted position */
+            width: 8px; /* Larger inner dot */
+            height: 8px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            z-index: 4;
+            opacity: 0.8;
+        }
+
+        .process-item:hover:before {
+            background-color: var(--secondary-color);
+            border-color: var(--primary-color);
+        }
+
+        .process-item:hover:after {
+            background-color: white;
+        }
+
+        .process-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 1.6rem; /* Larger title */
+            letter-spacing: 0.8px;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            padding-bottom: 15px;
+        }
+
+        .process-title:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px; /* Wider line */
+            height: 4px; /* Thicker line */
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        .process-item p {
+            font-size: 1.15rem; /* Slightly larger text */
+            line-height: 2.1;
+            color: var(--text-light);
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .english-translation {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--english-color);
+            font-size: 1.1rem; /* Slightly larger translation */
+            line-height: 2;
+            padding: 18px 0 18px 30px; /* More padding */
+            margin: 18px 0 28px;
+            position: relative;
+            background-color: rgba(248,248,248,0.8);
+            border-radius: 6px;
+            border-left: 4px solid var(--secondary-color); /* Thicker border */
+            box-shadow: inset 2px 2px 8px rgba(0,0,0,0.03); /* Subtle inner shadow */
+        }
+
+        /* Role Section */
+        .role {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px dashed rgba(26, 26, 46, 0.15); /* Thicker dashed line */
+            position: relative;
+            background-color: rgba(248,248,248,0.6);
+            padding: 35px; /* More padding */
+            border-radius: 8px;
+            box-shadow: inset 0 0 25px rgba(0,0,0,0.08); /* Deeper inner shadow */
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .role:before {
+            content: "我的角色 / My Role";
+            position: absolute;
+            top: -18px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: 0 25px; /* More padding */
+            color: var(--secondary-color);
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.2rem; /* Larger text */
+            letter-spacing: 1.2px;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 0 15px var(--shadow-light); /* Softer shadow */
+            border-radius: 4px;
+        }
+
+        /* Styling for the role list items */
+        .role ul {
+            list-style: none; /* Remove default bullet points */
+            padding: 0;
+            margin: 0;
+            border-left: 4px solid var(--secondary-color); /* Thicker border on the left */
+            padding-left: 30px; /* Add padding for the markers */
+        }
+
+        .role li {
+            position: relative;
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 1.15rem; /* Slightly larger text */
+            line-height: 1.6; /* Adjusted line height for list items */
+            margin-bottom: 15px; /* Space between list items */
+            padding-left: 20px; /* Space for the custom marker */
+        }
+
+        .role li:last-child {
+            margin-bottom: 0;
+        }
+
+        .role li:before {
+            content: "★"; /* Custom marker */
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--secondary-color); /* Marker color */
+            font-size: 0.9rem; /* Marker size */
+            margin-right: 10px; /* Space between marker and text */
+            line-height: 1.6; /* Align with text line height */
+        }
+
+        /* Separator for Chinese/English roles */
+        .role-separator {
+            list-style: none;
+            height: 1px; /* Make it a thin line */
+            margin: 25px 0; /* More vertical space */
+            padding: 0;
+            border-top: 2px dashed var(--secondary-color); /* Colored dashed line */
+            position: relative;
+            opacity: 0.8; /* Slight transparency */
+        }
+
+        .role-separator:before,
+        .role-separator:after {
+            content: none; /* Remove any content generated by pseudo-elements */
+        }
+
+        .role-separator span {
+            display: none; /* Hide the span completely */
+        }
+
+
+        /* Project Showcase */
+        .project-showcase {
+            margin-top: 70px;
+            text-align: center;
+            position: relative;
+            padding-top: 30px;
+        }
+
+        .project-showcase:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px; /* Thicker line */
+            background: linear-gradient(90deg, transparent, var(--secondary-color) 20%, var(--secondary-color) 80%, transparent);
+        }
+
+        .project-image-container {
+            margin: 0 auto 50px;
+            max-width: 900px; /* Larger max width for images */
+            text-align: center;
+            position: relative;
+            box-shadow: 0 25px 70px var(--shadow-medium); /* Deeper shadow */
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(212, 175, 55, 0.4); /* More prominent border */
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background-color: white;
+        }
+
+        .project-image-container:hover {
+            transform: translateY(-8px) scale(1.01); /* More pronounced lift and slight scale */
+            box-shadow: 0 35px 90px var(--shadow-heavy);
+        }
+
+        .project-showcase img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .project-image-container:hover img {
+            transform: scale(1.05); /* More pronounced zoom */
+        }
+
+        .project-image-container:before {
+            content: ""; /* This creates the "browser bar" look */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 45px; /* Taller bar */
+            background: linear-gradient(to right, #2c3e50, #4a6a80); /* Darker, more premium bar */
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 20px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            z-index: 2;
+            content: " "; /* Content removed, dots will suffice */
+        }
+
+        .project-image-container:after {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 14px; /* Smaller dots */
+            height: 14px;
+            background-color: #ff5f57;
+            border-radius: 50%;
+            box-shadow: 25px 0 0 #ffbd2e, 50px 0 0 #28ca42; /* Closer dots */
+            z-index: 3;
+        }
+
+        .project-link-container {
+            margin-top: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 18px 50px; /* Larger button */
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 60px; /* More rounded */
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-size: 1.3rem; /* Larger text */
+            box-shadow: 0 15px 40px var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .project-link:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -150%; /* Start further left */
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4) 50%, transparent);
+            transition: 0.8s ease-in-out;
+            transform: skewX(-20deg); /* Skewed shimmer effect */
+        }
+
+        .project-link:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-8px) scale(1.02); /* More pronounced lift */
+            box-shadow: 0 20px 50px var(--shadow-heavy);
+            color: var(--primary-color); /* Text color change */
+        }
+
+        .project-link:hover:before {
+            left: 150%; /* End further right */
+        }
+
+        .project-link i {
+            margin-right: 15px;
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .project-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            margin-top: 150px;
+            padding: 70px 0;
+            border-top: 1px solid rgba(26, 26, 46, 0.1);
+            color: var(--text-light);
+            font-size: 1.1rem;
+            position: relative;
+            background-image: linear-gradient(to bottom, rgba(248,248,248,0.95), rgba(248,248,248,0.95));
+            background-attachment: fixed;
+            box-shadow: 0 -5px 25px var(--shadow-light);
+        }
+
+        footer:before {
+            content: "";
+            position: absolute;
+            top: -50px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%; /* Wider line */
+            height: 2px; /* Thicker line */
+            background: linear-gradient(90deg, transparent, var(--secondary-color) 20%, var(--secondary-color) 80%, transparent);
+        }
+
+        .footer-quote {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-style: italic;
+            color: var(--primary-color);
+            font-size: 1.6rem; /* Larger quote */
+            position: relative;
+            line-height: 2.2;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-quote:before,
+        .footer-quote:after {
+            content: '“'; /* More elegant quotes */
+            color: var(--secondary-color);
+            font-size: 3.5rem; /* Larger quotes */
+            line-height: 0;
+            position: relative;
+            top: 1.5rem; /* Adjusted position */
+            opacity: 0.8;
+        }
+
+        .footer-quote:before {
+            margin-right: 15px;
+            left: -15px; /* Slightly offset for effect */
+        }
+
+        .footer-quote:after {
+            content: '”'; /* Matching closing quote */
+            margin-left: 15px;
+            right: -15px; /* Slightly offset for effect */
+        }
+
+        .copyright {
+            margin-top: 50px;
+            font-size: 1.1rem;
+            letter-spacing: 1.2px;
+            color: var(--accent-color);
+        }
+
+        .back-to-home {
+            position: absolute;
+            top: 40px; /* Adjusted position */
+            right: 50px; /* Adjusted position */
+        }
+
+        .home-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px; /* Larger button */
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            font-size: 1.15rem;
+            transition: all 0.4s ease;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1.2px;
+            box-shadow: 0 8px 20px var(--shadow-light);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            text-transform: uppercase;
+        }
+
+        .home-link:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 30px var(--shadow-medium);
+            color: var(--primary-color);
+        }
+
+        .home-link i {
+            margin-right: 12px;
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .home-link:hover i {
+            transform: translateX(-3px);
+        }
+
+        /* Floating decoration elements */
+        .floating-element {
+            position: fixed;
+            opacity: 0.05; /* More subtle */
+            z-index: -1;
+            pointer-events: none;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .fe-1 {
+            top: 15%;
+            left: 3%;
+            font-size: 12rem; /* Larger */
+            color: var(--secondary-color);
+            transform: rotate(10deg);
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .fe-2 {
+            bottom: 10%;
+            right: 3%;
+            font-size: 10rem; /* Larger */
+            color: var(--primary-color);
+            transform: rotate(-10deg);
+            animation: float 12s ease-in-out infinite reverse; /* Reversed animation */
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(5deg); }
+        }
+
+        /* Scroll indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px; /* Thicker bar */
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            z-index: 1000;
+            transition: width 0.1s linear; /* Smoother update */
+            box-shadow: 0 0 10px var(--secondary-color); /* Glow effect */
+        }
+
+        /* Additional Cool Effects */
+        /* Dynamic Background Texture for Header/Footer */
+        header:after, footer:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="p" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="1" height="1" fill="%23D4AF37"/><rect x="5" y="5" width="1" height="1" fill="%23D4AF37"/></pattern></defs><rect x="0" y="0" width="100" height="100" fill="url(%23p)"/></svg>') repeat;
+            background-size: 20px 20px;
+            opacity: 0.01; /* Very subtle */
+            pointer-events: none;
+            z-index: 0;
+            animation: subtlePan 60s linear infinite; /* Slow pan animation */
+        }
+        footer:after {
+            opacity: 0.005; /* Even more subtle for footer */
+        }
+
+        @keyframes subtlePan {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        /* Animated Title Glow */
+        h1 {
+            animation: textReveal 1.5s ease-out forwards, textGlow 3s ease-in-out infinite alternate;
+        }
+        @keyframes textGlow {
+            0% { text-shadow: 2px 2px 5px rgba(0,0,0,0.15), 0 0 5px var(--secondary-color); }
+            50% { text-shadow: 2px 2px 8px rgba(0,0,0,0.25), 0 0 20px var(--secondary-color), 0 0 30px rgba(212, 175, 55, 0.5); }
+            100% { text-shadow: 2px 2px 5px rgba(0,0,0,0.15), 0 0 5px var(--secondary-color); }
+        }
+
+        /* More Dynamic Project Card Hover */
+        .project:hover {
+            transform: translateY(-12px) rotateX(2deg) scale(1.005); /* Added slight rotation */
+            box-shadow: 0 35px 90px var(--shadow-heavy), 0 0 40px rgba(212, 175, 55, 0.3); /* Added golden glow */
+        }
+
+        /* Pulsing dot animation for Process Items */
+        .process-item:after {
+            animation: pulseDot 1.5s infinite alternate;
+        }
+        @keyframes pulseDot {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* Subtle ripple effect on Project Links */
+        .project-link:active {
+            transform: translateY(-5px) scale(0.98);
+        }
+        .project-link:active:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.4);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ripple 0.6s linear forwards;
+        }
+        @keyframes ripple {
+            to {
+                width: 200%;
+                height: 200%;
+                opacity: 0;
+            }
+        }
+
+        /* Animated "News/Press" floating elements */
+        .floating-element {
+            animation: float 10s ease-in-out infinite, rotateFloat 20s linear infinite;
+        }
+
+        @keyframes rotateFloat {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fe-2 {
+            animation: float 12s ease-in-out infinite reverse, rotateFloat 22s linear infinite reverse;
+        }
+
+        /* More pronounced background gradients for body */
+        body {
+            background-image:
+                linear-gradient(to bottom, rgba(248,248,248,0.98) 0%, rgba(248,248,248,0.98) 100%),
+                linear-gradient(135deg, rgba(212, 175, 55, 0.01) 0%, transparent 20%),
+                linear-gradient(45deg, rgba(26, 46, 61, 0.01) 0%, transparent 20%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 100 100"><text x="10" y="50" font-family="Playfair Display" font-weight="700" font-size="12" fill="rgba(26,46,61,0.02)">PRESS</text><text x="60" y="80" font-family="Playfair Display" font-weight="400" font-size="10" fill="rgba(26,46,61,0.01)">NEWS</text></svg>');
+            background-repeat: repeat, no-repeat, no-repeat, repeat;
+            background-attachment: fixed, fixed, fixed, fixed;
+            background-position: 0 0, top left, bottom right, 0 0;
+            background-size: auto, 100% 100%, 100% 100%, auto;
+        }
+        body:before {
+            background: radial-gradient(circle at 15% 25%, var(--gold-medium) 0%, transparent 35%),
+                        radial-gradient(circle at 85% 75%, var(--gold-light) 0%, transparent 30%),
+                        linear-gradient(to right, rgba(26,46,61,0.05) 0%, transparent 50%, rgba(26,46,61,0.05) 100%); /* Added subtle horizontal gradient */
+            background-blend-mode: multiply; /* Blends multiple gradients */
+            animation: backgroundShift 20s ease-in-out infinite alternate; /* Animates background */
+        }
+        @keyframes backgroundShift {
+            0% { background-position: 0% 0%, 0% 0%, 0% 0%; }
+            100% { background-position: 100% 100%, 10% 10%, -10% -10%; }
+        }
+
+        /* Improved Highlight Effect */
+        .highlight:after {
+            background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+        }
+        .project:hover .highlight:after {
+            transform: scaleX(1);
+            transform-origin: left;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); /* Added glow */
+        }
+
+        /* Back to Home button glow */
+        .home-link {
+            transition: all 0.5s ease;
+        }
+        .home-link:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4), 0 12px 30px var(--shadow-medium); /* Stronger glow */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .page-container {
+                padding: 0 40px 40px;
+            }
+            h1 {
+                font-size: 4rem;
+            }
+            h2 {
+                font-size: 2.8rem;
+            }
+            .project {
+                padding: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .page-container {
+                padding: 0 30px 30px;
+            }
+            h1 {
+                font-size: 3.5rem;
+                letter-spacing: 2px;
+            }
+            h1:after {
+                width: 100px;
+            }
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            h2 {
+                font-size: 2.5rem;
+                margin: 80px 0 50px;
+            }
+            h2:before {
+                font-size: 3rem;
+                top: -25px;
+            }
+            h3 {
+                font-size: 2.2rem;
+                padding-left: 40px;
+            }
+            .english-subtitle {
+                font-size: 1.4rem;
+            }
+            .project {
+                padding: 40px;
+                margin-bottom: 70px;
+            }
+            .project-intro p {
+                font-size: 1.1rem;
+            }
+            .process-item {
+                padding-left: 70px;
+            }
+            .process-title {
+                font-size: 1.5rem;
+            }
+            .english-translation {
+                font-size: 1.05rem;
+            }
+            .project-link {
+                padding: 16px 45px;
+                font-size: 1.2rem;
+            }
+            .back-to-home {
+                top: 30px;
+                right: 30px;
+            }
+            .home-link {
+                padding: 12px 25px;
+                font-size: 1.1rem;
+            }
+            .footer-quote {
+                font-size: 1.4rem;
+            }
+            .fe-1 {
+                font-size: 8rem;
+            }
+            .fe-2 {
+                font-size: 7rem;
+            }
+
+            .role ul {
+                padding-left: 25px;
+            }
+            .role li {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+                padding-left: 18px;
+            }
+            .role li:before {
+                font-size: 0.8rem;
+            }
+            .role-separator {
+                margin: 20px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+            .page-container {
+                padding: 0 25px 25px;
+            }
+            h1 {
+                font-size: 3rem;
+                letter-spacing: 1.5px;
+            }
+            h1:after {
+                width: 80px;
+                height: 4px;
+                bottom: -10px; /* Adjusted for smaller screens */
+            }
+            .subtitle {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+            .subtitle:before, .subtitle:after {
+                margin: 0 10px;
+            }
+            .press-badge {
+                padding: 8px 25px;
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 2.2rem;
+                margin: 70px 0 45px;
+                padding-bottom: 20px;
+                text-align: left; /* Align left on mobile */
+                padding-left: 20px; /* Add padding for mobile */
+            }
+            h2:before {
+                left: 0; /* Align left on mobile */
+                transform: translateX(0);
+                font-size: 2.8rem;
+                top: -20px;
+            }
+            h3 {
+                font-size: 1.9rem;
+                padding-left: 35px;
+                margin: 60px 0 35px;
+            }
+            h3:before {
+                width: 25px;
+                height: 4px;
+                top: 15px;
+            }
+            .english-subtitle {
+                font-size: 1.25rem;
+                margin-top: 10px;
+            }
+            .english-subtitle:after {
+                width: 90px;
+                height: 1px;
+                bottom: -6px;
+            }
+            .project {
+                padding: 35px;
+                margin-bottom: 60px;
+            }
+            .project-intro p {
+                font-size: 1.05rem;
+                line-height: 2;
+            }
+            .project-intro h4 {
+                font-size: 1.6rem;
+                margin: 40px 0 25px;
+            }
+            .project-intro:after {
+                bottom: -15px;
+                font-size: 1.6rem;
+                padding: 0 15px;
+            }
+            .highlight {
+                font-size: 1.1rem;
+                min-width: 80px;
+            }
+            .process {
+                padding-left: 40px;
+            }
+            .process-item {
+                padding-left: 60px;
+                margin-bottom: 40px;
+            }
+            .process-item:before {
+                left: 10px;
+                top: 8px;
+                width: 20px;
+                height: 20px;
+                border-width: 3px;
+                box-shadow: 0 0 0 4px white;
+            }
+            .process-item:after {
+                left: 20px;
+                top: 16px;
+                width: 6px;
+                height: 6px;
+            }
+            .process-title {
+                font-size: 1.4rem;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+            .process-title:before {
+                width: 50px;
+                height: 3px;
+            }
+            .process-item p {
+                font-size: 1rem;
+                line-height: 1.9;
+            }
+            .english-translation {
+                padding: 15px 0 15px 25px;
+                margin: 15px 0 25px;
+                font-size: 1rem;
+                line-height: 1.9;
+                border-left-width: 3px;
+            }
+            .role {
+                padding: 30px;
+            }
+            .role:before {
+                top: -14px;
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+            .role ul {
+                padding-left: 20px;
+            }
+            .role li {
+                font-size: 1.05rem;
+                padding-left: 15px;
+                margin-bottom: 10px;
+                line-height: 1.9;
+            }
+            .role li:before {
+                font-size: 0.8rem;
+                top: 2px;
+            }
+            .role-separator {
+                margin: 15px 0;
+            }
+            .project-image-container {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+            .project-image-container:before {
+                height: 40px;
+            }
+            .project-image-container:after {
+                top: 12px;
+                left: 12px;
+                width: 12px;
+                height: 12px;
+                box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #28ca42;
+            }
+            .project-link {
+                padding: 14px 35px;
+                font-size: 1.1rem;
+            }
+            footer {
+                margin-top: 100px;
+                padding: 50px 0;
+            }
+            footer:before {
+                top: -30px;
+                width: 80%;
+            }
+            .footer-quote {
+                font-size: 1.4rem;
+                margin: 0 auto 30px;
+            }
+            .footer-quote:before, .footer-quote:after {
+                font-size: 2.8rem;
+                top: 1rem;
+            }
+            .copyright {
+                margin-top: 40px;
+                font-size: 1rem;
+            }
+            .home-link {
+                padding: 10px 20px;
+                font-size: 1.1rem;
+            }
+            .home-link i {
+                font-size: 1.1rem;
+            }
+            .fe-1, .fe-2 {
+                display: none; /* Hide floating elements on smaller screens */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-container {
+                padding: 0 15px 15px;
+            }
+            header {
+                padding: 60px 0 40px;
+                margin-bottom: 50px;
+            }
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+            h1:after {
+                width: 60px;
+                height: 3px;
+                bottom: -10px;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+                letter-spacing: 0.8px;
+                margin-top: 20px;
+            }
+            .subtitle:before, .subtitle:after {
+                margin: 0 8px;
+                font-size: 1rem;
+            }
+            .press-badge {
+                padding: 7px 20px;
+                font-size: 0.9rem;
+                margin-top: 20px;
+            }
+            h2 {
+                font-size: 1.9rem;
+                margin: 50px 0 30px;
+                padding-bottom: 15px;
+                text-align: left; /* Align left on mobile */
+                padding-left: 20px; /* Add padding for mobile */
+            }
+            h2:before {
+                left: 0; /* Align left on mobile */
+                transform: translateX(0);
+                font-size: 2.2rem;
+                top: -15px;
+            }
+            h3 {
+                font-size: 1.7rem;
+                padding-left: 25px;
+                margin: 50px 0 30px;
+            }
+            h3:before {
+                width: 20px;
+                height: 3px;
+                top: 12px;
+            }
+            .english-subtitle {
+                font-size: 1.1rem;
+            }
+            .project {
+                padding: 25px 20px;
+                margin-bottom: 50px;
+            }
+            .project-intro p {
+                font-size: 0.95rem;
+                line-height: 1.8;
+            }
+            .project-intro h4 {
+                font-size: 1.4rem;
+                margin: 30px 0 20px;
+            }
+            .highlight {
+                font-size: 1rem;
+                min-width: 70px;
+            }
+            .process {
+                padding-left: 30px;
+            }
+            .process-item {
+                padding-left: 45px;
+                margin-bottom: 30px;
+            }
+            .process-item:before {
+                left: 8px;
+                top: 6px;
+                width: 18px;
+                height: 18px;
+                border-width: 2px;
+                box-shadow: 0 0 0 3px white;
+            }
+            .process-item:after {
+                left: 16px;
+                top: 14px;
+                width: 5px;
+                height: 5px;
+            }
+            .process-title {
+                font-size: 1.3rem;
+                padding-bottom: 8px;
+                margin-bottom: 15px;
+            }
+            .process-title:before {
+                width: 40px;
+                height: 2px;
+            }
+            .process-item p {
+                font-size: 0.95rem;
+                line-height: 1.8;
+            }
+            .english-translation {
+                padding: 12px 0 12px 20px;
+                margin: 12px 0 20px;
+                font-size: 0.95rem;
+                line-height: 1.8;
+                border-left-width: 2px;
+            }
+            .role {
+                padding: 25px;
+            }
+            .role:before {
+                top: -12px;
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            .role ul {
+                padding-left: 15px;
+            }
+            .role li {
+                font-size: 1rem;
+                padding-left: 12px;
+                margin-bottom: 8px;
+                line-height: 1.8;
+            }
+            .role li:before {
+                font-size: 0.7rem;
+                top: 3px;
+            }
+            .role-separator {
+                margin: 10px 0;
+            }
+            .project-image-container:before {
+                height: 35px;
+            }
+            .project-image-container:after {
+                top: 10px;
+                left: 10px;
+                width: 10px;
+                height: 10px;
+                box-shadow: 18px 0 0 #ffbd2e, 36px 0 0 #28ca42;
+            }
+            .project-link {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            footer {
+                margin-top: 80px;
+                padding: 40px 0;
+            }
+            footer:before {
+                top: -20px;
+                width: 70%;
+            }
+            .footer-quote {
+                font-size: 1.1rem;
+                margin: 0 auto 25px;
+                line-height: 1.9;
+            }
+            .footer-quote:before, .footer-quote:after {
+                font-size: 2.2rem;
+                top: 0.8rem;
+            }
+            .copyright {
+                margin-top: 30px;
+                font-size: 0.9rem;
+            }
+            .back-to-home {
+                top: 15px;
+                right: 15px;
+            }
+            .home-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            .home-link i {
+                font-size: 1rem;
+            }
+        }
+        /* Youthful portfolio refresh */
+        body.trend-page {
+            max-width: none;
+            color: #111318;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.88), rgba(246,248,255,0.76)),
+                radial-gradient(circle at 8% 10%, rgba(255, 92, 119, 0.24), transparent 30%),
+                radial-gradient(circle at 88% 2%, rgba(50, 196, 255, 0.22), transparent 34%),
+                radial-gradient(circle at 74% 88%, rgba(255, 194, 71, 0.2), transparent 30%),
+                #f5f7fb;
+            font-family: 'Noto Serif SC', 'Microsoft YaHei', serif;
+        }
+
+        body.trend-page * {
+            letter-spacing: 0 !important;
+        }
+
+        body.trend-page:before {
+            background:
+                linear-gradient(rgba(17,19,24,0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(17,19,24,0.045) 1px, transparent 1px);
+            background-size: 42px 42px;
+            opacity: 1;
+        }
+
+        body.trend-page .page-container {
+            width: min(1520px, calc(100% - clamp(20px, 3vw, 42px)));
+            margin: 0 auto;
+            padding: 0 0 72px;
+        }
+
+        .trend-nav {
+            position: sticky;
+            top: 14px;
+            z-index: 100;
+            width: min(1520px, calc(100% - clamp(20px, 3vw, 42px)));
+            margin: 14px auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 12px 14px;
+            border: 1px solid rgba(255,255,255,0.68);
+            border-radius: 24px;
+            background: rgba(255,255,255,0.68);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 18px 46px rgba(17,19,24,0.12);
+        }
+
+        .trend-nav .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            color: #111318;
+        }
+
+        .trend-nav .brand i {
+            display: grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 12px;
+            color: white;
+            background: linear-gradient(135deg, #ff5c77, #32c4ff);
+        }
+
+        .trend-nav .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+
+        .trend-nav a {
+            padding: 9px 13px;
+            border-radius: 999px;
+            color: #535b68;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.22s ease;
+        }
+
+        .trend-nav a:hover,
+        .trend-nav a.active {
+            color: white;
+            background: #111318;
+            box-shadow: 0 10px 24px rgba(17,19,24,0.16);
+        }
+
+        body.trend-page header {
+            margin: 28px 0 52px;
+            padding: clamp(54px, 8vw, 96px) clamp(22px, 5vw, 72px);
+            overflow: hidden;
+            text-align: left;
+            border: 0;
+            border-radius: 34px;
+            background:
+                linear-gradient(135deg, rgba(17,19,24,0.92), rgba(30,40,62,0.9)),
+                radial-gradient(circle at 86% 20%, rgba(50,196,255,0.6), transparent 28%);
+            box-shadow: 0 30px 90px rgba(17,19,24,0.2);
+        }
+
+        body.trend-page header:before {
+            height: 100%;
+            background:
+                linear-gradient(90deg, #ff5c77, #ffc247, #32c4ff);
+            opacity: 0.14;
+        }
+
+        body.trend-page h1 {
+            max-width: 900px;
+            margin: 0 0 20px;
+            color: white;
+            font-size: clamp(3rem, 8vw, 6.8rem);
+            line-height: 0.98;
+            letter-spacing: 0;
+            text-shadow: none;
+        }
+
+        body.trend-page h1:after {
+            left: 0;
+            bottom: -16px;
+            transform: none;
+            width: 170px;
+            height: 6px;
+            background: linear-gradient(90deg, #ff5c77, #ffc247, #32c4ff);
+        }
+
+        body.trend-page .subtitle {
+            max-width: 760px;
+            margin-top: 34px;
+            color: rgba(255,255,255,0.78);
+            font-size: clamp(1rem, 2vw, 1.32rem);
+            letter-spacing: 0;
+        }
+
+        body.trend-page .subtitle:before,
+        body.trend-page .subtitle:after {
+            display: none;
+        }
+
+        body.trend-page .press-badge,
+        body.trend-page .design-badge {
+            color: #111318;
+            border: 0;
+            border-radius: 999px;
+            background: white;
+            box-shadow: none;
+            letter-spacing: 0;
+        }
+
+        body.trend-page .back-to-home {
+            display: none;
+        }
+
+        body.trend-page h2 {
+            margin: 56px 0 28px;
+            color: #111318;
+            border: 0;
+            font-size: clamp(2rem, 5vw, 4.2rem);
+            line-height: 1;
+            letter-spacing: 0;
+            text-align: left;
+        }
+
+        body.trend-page h2:before {
+            display: none;
+        }
+
+        body.trend-page h2:after {
+            content: "";
+            display: block;
+            width: 110px;
+            height: 6px;
+            margin-top: 18px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #ff5c77, #ffc247, #32c4ff);
+        }
+
+        body.trend-page .project {
+            margin-bottom: 34px;
+            padding: clamp(22px, 4vw, 42px);
+            border: 1px solid rgba(255,255,255,0.76);
+            border-top: 0;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.78);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 24px 60px rgba(17,19,24,0.11);
+        }
+
+        body.trend-page .project:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 32px 90px rgba(17,19,24,0.16);
+        }
+
+        body.trend-page .project:after {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, #ff5c77, #32c4ff);
+            opacity: 0.1;
+            border-radius: 0 0 0 100%;
+            clip-path: none;
+        }
+
+        body.trend-page h3 {
+            margin: 6px 0 22px;
+            padding: 20px 22px;
+            color: #111318;
+            font-size: clamp(1.7rem, 3.5vw, 3rem);
+            letter-spacing: 0;
+            border: 1px solid rgba(17,19,24,0.08);
+            border-radius: 24px;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.82), rgba(255,255,255,0.48)),
+                radial-gradient(circle at right top, rgba(50,196,255,0.18), transparent 30%);
+            box-shadow: 0 16px 40px rgba(17,19,24,0.07);
+        }
+
+        body.trend-page h3:before {
+            content: "FEATURE";
+            display: inline-flex;
+            width: auto;
+            height: auto;
+            position: static;
+            margin: 0 12px 12px 0;
+            padding: 6px 10px;
+            vertical-align: middle;
+            border-radius: 999px;
+            color: white;
+            background: linear-gradient(135deg, #ff5c77, #32c4ff);
+            font-family: 'Noto Serif SC', 'Microsoft YaHei', serif;
+            font-size: 0.82rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        body.trend-page .english-subtitle {
+            color: #667085;
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            letter-spacing: 0;
+        }
+
+        body.trend-page .project-showcase {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.55fr);
+            align-items: stretch;
+            gap: clamp(18px, 3vw, 34px);
+            min-height: 390px;
+            padding: clamp(16px, 2.4vw, 30px);
+            overflow: hidden;
+            border-radius: 30px;
+            background:
+                radial-gradient(circle at 20% 18%, rgba(255, 92, 119, 0.34), transparent 28%),
+                radial-gradient(circle at 90% 18%, rgba(50, 196, 255, 0.32), transparent 30%),
+                linear-gradient(135deg, #10131a 0%, #171c28 52%, #0b0d12 100%);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 26px 62px rgba(17,19,24,0.18);
+        }
+
+        body.trend-page .project-showcase:before {
+            content: "";
+            position: absolute;
+            inset: 16px;
+            z-index: 0;
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 24px;
+            background:
+                linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+            background-size: 34px 34px;
+            pointer-events: none;
+            mask-image: linear-gradient(90deg, rgba(0,0,0,0.9), rgba(0,0,0,0.22));
+        }
+
+        body.trend-page .project-showcase:after {
+            content: "ARTICLE";
+            position: absolute;
+            right: clamp(22px, 4vw, 46px);
+            top: clamp(24px, 4vw, 46px);
+            z-index: 0;
+            color: rgba(255,255,255,0.06);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.5rem, 9vw, 8rem);
+            font-weight: 700;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        body.trend-page .project-image-container {
+            align-self: center;
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            min-height: 320px;
+            padding: 44px 18px 18px;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.16);
+            background: rgba(255,255,255,0.96);
+            box-shadow: 0 28px 60px rgba(0,0,0,0.36);
+            transform: rotate(-1.2deg);
+        }
+
+        body.trend-page .project-image-container:hover {
+            transform: translateY(-4px) rotate(0deg);
+        }
+
+        body.trend-page .project-image-container:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 34px;
+            background:
+                radial-gradient(circle at 20px 17px, #ff5c77 0 6px, transparent 7px),
+                radial-gradient(circle at 42px 17px, #ffc247 0 6px, transparent 7px),
+                radial-gradient(circle at 64px 17px, #35d07f 0 6px, transparent 7px),
+                linear-gradient(90deg, #334155, #475569);
+            z-index: 2;
+        }
+
+        body.trend-page .project-image-container:after {
+            content: "";
+            position: absolute;
+            inset: 34px 0 0;
+            pointer-events: none;
+            background: linear-gradient(135deg, rgba(255,255,255,0.26), transparent 32%);
+            z-index: 3;
+        }
+
+        body.trend-page .project-showcase img,
+        body.trend-page .content-image {
+            width: 100%;
+            max-height: 430px;
+            object-fit: contain;
+            border-radius: 12px;
+            filter: saturate(1.06) contrast(1.04);
+        }
+
+        body.trend-page .project-link-container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            min-height: 100%;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 18px;
+            padding: clamp(10px, 2vw, 18px);
+        }
+
+        body.trend-page .project-link-container:before {
+            content: "新闻原稿预览";
+            display: block;
+            max-width: 310px;
+            color: white;
+            font-size: clamp(1.7rem, 3vw, 2.8rem);
+            line-height: 1.08;
+            font-weight: 700;
+        }
+
+        body.trend-page .project-link-container:after {
+            content: "点击查看高清完整稿件，保留原图链接与作品内容。";
+            display: block;
+            max-width: 320px;
+            margin-bottom: 8px;
+            color: rgba(255,255,255,0.64);
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        body.trend-page .project-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 58px;
+            padding: 15px 22px;
+            border: 0;
+            border-radius: 18px;
+            color: #111318;
+            background: white;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+            white-space: normal;
+            text-align: center;
+            font-size: 1.02rem;
+            font-weight: 700;
+        }
+
+        body.trend-page .project-link:hover {
+            color: white;
+            background: linear-gradient(135deg, #ff5c77, #32c4ff);
+        }
+
+        body.trend-page .official-published {
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.86), rgba(255,255,255,0.66)),
+                radial-gradient(circle at 8% 0%, rgba(255,92,119,0.14), transparent 34%),
+                radial-gradient(circle at 96% 10%, rgba(50,196,255,0.16), transparent 34%);
+        }
+
+        body.trend-page .official-published h3:before {
+            content: "PUBLISHED";
+        }
+
+        .official-note {
+            margin: -4px 0 28px;
+            color: #536070;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .official-grid {
+            display: grid;
+            gap: 18px;
+        }
+
+        .official-article-card {
+            display: grid;
+            grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+            gap: 20px;
+            padding: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(17,19,24,0.08);
+            border-radius: 24px;
+            background: rgba(255,255,255,0.78);
+            box-shadow: 0 18px 46px rgba(17,19,24,0.09);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .official-article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 66px rgba(17,19,24,0.14);
+        }
+
+        .official-thumb {
+            position: relative;
+            display: block;
+            min-height: 260px;
+            overflow: hidden;
+            border-radius: 18px;
+            background: #111318;
+        }
+
+        .official-thumb:before {
+            content: "ANYANG DAILY";
+            position: absolute;
+            left: 14px;
+            top: 14px;
+            z-index: 2;
+            padding: 7px 10px;
+            border-radius: 999px;
+            color: white;
+            background: rgba(17,19,24,0.78);
+            font-size: 0.78rem;
+            font-weight: 700;
+            backdrop-filter: blur(10px);
+        }
+
+        .official-thumb img {
+            width: 100%;
+            height: 100%;
+            min-height: 260px;
+            object-fit: cover;
+            object-position: top center;
+            filter: saturate(1.03) contrast(1.03);
+            transition: transform 0.5s ease;
+        }
+
+        .official-article-card:hover .official-thumb img {
+            transform: scale(1.04);
+        }
+
+        .official-clipping {
+            position: relative;
+            display: flex;
+            min-height: 260px;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 24px;
+            overflow: hidden;
+            border-radius: 18px;
+            color: #111318;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.98), rgba(246,248,255,0.92)),
+                linear-gradient(rgba(17,19,24,0.045) 1px, transparent 1px);
+            background-size: auto, 100% 30px;
+            box-shadow: inset 0 0 0 1px rgba(17,19,24,0.08);
+        }
+
+        .official-clipping:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 7px;
+            background: linear-gradient(#ff5c77, #ffc247, #32c4ff);
+        }
+
+        .official-clipping:after {
+            content: "ARTICLE";
+            position: absolute;
+            right: -6px;
+            bottom: -8px;
+            color: rgba(17,19,24,0.05);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3.2rem, 7vw, 5.4rem);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .official-clipping .clip-kicker {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            width: fit-content;
+            padding: 7px 10px;
+            border-radius: 999px;
+            color: white;
+            background: #111318;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .official-clipping strong {
+            position: relative;
+            z-index: 1;
+            display: block;
+            font-size: clamp(1.6rem, 3vw, 2.45rem);
+            line-height: 1.18;
+        }
+
+        .official-clipping em {
+            position: relative;
+            z-index: 1;
+            color: #ff5c77;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .official-clipping p {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            color: #4b5563;
+            font-size: 0.98rem;
+            line-height: 1.8;
+        }
+
+        .official-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 10px 6px;
+        }
+
+        .official-date {
+            display: inline-flex;
+            width: fit-content;
+            padding: 7px 11px;
+            border-radius: 999px;
+            color: #ff5c77;
+            background: rgba(255,92,119,0.1);
+            font-size: 0.86rem;
+            font-weight: 700;
+        }
+
+        body.trend-page .official-content h4 {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            color: #111318;
+            font-size: clamp(1.38rem, 2.3vw, 2rem);
+            line-height: 1.28;
+        }
+
+        body.trend-page .official-content h4:after {
+            display: none;
+        }
+
+        .official-content p {
+            margin: 0;
+            color: #48515f;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .official-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .official-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 10px;
+            border-radius: 999px;
+            color: #3f4652;
+            background: rgba(17,19,24,0.06);
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        .official-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .official-actions a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 44px;
+            padding: 10px 14px;
+            border-radius: 14px;
+            color: white;
+            background: #111318;
+            font-size: 0.92rem;
+            font-weight: 700;
+            box-shadow: 0 12px 26px rgba(17,19,24,0.14);
+        }
+
+        .official-actions a.secondary {
+            color: #111318;
+            background: rgba(17,19,24,0.07);
+            box-shadow: none;
+        }
+
+        body.trend-page .project-intro {
+            margin-top: 28px;
+            border-bottom: 1px solid rgba(17,19,24,0.08);
+        }
+
+        body.trend-page .project-intro:after {
+            display: none;
+        }
+
+        body.trend-page .project-intro p,
+        body.trend-page .process-item p,
+        body.trend-page .role li {
+            color: #3f4652;
+            font-size: 1.06rem;
+        }
+
+        body.trend-page .english-translation {
+            border-left: 4px solid #32c4ff;
+            border-radius: 16px;
+            background: rgba(50,196,255,0.08);
+            color: #536070;
+            box-shadow: none;
+        }
+
+        body.trend-page .highlight {
+            color: #ff5c77;
+        }
+
+        body.trend-page .process {
+            padding-left: 26px;
+        }
+
+        body.trend-page .process:before {
+            left: 12px;
+            width: 3px;
+            background: linear-gradient(#ff5c77, #ffc247, #32c4ff);
+        }
+
+        body.trend-page .process-item {
+            padding-left: 42px;
+            border-radius: 22px;
+        }
+
+        body.trend-page .process-item:before {
+            left: 0;
+            background: #111318;
+            border-color: white;
+            box-shadow: 0 0 0 7px rgba(50,196,255,0.14);
+        }
+
+        body.trend-page .process-item:after {
+            display: none;
+        }
+
+        body.trend-page .process-title {
+            color: #111318;
+            letter-spacing: 0;
+        }
+
+        body.trend-page .process-title:before,
+        body.trend-page .project-intro h4:after,
+        body.trend-page h4:after {
+            background: linear-gradient(90deg, #ff5c77, #32c4ff);
+        }
+
+        body.trend-page .role {
+            border: 1px solid rgba(17,19,24,0.08);
+            border-radius: 24px;
+            background: rgba(17,19,24,0.04);
+            box-shadow: none;
+        }
+
+        body.trend-page .role:before {
+            border-radius: 999px;
+            color: white;
+            background: #111318;
+            box-shadow: none;
+            letter-spacing: 0;
+        }
+
+        body.trend-page footer {
+            margin-top: 42px;
+            border-radius: 30px;
+            color: white;
+            background: #111318;
+            box-shadow: 0 24px 64px rgba(17,19,24,0.16);
+        }
+
+        body.trend-page .footer-quote,
+        body.trend-page .copyright {
+            color: rgba(255,255,255,0.78);
+        }
+
+        @media (max-width: 820px) {
+            .trend-nav {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .trend-nav .links {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .trend-nav a {
+                text-align: center;
+                padding-inline: 8px;
+            }
+
+            body.trend-page .project-showcase {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            body.trend-page .project-link {
+                width: 100%;
+                justify-content: center;
+                white-space: normal;
+            }
+
+            body.trend-page .project-image-container {
+                max-width: 100%;
+                min-height: auto;
+                transform: none;
+            }
+
+            body.trend-page .project-link-container:before,
+            body.trend-page .project-link-container:after {
+                max-width: none;
+            }
+
+            .official-article-card {
+                grid-template-columns: 1fr;
+            }
+
+            .official-actions a {
+                width: 100%;
+            }
+        }
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2,
+        h3,
+        .subtitle,
+        .project,
+        .project p,
+        .project li,
+        .emphasized-paragraph,
+        .english-translation,
+        .english-text {
+            max-width: 100%;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        }
+
+        @media (max-width: 768px) {
+            .page-container {
+                width: 100%;
+                max-width: 100vw;
+                overflow: hidden;
+            }
+
+            header,
+            .project,
+            .emphasized-paragraph {
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: clamp(2.1rem, 10.5vw, 3.25rem);
+                line-height: 1.08;
+                white-space: normal !important;
+            }
+
+            h2 {
+                display: block;
+                font-size: clamp(1.22rem, 5.8vw, 1.72rem);
+                line-height: 1.14;
+                white-space: normal !important;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .project {
+                padding: clamp(22px, 7vw, 34px);
+            }
+        }
+
+        @media (max-width: 460px) {
+            h1 {
+                font-size: clamp(1.95rem, 10vw, 2.8rem);
+            }
+
+            h2 {
+                font-size: clamp(1.18rem, 5.8vw, 1.55rem);
+            }
+        }
+    </style>
+</head>
+<body class="trend-page text-trend">
+    <div class="scroll-progress"></div>
+    <nav class="trend-nav" aria-label="作品分类导航">
+        <a class="brand" href="index.html"><i class="fas fa-bolt"></i><span>CDL Portfolio</span></a>
+        <div class="links">
+            <a href="index.html">首页</a>
+            <a class="active" href="text.html">文字</a>
+            <a href="design.html">设计</a>
+            <a href="video.html">视频</a>
+        </div>
+    </nav>
+
+    <span class="floating-element fe-1">NEWS</span>
+    <span class="floating-element fe-2">PRESS</span>
+
+    <div class="page-container">
+        <header>
+            <div class="back-to-home">
+                <a href="index.html" class="home-link">
+                    <i class="fas fa-home"></i> 返回首页 / Home
+                </a>
+            </div>
+            <h1>新闻作品集</h1>
+            <div class="press-badge">PRESS PORTFOLIO</div>
+            <p class="subtitle">用文字记录时代 · 用报道传递价值<br>Documenting the Times · Communicating Values</p>
+        </header>
+
+        <section>
+            <h2>文字类作品 / Written Works</h2>
+
+            <div class="project fade-in">
+                <h3>项目 1：春节里的搬运工<br><span class="english-subtitle">Project 1: The Porter During Spring Festival</span></h3>
+                <div class="project-showcase">
+                    <div class="project-image-container">
+                        <img src="https://user4170.cn.imgto.link/public/20260311/c0453512a946b1a58b8cf74e44e8b94.avif" alt="项目1新闻稿件截图">
+                    </div>
+                    <div class="project-link-container">
+                        <a href="https://user4170.cn.imgto.link/public/20260311/c0453512a946b1a58b8cf74e44e8b94.avif" class="project-link" target="_blank">
+                            <i class="fas fa-newspaper"></i> 查看完整新闻稿件 / View Full Article
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-intro">
+                    <h4>项目简介 / Project Introduction</h4>
+                    <p><span class="highlight">字数：</span>919</p>
+                    <p class="english-translation">Word Count: 919</p>
+                    <p><span class="highlight">类型：</span>人物通讯类新闻作品</p>
+                    <p class="english-translation">Type: Character Feature News Article</p>
+                    <p><span class="highlight">结构特点：</span>华尔街日报体</p>
+                    <p class="english-translation">Structural Feature: Wall Street Journal Style</p>
+
+                    <h4>写作流程 / Writing Process</h4>
+                    <div class="process">
+                        <div class="process-item">
+                            <div class="process-title">1、选题与策划</div>
+                            <p>选题背景：春节前后社会消费回暖，基层劳动者忙碌的场景成为观察民生的鲜活切口。我关注到"平凡劳动者如何通过劳动创造幸福"这一主题，既贴合时代背景即消费复苏，又能引发大众对"劳动价值""幸福定义"的共鸣。</p>
+                            <p class="english-translation">Background: The recovery of social consumption around the Spring Festival made the busy scenes of grassroots workers a vivid window to observe people's livelihoods. I focused on the theme of "how ordinary workers create happiness through labor", which not only fits the background of consumption recovery but also resonates with the public's understanding of "labor value" and "definition of happiness".</p>
+                            <p>核心主题：以搬运工朱保平的日常劳动为切入点，展现基层劳动者的奋斗状态，传递"劳动创造幸福""自立自强"的价值观，折射普通群体的生活态度。</p>
+                            <p class="english-translation">Core Theme: Using porter Zhu Baoping's daily labor as an entry point to showcase the working state of grassroots laborers, conveying the values of "labor creates happiness" and "self-reliance", reflecting the life attitudes of ordinary people.</p>
+                            <p>目标读者：面向大众读者，尤其是关注民生、社会百态的群体，通过接地气的故事引发情感共鸣。</p>
+                            <p class="english-translation">Target Audience: General readers, especially those interested in people's livelihoods and social phenomena, to evoke emotional resonance through down-to-earth stories.</p>
+                            <p>策划重点：确定以"个体故事+群体共鸣"为框架，用朱保平的具体经历串联起"劳动者的日常""劳动观""幸福观"三大板块；计划突出细节描写（如工作场景、动作、对话），避免空洞抒情，以真实感打动读者；</p>
+                            <p class="english-translation">Planning Focus: Established a framework of "individual story + group resonance", using Zhu Baoping's specific experiences to connect three sections: "workers' daily life", "views on labor", and "views on happiness"; planned to highlight detailed descriptions (such as work scenes, actions, dialogues) to move readers with authenticity rather than empty sentiment.</p>
+                            <p>预设采访方向：聚焦朱保平的工作流程、个人经历、思想观念，以及周围人对他的评价，补充社会消费回暖的背景信息。</p>
+                            <p class="english-translation">Planned Interview Direction: Focus on Zhu Baoping's work process, personal experiences, thoughts and ideas, as well as evaluations from people around him, supplemented with background information on the recovery of social consumption.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">2、采访与收集信息</div>
+                            <p>实地探访：时间：选择2月1日（农历正月十一）清晨，贴合春节后复工的时间节点，捕捉"忙碌感"；地点：殷都区平安大道批发食品仓库，现场观察朱保平的工作场景——核对出库单、装货、与工友协作的细节，记录环境特征（寒风、仓库布局、货物类型）。</p>
+                            <p class="english-translation">Field Visit: Time: Chose the morning of February 1st (11th day of the lunar new year) to capture the "busy atmosphere" during post-Spring Festival resumption; Location: Wholesale food warehouse on Ping'an Avenue in Yindu District, observing Zhu Baoping's work scenes - checking delivery orders, loading goods, cooperating with coworkers, recording environmental features (cold wind, warehouse layout, types of goods).</p>
+                            <p>人物采访：对朱保平：重点询问工作内容、工作年限、通勤情况、家庭背景、劳动动机、生活细节；对工友：了解朱保平的工作态度，补充侧面评价；对仓库或商户：侧面确认春节前后消费回暖的背景（"商户生意红火，仓库忙碌"），增强稿件的时代性。</p>
+                            <p class="english-translation">Interviews: With Zhu Baoping: Focused on work content, years of service, commute situation, family background, work motivation, life details; With coworkers: Understood Zhu's work attitude and supplementary evaluations; With warehouse or merchants: Indirectly confirmed the background of consumption recovery around Spring Festival ("business is booming, warehouse is busy"), enhancing the contemporary relevance of the article.</p>
+                            <p>信息核实：确认关键信息的准确性，如货物数量、工作时间、家庭情况等，避免事实误差。</p>
+                            <p class="english-translation">Information Verification: Confirmed accuracy of key information such as quantity of goods, working hours, family situation to avoid factual errors.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">3、撰写稿件</div>
+                            <p>结构设计：采用"场景切入—细节展开—主题升华"的逻辑，强调"以小见大"的特点：开篇以仓库场景切入，用具体画面吸引读者；主体按"工作日常—个人经历—思想观念"展开，先描述当日任务，再穿插3年工作流程、通勤细节，接着通过对话展现其劳动观、家庭观，并加入工友评价增强立体感；转折以别人的质疑引出朱保平的回应，强化人物性格；结尾通过"设置收款码"的小插曲，以其感言"能干活、身体健康就是幸福"点题，最终扩展到"仓库工友们创造幸福"，实现从个体到群体的升华。</p>
+                            <p class="english-translation">Structure Design: Adopted a "scene entry - detail expansion - theme elevation" logic, emphasizing the "see the big from the small" approach: begins with warehouse scenes to attract readers; main body unfolds as "daily work - personal experience - philosophy", first describing daily tasks, then interspersing 3-year work routine and commute details, followed by dialogues showcasing his views on labor and family, supplemented with coworker comments for dimensionality; uses others' doubts to prompt Zhu's response, strengthening character; concludes with the episode of "setting up payment QR code" and his remark "being able to work and having good health is happiness", ultimately expanding to "warehouse coworkers creating happiness", achieving elevation from individual to group.</p>
+                            <p>语言风格：以白描为主，用平实、生动的语言还原场景，人物对话保留口语化特征，增强真实感。</p>
+                            <p class="english-translation">Language Style: Primarily uses straightforward description, restoring scenes with plain and vivid language, retaining colloquial characteristics in dialogues to enhance authenticity.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">4、反复校对</div>
+                            <p>事实校对：再次核对时间（2月1日）、地点（殷都区平安大道仓库）、数据（500件货、3年工龄、子女职业）等关键信息，确保与采访记录一致；</p>
+                            <p class="english-translation">Fact Checking: Reconfirmed key information such as time (February 1st), location (Ping'an Avenue warehouse in Yindu District), data (500 items, 3 years of service, children's occupations) to ensure consistency with interview records;</p>
+                            <p>逻辑检查：梳理叙事顺序，确认"工作场景—个人故事—主题升华"的逻辑连贯，无跳跃或矛盾；</p>
+                            <p class="english-translation">Logic Check: Organized narrative sequence, confirmed logical coherence of "work scene - personal story - theme elevation" without jumps or contradictions;</p>
+                            <p>语言润色：修正语病、错别字，优化细节描写，确保句子简洁流畅，避免冗余；</p>
+                            <p class="english-translation">Language Polishing: Corrected grammatical errors and typos, optimized detailed descriptions to ensure concise and smooth sentences, avoiding redundancy;</p>
+                            <p>主题校准：检查是否紧扣"劳动创造幸福"的核心，人物言行是否与主题匹配。</p>
+                            <p class="english-translation">Theme Calibration: Checked whether it closely follows the core of "labor creates happiness" and whether the characters' words and deeds match the theme.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">5. 投稿审核</div>
+                            <p>投稿选择：结合稿件"民生视角、本地劳动者故事"的特点，投稿至《安阳日报》贴合报刊定位；</p>
+                            <p class="english-translation">Submission Choice: Considering the article's features of "people's livelihood perspective, local worker story", submitted to "Anyang Daily" matching the newspaper's positioning;</p>
+                            <p>提交材料：附上稿件正文及采访记录，供编辑核实真实性；</p>
+                            <p class="english-translation">Materials Submitted: Included article text and interview records for editors to verify authenticity;</p>
+                            <p>审核反馈：编辑可能提出修改建议，例如：补充"春节消费回暖"的具体数据以增强背景厚度；调整开篇场景的细节描写，让画面更鲜活；</p>
+                            <p class="english-translation">Review Feedback: Editors might suggest revisions, such as: adding specific data on "Spring Festival consumption recovery" to enhance background depth; adjusting detailed descriptions of opening scenes to make them more vivid;</p>
+                            <p>修改完善：根据编辑意见优化稿件，例如补充仓库负责人关于"春节后订单增长30%"的表述，强化时代背景，最终通过审核。</p>
+                            <p class="english-translation">Revision & Improvement: Optimized the article based on editorial opinions, such as adding the warehouse manager's statement about "30% increase in orders after Spring Festival" to strengthen contemporary background, ultimately passing the review.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">6. 报刊发表</div>
+                            <p>发表时机：结合"春节后复工"的时间节点，选择在2月上中旬发表，契合社会关注"返工潮""基层劳动者"的热点；</p>
+                            <p class="english-translation">Publication Timing: Aligning with the "post-Spring Festival return to work" timeframe, chose to publish in early-mid February, matching the social focus on "returning worker tide" and "grassroots workers";</p>
+                            <p>版面安排：刊登于报纸"民生版"栏目，配以朱保平工作的现场照片，增强视觉感染力；</p>
+                            <p class="english-translation">Layout Arrangement: Published in the newspaper's "People's Livelihood" section, accompanied by on-site photos of Zhu Baoping working to enhance visual impact;</p>
+                            <p>传播效果：稿件发表后，通过讲述普通人的奋斗故事引发读者共鸣，传递积极的价值观，读者可能在评论区留言点赞朱保平的"实在"勤劳"，实现社会正向价值的传播。</p>
+                            <p class="english-translation">Communication Effect: After publication, the article evoked reader resonance by telling an ordinary person's striving story, conveying positive values, with readers possibly leaving comments praising Zhu Baoping's "down-to-earth" and "hardworking" qualities, achieving dissemination of positive social values.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="role">
+                    <ul>
+                        <li>新闻策划：负责本次新闻的选题策划</li>
+                        <li>采访记者：负责新闻人物的采访和实地考察、数据收集</li>
+                        <li>摄影记者：负责拍摄新闻的配图</li>
+                        <li>稿件撰写：负责撰写初稿，并在专业记者的指导下加以修改。</li>
+                        <p class="role-separator"></p>
+                        <li>News Planning: Responsible for topic selection and planning of this news</li>
+                        <li>Interviewing Journalist: Responsible for interviewing subjects and field research, data collection</li>
+                        <li>Photographer: Responsible for news photos</li>
+                        <li>Article Writing: Responsible for drafting and revising under guidance of professional journalists.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project fade-in">
+                <h3>项目 2："人社小喇叭"开讲"政策声"入千万家<br><span class="english-subtitle">Project 2: "HR Speaker" Broadcasts Policy Voices to Millions</span></h3>
+                <div class="project-showcase">
+                    <div class="project-image-container">
+                        <img src="https://user4170.cn.imgto.link/public/20260311/af0bcf6196a62c53826e696202f458e.avif" alt="项目2新闻稿件截图">
+                    </div>
+                    <div class="project-link-container">
+                        <a href="https://user4170.cn.imgto.link/public/20260311/af0bcf6196a62c53826e696202f458e.avif" class="project-link" target="_blank">
+                            <i class="fas fa-newspaper"></i> 查看完整新闻稿件 / View Full Article
+                        </a>
+                    </div>
+                </div>
+                <div class="project-intro">
+                    <h4>项目简介 / Project Introduction</h4>
+                    <p><span class="highlight">字数：</span>893</p>
+                    <p class="english-translation">Word Count: 893</p>
+                    <p><span class="highlight">类型：</span>新闻纪实报道</p>
+                    <p class="english-translation">Type: News Documentary Report</p>
+
+                    <h4>结构特点 / Structural Features</h4>
+                    <p>1.总分总逻辑闭环：开篇以"'云端'成为连接党群的新桥梁"总起，提炼核心创新点；中间分述两大实践场景——县人社局"人社小喇叭"视频号专栏与村级党员教育直播间，通过具体事件、数据支撑；结尾总结实践意义并展望未来拓展方向，形成"现象—案例—价值—展望"的完整叙事链。</p>
+                    <p class="english-translation">1. Complete logical loop (general-specific-general): Begins with "'cloud' becoming a new bridge connecting party and masses" to extract core innovation; middle part details two practical scenarios - county HR Bureau's "HR Speaker" video channel and village-level party member education livestream, supported by specific events and data; conclusion summarizes practical significance and future development directions, forming a complete narrative chain of "phenomenon-case-value-prospect".</p>
+                    <p>2.微观案例与宏观主题结合：以"城乡居民养老保险政策解读直播""村干部化身主播讲政策"等微观场景为切口，关联"基层治理现代化""乡村振兴""党建创新"等宏观主题，体现"小切口反映大时代"的新闻视角。</p>
+                    <p class="english-translation">2. Integration of micro cases with macro themes: Uses micro scenarios like "livestream interpreting urban-rural resident pension insurance policy" and "village cadres becoming anchors to explain policies" as entry points, connecting with macro themes like "modernization of grassroots governance", "rural revitalization", and "party building innovation", reflecting the journalistic perspective of "small entry point reflecting big era".</p>
+                    <p>3.数据与场景互证：通过"7期短视频""解答120余个问题""政策咨询效率提升60%"等硬数据，与"群众足不出户明晰流程""村民亲切称为'政策百宝箱'"等场景化描述结合，增强报道的真实性与感染力。</p>
+                    <p class="english-translation">3. Mutual verification of data and scenarios: Combines hard data like "7 short videos", "answered over 120 questions", "policy consultation efficiency improved by 60%" with scenario-based descriptions like "masses clarifying procedures without leaving home" and "villagers affectionately calling it 'policy treasure chest'", enhancing the report's authenticity and appeal.</p>
+
+                    <h4>写作流程 / Writing Process</h4>
+                    <div class="process">
+                        <div class="process-item">
+                            <div class="process-title">1. 选题与策划</div>
+                            <p>聚焦"新媒体赋能基层治理"这一时代命题，发现安阳县将"云直播"融入党群服务的创新实践具有典型性——既体现政策落地的"最后一公里"突破，又契合新媒体与基层工作融合的趋势，具备新闻价值与社会意义。策划时明确以"'云端'如何让治理更贴近百姓"为核心问题，确定"政策传播—民声响应—治理升级"的叙事主线，涵盖政府部门与村级实践两个层级，确保视角全面。</p>
+                            <p class="english-translation">Focusing on the contemporary theme of "new media empowering grassroots governance", discovered Anyang County's innovative practice of integrating "cloud livestreaming" into party-mass services has typicality - both reflecting the "last kilometer" breakthrough of policy implementation and aligning with the trend of new media integrating with grassroots work, possessing news value and social significance. During planning, clearly defined "how 'cloud' makes governance closer to people" as the core question, established the narrative thread of "policy dissemination - public response - governance upgrade", covering two levels of government departments and village practices to ensure comprehensive perspective.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">2. 采访与收集信息</div>
+                            <p>采用"分层采访+多源验证"方式：走访安阳县人社局，专访"人社小喇叭"项目负责人及直播主讲人，获取直播策划细节、群众互动案例及数据；深入白璧镇东北务村，与村干部、村民座谈，记录直播间运营日常、接访量变化的具体场景，收集"主题党日结合群众高频问题"的实例；对接县委组织部，了解党员教育直播间的整体规划、建设标准及政策背景，同步收集官方文件、工作提示等资料，确保信息权威准确。</p>
+                            <p class="english-translation">Adopted "layered interviews + multi-source verification": Visited Anyang County HR Bureau, exclusively interviewed "HR Speaker" project leader and livestream hosts to obtain livestream planning details, public interaction cases and data; went deep into Dongbeiwu Village of Baibi Town, held discussions with village cadres and residents, recorded specific scenarios of livestream room daily operations and changes in visitor volume, collected examples of "theme party day combined with public's frequent questions"; connected with County Party Committee Organization Department to understand overall planning, construction standards and policy background of party member education livestream rooms, simultaneously collected official documents and work notices to ensure authoritative and accurate information.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">3. 撰写稿件</div>
+                            <p>遵循"场景先行—逻辑递进"原则：开篇以"云端连接党群"的具象化描述引入，快速建立读者认知；主体部分按"部门实践—村级实践—顶层设计"层次展开，每个案例先呈现具体场景，再嵌入数据与成效，最后关联治理价值；结尾立足"未来拓展"，升华至"乡村振兴""基层治理"的深层意义。语言风格兼顾新闻的严谨性与可读性，避免政策术语堆砌，用"群众关心的'怎么缴、怎么领'""村干部化身主播"等通俗表达增强贴近性。</p>
+                            <p class="english-translation">Followed the principle of "scenes first - logical progression": Begins with concrete description of "cloud connecting party and masses" to quickly establish reader understanding; main body unfolds at levels of "department practice - village practice - top-level design", each case first presenting specific scenarios, then embedding data and results, finally connecting governance value; conclusion based on "future development", elevating to deeper significance of "rural revitalization" and "grassroots governance". Language style balances journalistic rigor and readability, avoiding policy jargon accumulation, using popular expressions like "masses' concerns about 'how to pay, how to receive'" and "village cadres becoming anchors" to enhance approachability.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">4. 反复校对</div>
+                            <p>重点核查三重维度：一是数据准确性，如"7期短视频""10万人次点击量""接访量下降40%"等关键数据与采访记录、官方资料交叉验证；二是逻辑连贯性，确保"具体案例—成效—顶层设计—未来规划"的递进关系清晰，无断层；三是表述精准性，如"党员远程教育体系""闭环机制"等术语使用规范，场景描述与事实一致。</p>
+                            <p class="english-translation">Focused on verifying three dimensions: First, data accuracy, cross-verifying key data like "7 short videos", "100,000 views", "40% drop in visitor volume" with interview records and official materials; second, logical coherence, ensuring clear progressive relationship of "specific cases - results - top-level design - future planning" without gaps; third, expression precision, standard use of terms like "party member distance education system" and "closed-loop mechanism", with scenario descriptions consistent with facts.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">5. 投稿审核</div>
+                            <p>针对地方党报或民生类报刊的定位，调整内容侧重——强化"党建引领""民生实效"等符合报刊导向的表述，补充基层干部与群众的直接引语增强报道温度，按报刊要求规范格式，通过审核确认内容符合发布标准。</p>
+                            <p class="english-translation">Adjusted content emphasis according to positioning of local party newspapers or people's livelihood publications - strengthened expressions aligned with publication orientation like "party building leadership" and "people's livelihood effectiveness", supplemented direct quotes from grassroots cadres and masses to enhance report warmth, standardized format according to publication requirements, passed review confirming content meets publishing standards.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">6. 报刊发表</div>
+                            <p>作品发表于地方主流报刊的"基层治理"或"民生创新"专栏，凭借鲜活案例与深度视角，成为展现基层新媒体应用的代表性报道，被当地政务平台转载，为其他地区基层治理创新提供参考，实现新闻传播的社会价值。</p>
+                            <p class="english-translation">The work was published in "Grassroots Governance" or "People's Livelihood Innovation" columns of local mainstream newspapers, with vivid cases and in-depth perspective becoming representative reporting showcasing grassroots new media applications, reposted by local government platforms, providing reference for grassroots governance innovation in other regions, realizing the social value of news communication.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="role">
+                    <ul>
+                        <li>新闻策划：负责本次新闻的选题策划</li>
+                        <li>采访记者：负责新闻人物的采访和实地考察、数据收集</li>
+                        <li>稿件撰写：反复校验各类材料，并验证准确性、真实性，据此撰写稿件。</li>
+                        <p class="role-separator"></p>
+                        <li>News Planning: Responsible for topic selection and planning of this news</li>
+                        <li>Interviewing Journalist: Responsible for interviewing subjects and field research, data collection</li>
+                        <li>Article Writing: Repeatedly verified various materials and confirmed accuracy and authenticity, accordingly wrote the article.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project fade-in">
+                <h3>项目3：跨越山海 相聚安阳<br><span class="english-subtitle">Project 3: Across Mountains and Seas: Gathering in Anyang</span></h3>
+                <div class="project-showcase">
+                    <div class="project-image-container">
+                        <img src="https://user4170.cn.imgto.link/public/20260311/13eaa96a0163a39786ba721686a3114.avif" alt="项目3新闻稿件截图">
+                    </div>
+                    <div class="project-link-container">
+                        <a href="https://user4170.cn.imgto.link/public/20260311/13eaa96a0163a39786ba721686a3114.avif" class="project-link" target="_blank">
+                            <i class="fas fa-newspaper"></i> 查看完整新闻稿件 / View Full Article
+                        </a>
+                    </div>
+                </div>
+                <div class="project-intro">
+                    <p><span class="highlight">字数：</span>583</p>
+                    <p class="english-translation">Word Count: 583</p>
+                    <p><span class="highlight">类型：</span>跨区域文化交流主题深度报道</p>
+                    <p class="english-translation">Type: In-depth Report on Cross-regional Cultural Exchange</p>
+
+                    <h4>项目简介 / Project Introduction</h4>
+                    <p>作为文化交流类深度报道，聚焦香港学生"爱我中华河南之旅"安阳研学活动，以中国文字博物馆、殷墟为文化载体，通过记录香港学生"书本认知→实地震撼"的情感体验，解码"文字根脉与商代智慧"的历史价值，串联"文化体验→国家认同→豫港交流"的传播逻辑。我从挖掘"青年文化认知反差"的选题策划，到捕捉现场细节的采访、史实校验与故事化撰写，尝试以新闻文本搭建"历史共情→身份认同"的传播桥梁，探索港澳青年文化传播的叙事路径。</p>
+                    <p class="english-translation">As a cultural exchange in-depth report, focusing on Hong Kong students' "Love My China Henan Tour" study activity in Anyang, using the Chinese Writing Museum and Yin Ruins as cultural carriers, through recording Hong Kong students' emotional journey from "textbook knowledge to on-site awe", decoding the historical value of "writing roots and Shang Dynasty wisdom", connecting the communication logic of "cultural experience → national identity → Henan-Hong Kong exchange". From the topic planning of exploring "youth cultural cognitive contrast" to on-site detail capturing interviews, historical fact verification and storytelling writing, attempted to build a communication bridge of "historical empathy → identity recognition" through journalistic text, exploring narrative approaches for cultural communication with Hong Kong and Macao youth.</p>
+
+                    <h4>结构特点 / Structural Features</h4>
+                    <p>"体验叙事+文化解码"的双线共鸣架构</p>
+                    <p class="english-translation">Dual-line resonance structure of "experience narrative + cultural decoding"</p>
+
+                    <h4>写作流程 / Writing Process</h4>
+                    <div class="process">
+                        <div class="process-item">
+                            <div class="process-title">1. 选题与策划</div>
+                            <p>捕捉"文化寻根"的三重传播价值：青年视角：香港学生"走出课堂"的认知反差（书本→实地），天然具备故事性；文化视角：安阳作为"文字根脉、殷墟故地"的文化唯一性，是解读中华文明的优质样本；政策视角：呼应"国策与民生"主题，将"文化交流"与"国家认同教育""城市文旅发展"关联，提升报道格局。据此策划 "触摸文明根脉——香港青年的安阳文化觉醒记" 主题，明确"以青年体验为镜，照见历史文化的当代感染力"的叙事方向。</p>
+                            <p class="english-translation">Captured threefold communication value of "cultural roots tracing": Youth perspective: Hong Kong students' cognitive contrast from "classroom to field" naturally contains storytelling; Cultural perspective: Anyang's uniqueness as "writing roots and Yin Ruins site" makes it a quality sample for interpreting Chinese civilization; Policy perspective: Echoing the theme of "national policy and people's livelihood", connecting "cultural exchange" with "national identity education" and "urban cultural tourism development" to elevate the report's perspective. Accordingly planned the theme "Touching the Roots of Civilization - Hong Kong Youth's Anyang Cultural Awakening", clarifying the narrative direction of "using youth experience as a mirror to reflect the contemporary appeal of historical culture".</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">2. 采访与收集信息</div>
+                            <p>微观体验层：捕捉表情、动作、语言等细节，记录香港学生从"陌生"到"震撼"的情绪曲线；宏观文化层：查阅殷墟排水系统、甲骨文发现史等权威资料，提炼"商代文明科技智慧""汉字演变里程碑"等文化知识点，为"学生感慨"提供专业背书。同时，挖掘活动背景，明确"文化交流→认同构建"的逻辑关联。</p>
+                            <p class="english-translation">Micro experience layer: Captured details like expressions, movements and language, recording Hong Kong students' emotional curve from "unfamiliar" to "awe"; Macro cultural layer: Researched authoritative materials like Yin Ruins drainage system and oracle bone script discovery history, extracting cultural knowledge points like "Shang Dynasty civilization's technological wisdom" and "milestones in Chinese character evolution" to professionally validate students' impressions. Simultaneously explored activity background to clarify the logical connection of "cultural exchange → identity construction".</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">3. 撰写稿件</div>
+                            <p>场景共情：以"踏入中国文字博物馆光影交错的展厅"构建沉浸式开头，用"眼神中满是惊叹"等画面感描写，快速抓取读者注意力；引语点睛：精选黎紫希"古人雕琢文字"、杨汉宇"文物是钥匙"等个性化表达，替代笼统评价，让文化感悟更真实；文化呼应：在学生体验后，补充"汉字演变时间轴""殷墟文明成就"等轻量化解读，实现"故事性→知识性"的自然过渡；主题收束：紧扣"国策与民生"，落点在"豫港交流桥梁"和"城市文旅发展"，强化报道的现实意义。</p>
+                            <p class="english-translation">Scene empathy: Constructed immersive opening with "stepping into the light-and-shadow interwoven exhibition hall of Chinese Writing Museum", using visually descriptive language like "eyes full of amazement" to quickly capture reader attention; Quote highlights: Carefully selected personalized expressions like Li Zixi's "ancients carved characters" and Yang Hanyu's "cultural relics are keys" to replace general evaluations, making cultural perceptions more authentic; Cultural respond: After student experiences, supplemented lightweight interpretations like "Chinese character evolution timeline" and "Yin Ruins civilization achievements" to achieve natural transition from "storytelling to knowledge"; Theme conclusion: Closely tied to "national policy and people's livelihood", landing on "Henan-Hong Kong exchange bridge" and "urban cultural tourism development", strengthening the report's practical significance.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">4. 反复校对</div>
+                            <p>史实校验：核对"殷墟排水系统年代""甲骨文出土地"等历史信息，确保文化解读准确；传播校验：验证"香港学生活动委员会"背景、活动名称表述，确保机构和项目信息无误，避免舆论风险。</p>
+                            <p class="english-translation">Historical fact verification: Checked historical information like "Yin Ruins drainage system era" and "oracle bone script excavation site" to ensure accurate cultural interpretation; Communication verification: Verified background of "Hong Kong Student Activity Committee" and activity name description to ensure institution and project information accuracy, avoiding public opinion risks.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">5. 投稿审核</div>
+                            <p>提炼 "青年认同故事"：突出香港学生的"惊叹""震撼"等情感变化，将"文化交流"转化为个体成长叙事，契合媒体"人物故事化"的传播偏好；强化 "文化传播亮点"：标注"中国文字博物馆、殷墟"的文化符号价值，附加"豫港文化交流"的政策背景，协助编辑快速抓取"文化统战"新闻价值。</p>
+                            <p class="english-translation">Extracted "youth identity stories": Highlighted Hong Kong students' emotional changes like "amazement" and "awe", transforming "cultural exchange" into individual growth narratives matching media's "character storytelling" communication preference; Strengthened "cultural communication highlights": Marked cultural symbolic value of "Chinese Writing Museum, Yin Ruins", added policy background of "Henan-Hong Kong cultural exchange" to assist editors quickly grasping "cultural united front" news value.</p>
+                        </div>
+
+                        <div class="process-item">
+                            <div class="process-title">6. 报刊发表</div>
+                            <p>实现"文化传播+认同构建"的舆论价值 稿件以 "青年体验为表，文化根脉为里" 的特色，既满足读者对"香港青年内地行" 的故事期待，又通过历史文化解读传递"文明自信"，达成"新闻可读性"与"文化传播性"的统一。</p>
+                            <p class="english-translation">Achieved public opinion value of "cultural communication + identity construction". The article featured "youth experience as surface, cultural roots as core", both satisfying readers' story expectations about "Hong Kong youth mainland trips" and conveying "civilization confidence" through historical-cultural interpretation, achieving unity of "news readability" and "cultural communicability".</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="role">
+                    <ul>
+                        <li>新闻策划：突破"文化报道=景点介绍"的惯性，挖掘"香港青年的文化认知反差"这一核心冲突，将"历史文化"与"青年认同"深度绑定，构建"小切口→大主题"的报道框架。</li>
+                        <li>采访记者：采用"参与式观察+情感捕捉"法：不仅记录学生的语言，更捕捉"眼神惊叹""驻足凝视"等非语言信号，还原最真实的文化冲击瞬间；同时，通过轻量化文化提问如"对商代排水系统的理解"，引导学生输出更具思考性的观点。</li>
+                        <li>新闻编辑：以"体验→解读→升华"逻辑重构信息，用学生的"惊叹"串联文化知识点，避免生硬说教；建立"史实+传播"双校验机制，确保文化解读准确且符合传播规律。</li>
+                        <p class="role-separator"></p>
+                        <li>News Planning: Broke the inertia of "cultural reporting = scenic spot introduction", explored the core conflict of "Hong Kong youth's cultural cognitive contrast", deeply bound "historical culture" with "youth identity", constructed "small entry point → big theme" reporting framework.</li>
+                        <li>Interviewing Journalist: Adopted "participatory observation + emotion capturing" method: Not only recorded students' language but also captured non-verbal signals like "amazed eyes" and "lingering gazes" to restore most authentic cultural shock moments; simultaneously, through lightweight cultural questions like "understanding of Shang Dynasty drainage system", guided students to output more thoughtful viewpoints.</li>
+                        <li>News Editing: Reconstructed information with "experience → interpretation → elevation" logic, connected cultural knowledge points with students' "amazement" to avoid rigid preaching; established dual verification mechanism of "historical facts + communication" to ensure accurate cultural interpretation aligned with communication principles.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project fade-in official-published">
+                <h3>发表文章补充<br><span class="english-subtitle">Published Highlights</span></h3>
+
+                <div class="official-grid">
+                    <article class="official-article-card">
+                        <a class="official-clipping" href="https://www.ayrbs.com/szb/pc/content/202301/31/content_22344.html" target="_blank">
+                            <span class="clip-kicker">安阳日报 · 新春走基层</span>
+                            <strong>儿媳给我发红包</strong>
+                            <em>□本报记者 杨凌高 实习生 程栋梁</em>
+                            <p>阖家团圆的时候，来自亲人的祝福总能将岁月暖热。报道从春节拜年细节切入，呈现家庭温度与亲情传承。</p>
+                        </a>
+                        <div class="official-content">
+                            <div>
+                                <span class="official-date">2023-01-31 · 安阳日报数字报</span>
+                                <h4>儿媳给我发红包（新春走基层）</h4>
+                            </div>
+                            <p>春节走基层报道，聚焦文峰区杨老先生一家拜年与发红包的生活场景，以家庭细节呈现节日温度与亲情传承。</p>
+                            <div class="official-meta">
+                                <span><i class="fas fa-pen-nib"></i> 署名：本报记者 杨凌高 实习生 程栋梁</span>
+                                <span><i class="fas fa-newspaper"></i> 来源：安阳日报</span>
+                            </div>
+                            <div class="official-actions">
+                                <a href="https://www.ayrbs.com/szb/pc/content/202301/31/content_22344.html" target="_blank"><i class="fas fa-external-link-alt"></i> 查看官网文章</a>
+                                <a class="secondary" href="https://www.ayrbs.com/szb/pc/attachment/202301/31/184242a1-f04e-4619-967b-804f406caad8.pdf" target="_blank"><i class="fas fa-file-pdf"></i> 查看报纸版面</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="official-article-card">
+                        <a class="official-clipping" href="https://www.ayrbs.com/szb/pc/content/202504/11/content_85670.html" target="_blank">
+                            <span class="clip-kicker">安阳日报 · 城市赛事</span>
+                            <strong>“安马”参赛物资领取工作开启</strong>
+                            <em>记者 郝亚伟 实习生 程栋梁</em>
+                            <p>中国工商银行安阳分行“甲骨文杯”2025 安阳马拉松赛参赛物资领取工作启动，赛事预计吸引 1.8 万名跑者参与。</p>
+                        </a>
+                        <div class="official-content">
+                            <div>
+                                <span class="official-date">2025-04-11 · 安阳日报数字报</span>
+                                <h4>“安马”参赛物资领取工作开启</h4>
+                            </div>
+                            <p>围绕 2025 安阳马拉松赛参赛物资领取启动进行报道，交代赛事规模、领取安排与城市赛事服务细节。</p>
+                            <div class="official-meta">
+                                <span><i class="fas fa-pen-nib"></i> 署名：记者 郝亚伟 实习生 程栋梁</span>
+                                <span><i class="fas fa-newspaper"></i> 来源：安阳日报</span>
+                            </div>
+                            <div class="official-actions">
+                                <a href="https://www.ayrbs.com/szb/pc/content/202504/11/content_85670.html" target="_blank"><i class="fas fa-external-link-alt"></i> 查看官网文章</a>
+                                <a class="secondary" href="https://www.ayrbs.com/szb/pc/attachment/202504/11/5091ba96-99c9-40ff-9149-90f6dc872fad.pdf" target="_blank"><i class="fas fa-file-pdf"></i> 查看报纸版面</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="official-article-card">
+                        <a class="official-clipping" href="https://www.ayrbs.com/szb/pc/content/202504/15/content_85998.html" target="_blank">
+                            <span class="clip-kicker">安阳日报 · 基层传播</span>
+                            <strong>线上线下双驱动 共促学习掀热潮</strong>
+                            <em>记者 郝亚伟 实习生 程栋梁</em>
+                            <p>安阳县崔家桥镇段宋村采用“线上+线下”方式开展讲座，现场听讲与直播参与结合，推动基层学习传播。</p>
+                        </a>
+                        <div class="official-content">
+                            <div>
+                                <span class="official-date">2025-04-15 · 安阳日报数字报</span>
+                                <h4>线上线下双驱动 共促学习掀热潮</h4>
+                            </div>
+                            <p>报道安阳县崔家桥镇段宋村采用线下讲座与党员远程教育直播间同步传播的学习活动，呈现基层文化传播新形式。</p>
+                            <div class="official-meta">
+                                <span><i class="fas fa-pen-nib"></i> 署名：记者 郝亚伟 实习生 程栋梁</span>
+                                <span><i class="fas fa-newspaper"></i> 来源：安阳日报</span>
+                            </div>
+                            <div class="official-actions">
+                                <a href="https://www.ayrbs.com/szb/pc/content/202504/15/content_85998.html" target="_blank"><i class="fas fa-external-link-alt"></i> 查看官网文章</a>
+                                <a class="secondary" href="https://www.ayrbs.com/szb/pc/attachment/202504/15/3b24d043-3b99-4ea1-a3c8-943297af8a29.pdf" target="_blank"><i class="fas fa-file-pdf"></i> 查看报纸版面</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="official-article-card">
+                        <a class="official-clipping" href="https://www.ayrbs.com/szb/pc/content/202504/18/content_86390.html" target="_blank">
+                            <span class="clip-kicker">安阳日报 · 乡村现场</span>
+                            <strong>闻风而动 干群合力护花果</strong>
+                            <em>记者 郝亚伟 实习生 程栋梁</em>
+                            <p>林州市黄华镇庙荒村大风后启动“护樱保卫战”，干群协力修复防鸟网，守护刚坐果的樱桃幼果。</p>
+                        </a>
+                        <div class="official-content">
+                            <div>
+                                <span class="official-date">2025-04-18 · 安阳日报数字报</span>
+                                <h4>闻风而动 干群合力护花果</h4>
+                            </div>
+                            <p>记录林州市黄华镇庙荒村大风后干群协力修复防鸟网、守护樱桃幼果的现场行动，突出基层应急与产业守护。</p>
+                            <div class="official-meta">
+                                <span><i class="fas fa-pen-nib"></i> 署名：记者 郝亚伟 实习生 程栋梁</span>
+                                <span><i class="fas fa-newspaper"></i> 来源：安阳日报</span>
+                            </div>
+                            <div class="official-actions">
+                                <a href="https://www.ayrbs.com/szb/pc/content/202504/18/content_86390.html" target="_blank"><i class="fas fa-external-link-alt"></i> 查看官网文章</a>
+                                <a class="secondary" href="https://www.ayrbs.com/szb/pc/attachment/202504/18/eaf7ded3-563f-4dba-b00e-b94b98eab09e.pdf" target="_blank"><i class="fas fa-file-pdf"></i> 查看报纸版面</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="official-article-card">
+                        <a class="official-clipping" href="https://www.ayrbs.com/szb/pc/content/202504/24/content_86656.html" target="_blank">
+                            <span class="clip-kicker">安阳日报 · 产业观察</span>
+                            <strong>引领摩托车锻造轮毂行业新潮流</strong>
+                            <em>□本报记者 郝亚伟 实习生 程栋梁</em>
+                            <p>走进安阳固特隆科技实业有限公司，观察锻造轮毂制造企业通过技术创新、产业升级形成的发展动能。</p>
+                        </a>
+                        <div class="official-content">
+                            <div>
+                                <span class="official-date">2025-04-24 · 安阳日报数字报</span>
+                                <h4>引领摩托车锻造轮毂行业新潮流</h4>
+                            </div>
+                            <p>以安阳固特隆科技实业有限公司为样本，报道锻造轮毂产业在技术创新、产业升级与市场拓展中的发展动能。</p>
+                            <div class="official-meta">
+                                <span><i class="fas fa-pen-nib"></i> 署名：本报记者 郝亚伟 实习生 程栋梁</span>
+                                <span><i class="fas fa-newspaper"></i> 来源：安阳日报</span>
+                            </div>
+                            <div class="official-actions">
+                                <a href="https://www.ayrbs.com/szb/pc/content/202504/24/content_86656.html" target="_blank"><i class="fas fa-external-link-alt"></i> 查看官网文章</a>
+                                <a class="secondary" href="https://www.ayrbs.com/szb/pc/attachment/202504/24/c6580fee-f6b2-442a-b78a-ca94e0056775.pdf" target="_blank"><i class="fas fa-file-pdf"></i> 查看报纸版面</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-quote">
+                新闻是历史的初稿，记者是时代的记录者。我用笔尖触摸社会脉搏，用报道传递真实价值。<br>
+                Journalism is the first draft of history, journalists are the chroniclers of our times. With my pen I touch the pulse of society, through reporting I communicate true values.
+            </div>
+            <div class="copyright">© 2025 新闻作品集 | 用专业诠释传媒力量<br>Press Portfolio | Interpreting Media Power with Professionalism</div>
+        </footer>
+    </div>
+    <script>
+        // Scroll progress indicator
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.querySelector(".scroll-progress").style.width = scrolled + "%";
+
+            // Fade-in on scroll for project cards
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                const projectTop = project.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (projectTop < windowHeight * 0.8) { // When 80% of the project is in view
+                    project.classList.add('appear');
+                } else {
+                    // Optional: remove 'appear' class if you want elements to re-animate on scroll up/down
+                    // project.classList.remove('appear');
+                }
+            });
+        };
+
+        // Initial check for fade-in elements on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                const projectTop = project.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (projectTop < windowHeight * 0.8) {
+                    project.classList.add('appear');
+                }
+            });
+        });
+
+        // This fetch call seems specific to local testing with ngrok and might not be needed for general deployment.
+        // It's kept for consistency with previous user-provided code, but can be removed if not applicable.
+        fetch(location.href,{headers:{"ngrok-skip-browser-warning":"1"}});
+    </script>
+</body>
+</html>

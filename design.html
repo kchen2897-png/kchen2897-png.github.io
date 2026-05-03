@@ -1,0 +1,2079 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平面设计作品集 | 传媒人展示</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Base Variables & General Styles */
+        :root {
+            --primary-color: #1A2E3D; /* Deep Charcoal Blue */
+            --secondary-color: #D4AF37; /* Rich Gold */
+            --accent-color: #7A8D9E; /* Muted Grey-Blue */
+            --light-color: #F8F8F8; /* Off-White Background */
+            --highlight-color: #E94560; /* Accent Red (less used, for specific highlights) */
+            --text-color: #333333; /* Dark Grey for Body Text */
+            --text-light: #555555; /* Slightly Lighter Grey */
+            --english-color: #6A7B8C; /* Softer Blue-Grey for English */
+            --gold-light: rgba(212, 175, 55, 0.05); /* Very Light Gold for Gradients */
+            --gold-medium: rgba(212, 175, 55, 0.15); /* Medium Gold for Gradients */
+            --gold-dark: rgba(212, 175, 55, 0.4); /* Darker Gold for Gradients */
+            --shadow-light: rgba(0, 0, 0, 0.05);
+            --shadow-medium: rgba(0, 0, 0, 0.12);
+            --shadow-heavy: rgba(0, 0, 0, 0.2);
+        }
+
+        /* Utility for fade-in effect on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Global Body & Container */
+        body {
+            font-family: 'Noto Serif SC', 'Microsoft YaHei', serif;
+            line-height: 1.8; /* Slightly adjusted for better readability */
+            color: var(--text-color);
+            max-width: 1400px; /* Increased max-width for grander feel */
+            margin: 0 auto;
+            padding: 0;
+            background-color: var(--light-color);
+            position: relative;
+            overflow-x: hidden;
+            background-image:
+                linear-gradient(to bottom, rgba(248,248,248,0.98) 0%, rgba(248,248,248,0.98) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 100 100"><text x="10" y="50" font-family="Playfair Display" font-weight="700" font-size="12" fill="rgba(26,46,61,0.02)">DESIGN</text><text x="60" y="80" font-family="Playfair Display" font-weight="400" font-size="10" fill="rgba(26,46,61,0.01)">ART</text></svg>'); /* More subtle, themed background */
+            background-repeat: repeat;
+            background-attachment: fixed;
+        }
+
+        body:before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 15% 25%, var(--gold-medium) 0%, transparent 35%),
+                        radial-gradient(circle at 85% 75%, var(--gold-light) 0%, transparent 30%);
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        .page-container {
+            padding: 0 60px 60px; /* More generous padding */
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin: 0 0 80px; /* More space below header */
+            padding: 80px 0 60px; /* More padding */
+            border-bottom: 1px solid rgba(26, 26, 46, 0.1);
+            position: relative;
+            background: linear-gradient(to right, rgba(255,255,255,0.98), rgba(255,255,255,0.98));
+            background-attachment: fixed;
+            box-shadow: 0 5px 25px var(--shadow-light); /* Soft shadow for depth */
+        }
+
+        header:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8px; /* Thicker accent line */
+            background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            z-index: 2;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 4.5rem; /* Larger, more impactful */
+            margin: 0 0 25px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+            animation: textReveal 1.5s ease-out forwards; /* Text reveal animation */
+        }
+
+        @keyframes textReveal {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        h1:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px; /* Wider underline */
+            height: 5px; /* Thicker underline */
+            background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+            border-radius: 3px;
+            animation: underlineGrow 1.5s ease-out forwards 0.5s; /* Animated underline */
+        }
+
+        @keyframes underlineGrow {
+            0% { width: 0; opacity: 0; }
+            100% { width: 120px; opacity: 1; }
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.6rem; /* Larger subtitle */
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-top: 30px;
+            position: relative;
+            display: inline-block;
+            line-height: 1.6;
+            animation: fadeIn 2s ease-out forwards 0.8s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .subtitle:before, .subtitle:after {
+            content: "◆"; /* More refined bullet */
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin: 0 20px;
+            position: relative;
+            top: 2px;
+            opacity: 0.8;
+        }
+
+        .design-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 30px; /* Larger badge */
+            border-radius: 40px;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--secondary-color); /* More prominent border */
+            box-shadow: 0 8px 20px var(--shadow-medium);
+            transition: all 0.4s ease;
+            cursor: default;
+            animation: fadeIn 2s ease-out forwards 1.2s;
+        }
+
+        .design-badge:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px var(--shadow-heavy);
+        }
+
+        .design-badge:before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3) 50%, transparent 100%);
+            transform: rotate(45deg);
+            transition: 0.8s ease-in-out;
+            opacity: 0.8;
+        }
+
+        .design-badge:hover:before {
+            left: 100%;
+            top: 100%;
+        }
+
+        /* Section Headings */
+        h2 {
+            color: var(--primary-color);
+            font-size: 3rem; /* Larger H2 */
+            margin: 100px 0 60px; /* More spacing */
+            padding-bottom: 25px;
+            border-bottom: 3px solid var(--secondary-color); /* Thicker accent line */
+            font-weight: 600;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1.5px;
+            text-align: center;
+        }
+
+        h2:before {
+            content: "❝";
+            position: absolute;
+            left: 50%;
+            top: -30px; /* Adjusted position */
+            transform: translateX(-50%);
+            color: var(--secondary-color);
+            font-size: 3.5rem; /* Larger quote mark */
+            opacity: 0.7;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            font-size: 2.5rem; /* Larger H3 */
+            margin: 70px 0 40px;
+            font-weight: 600;
+            position: relative;
+            padding-left: 45px; /* More padding */
+            line-height: 1.4;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h3:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 20px; /* Adjusted position */
+            width: 35px; /* Wider line */
+            height: 5px; /* Thicker line */
+            background-color: var(--secondary-color);
+        }
+
+        .english-subtitle {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem; /* Larger English subtitle */
+            color: var(--english-color);
+            margin-top: 15px;
+            font-weight: 400;
+            letter-spacing: 1.2px;
+            font-style: italic;
+            position: relative;
+            opacity: 0.9;
+        }
+
+        .english-subtitle:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 120px; /* Wider line */
+            height: 2px; /* Thicker line */
+            background-color: var(--english-color);
+            opacity: 0.4;
+        }
+
+        /* Project Card Styles */
+        .project {
+            background-color: white;
+            padding: 60px; /* More padding */
+            margin-bottom: 90px; /* More space between projects */
+            border-radius: 12px; /* More rounded corners */
+            box-shadow: 0 20px 60px var(--shadow-medium); /* Deeper shadow */
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+            position: relative;
+            overflow: hidden;
+            border-top: 8px solid var(--secondary-color); /* Thicker, more prominent top border */
+            background-image: linear-gradient(to bottom, rgba(255,255,255,0.99), rgba(255,255,255,0.99));
+            background-attachment: fixed;
+            animation: scaleIn 0.8s ease-out forwards; /* Initial scale-in animation */
+        }
+
+        @keyframes scaleIn {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .project:hover {
+            transform: translateY(-12px); /* More pronounced lift */
+            box-shadow: 0 30px 80px var(--shadow-heavy); /* Even deeper shadow on hover */
+            border-top-color: var(--primary-color); /* Change border color on hover */
+        }
+
+        .project:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px; /* Larger corner decor */
+            height: 120px;
+            background-color: var(--secondary-color);
+            clip-path: polygon(0 0, 100% 100%, 100% 0);
+            opacity: 0.08;
+        }
+
+        .project-intro {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 2px dashed rgba(26, 26, 46, 0.1); /* Thicker dashed line */
+            position: relative;
+        }
+
+        .project-intro:after {
+            content: "✦"; /* More elegant divider */
+            position: absolute;
+            bottom: -20px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--secondary-color);
+            font-size: 1.8rem; /* Larger icon */
+            background-color: white;
+            padding: 0 25px; /* More padding */
+            z-index: 1;
+        }
+
+        .project-intro p {
+            margin: 20px 0;
+            color: var(--text-light);
+            font-size: 1.2rem; /* Larger paragraph text */
+            line-height: 2.1;
+        }
+
+        .project-intro h4 {
+            font-size: 1.8rem; /* Larger H4 */
+            color: var(--primary-color);
+            margin: 50px 0 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(26, 26, 46, 0.1);
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
+
+        .project-intro h4:after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100px; /* Wider line */
+            height: 3px; /* Thicker line */
+            background-color: var(--secondary-color);
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: var(--secondary-color);
+            display: inline-block;
+            min-width: 100px; /* Slightly wider */
+            position: relative;
+            font-size: 1.2rem;
+            letter-spacing: 0.7px;
+            padding-right: 5px; /* Add some space */
+        }
+
+        .highlight:after {
+            content: "";
+            position: absolute;
+            bottom: -5px; /* Adjusted position */
+            left: 0;
+            width: 100%;
+            height: 3px; /* Thicker underline */
+            background-color: var(--secondary-color);
+            transform: scaleX(0);
+            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transform-origin: right;
+            border-radius: 2px;
+        }
+
+        .project:hover .highlight:after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* Process Timeline */
+        .process {
+            margin-top: 55px;
+            position: relative;
+            padding-left: 50px; /* More left padding */
+        }
+
+        .process:before {
+            content: "";
+            position: absolute;
+            left: 30px; /* Adjusted position */
+            top: 0;
+            bottom: 0;
+            width: 4px; /* Thicker line */
+            background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .process-item {
+            margin-bottom: 50px; /* More space between items */
+            position: relative;
+            padding-left: 80px; /* More padding */
+            z-index: 2;
+        }
+
+        .process-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-item:before {
+            content: "";
+            position: absolute;
+            left: 15px; /* Adjusted position */
+            top: 10px; /* Adjusted position */
+            width: 24px; /* Larger circle */
+            height: 24px;
+            background-color: white;
+            border: 4px solid var(--secondary-color); /* Thicker border */
+            border-radius: 50%;
+            z-index: 3;
+            box-shadow: 0 0 0 6px white; /* More prominent halo */
+            transition: all 0.3s ease;
+        }
+
+        .process-item:after {
+            content: "";
+            position: absolute;
+            left: 27px; /* Adjusted position */
+            top: 22px; /* Adjusted position */
+            width: 8px; /* Larger inner dot */
+            height: 8px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            z-index: 4;
+            opacity: 0.8;
+        }
+
+        .process-item:hover:before {
+            background-color: var(--secondary-color);
+            border-color: var(--primary-color);
+        }
+
+        .process-item:hover:after {
+            background-color: white;
+        }
+
+        .process-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 1.6rem; /* Larger title */
+            letter-spacing: 0.8px;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            padding-bottom: 15px;
+        }
+
+        .process-title:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px; /* Wider line */
+            height: 4px; /* Thicker line */
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+        }
+
+        .process-item p {
+            font-size: 1.15rem; /* Slightly larger text */
+            line-height: 2.1;
+            color: var(--text-light);
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .english-translation {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--english-color);
+            font-size: 1.1rem; /* Slightly larger translation */
+            line-height: 2;
+            padding: 18px 0 18px 30px; /* More padding */
+            margin: 18px 0 28px;
+            position: relative;
+            background-color: rgba(248,248,248,0.8);
+            border-radius: 6px;
+            border-left: 4px solid var(--secondary-color); /* Thicker border */
+            box-shadow: inset 2px 2px 8px rgba(0,0,0,0.03); /* Subtle inner shadow */
+        }
+
+        /* Role Section */
+        .role {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px dashed rgba(26, 26, 46, 0.15); /* Thicker dashed line */
+            position: relative;
+            background-color: rgba(248,248,248,0.6);
+            padding: 35px; /* More padding */
+            border-radius: 8px;
+            box-shadow: inset 0 0 25px rgba(0,0,0,0.08); /* Deeper inner shadow */
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .role:before {
+            content: "我的角色 / My Role";
+            position: absolute;
+            top: -18px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: 0 25px; /* More padding */
+            color: var(--secondary-color);
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1.2rem; /* Larger text */
+            letter-spacing: 1.2px;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 0 15px var(--shadow-light); /* Softer shadow */
+            border-radius: 4px;
+        }
+
+        /* Styling for the role list items */
+        .role ul {
+            list-style: none; /* Remove default bullet points */
+            padding: 0;
+            margin: 0;
+            border-left: 4px solid var(--secondary-color); /* Thicker border on the left */
+            padding-left: 30px; /* Add padding for the markers */
+        }
+
+        .role li {
+            position: relative;
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 1.15rem; /* Slightly larger text */
+            line-height: 1.6; /* Adjusted line height for list items */
+            margin-bottom: 15px; /* Space between list items */
+            padding-left: 20px; /* Space for the custom marker */
+        }
+
+        .role li:last-child {
+            margin-bottom: 0;
+        }
+
+        .role li:before {
+            content: "★"; /* Custom marker */
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--secondary-color); /* Marker color */
+            font-size: 0.9rem; /* Marker size */
+            margin-right: 10px; /* Space between marker and text */
+            line-height: 1.6; /* Align with text line height */
+        }
+
+        /* Separator for Chinese/English roles */
+        .role-separator {
+            list-style: none;
+            height: 1px; /* Make it a thin line */
+            margin: 25px 0; /* More vertical space */
+            padding: 0;
+            border-top: 2px dashed var(--secondary-color); /* Colored dashed line */
+            position: relative;
+            opacity: 0.8; /* Slight transparency */
+        }
+
+        .role-separator:before,
+        .role-separator:after {
+            content: none; /* Remove any content generated by pseudo-elements */
+        }
+
+        .role-separator span {
+            display: none; /* Hide the span completely */
+        }
+
+        /* Project Showcase */
+        .project-showcase {
+            margin-top: 70px;
+            text-align: center;
+            position: relative;
+            padding-top: 30px;
+        }
+
+        .project-showcase:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px; /* Thicker line */
+            background: linear-gradient(90deg, transparent, var(--secondary-color) 20%, var(--secondary-color) 80%, transparent);
+        }
+
+        .project-image-container {
+            margin: 0 auto 50px;
+            max-width: 900px; /* Larger max width for images */
+            text-align: center;
+            position: relative;
+            box-shadow: 0 25px 70px var(--shadow-medium); /* Deeper shadow */
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(212, 175, 55, 0.4); /* More prominent border */
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background-color: white;
+        }
+
+        .project-image-container:hover {
+            transform: translateY(-8px) scale(1.01); /* More pronounced lift and slight scale */
+            box-shadow: 0 35px 90px var(--shadow-heavy);
+        }
+
+        .project-showcase img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .project-image-container:hover img {
+            transform: scale(1.05); /* More pronounced zoom */
+        }
+
+        .project-image-container:before {
+    content: ""; /* This creates the "browser bar" look */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px; /* 从原来的45px减小到30px */
+    background: linear-gradient(to right, #2c3e50, #4a6a80);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    z-index: 2;
+    content: " "; /* Content removed, dots will suffice */
+}
+
+.project-image-container:after {
+    content: "";
+    position: absolute;
+    top: 5px; /* 从原来的15px减小到10px */
+    left: 15px;
+    width: 8px; /* 从原来的14px减小到12px */
+    height: 0px;
+    background-color: #ff5f57;
+    border-radius: 50%;
+    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #28ca42; /* 调整阴影位置使三个点更紧凑 */
+    z-index: 3;
+}
+
+        .project-link-container {
+            margin-top: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 18px 50px; /* Larger button */
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 60px; /* More rounded */
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-size: 1.3rem; /* Larger text */
+            box-shadow: 0 15px 40px var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--secondary-color);
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .project-link:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -150%; /* Start further left */
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4) 50%, transparent);
+            transition: 0.8s ease-in-out;
+            transform: skewX(-20deg); /* Skewed shimmer effect */
+        }
+
+        .project-link:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-8px) scale(1.02); /* More pronounced lift */
+            box-shadow: 0 20px 50px var(--shadow-heavy);
+            color: var(--primary-color); /* Text color change */
+        }
+
+        .project-link:hover:before {
+            left: 150%; /* End further right */
+        }
+
+        .project-link i {
+            margin-right: 15px;
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .project-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            margin-top: 150px;
+            padding: 70px 0;
+            border-top: 1px solid rgba(26, 26, 46, 0.1);
+            color: var(--text-light);
+            font-size: 1.1rem;
+            position: relative;
+            background-image: linear-gradient(to bottom, rgba(248,248,248,0.95), rgba(248,248,248,0.95));
+            background-attachment: fixed;
+            box-shadow: 0 -5px 25px var(--shadow-light);
+        }
+
+        footer:before {
+            content: "";
+            position: absolute;
+            top: -50px; /* Adjusted position */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%; /* Wider line */
+            height: 2px; /* Thicker line */
+            background: linear-gradient(90deg, transparent, var(--secondary-color) 20%, var(--secondary-color) 80%, transparent);
+        }
+
+        .footer-quote {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-style: italic;
+            color: var(--primary-color);
+            font-size: 1.6rem; /* Larger quote */
+            position: relative;
+            line-height: 2.2;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-quote:before,
+        .footer-quote:after {
+            content: '“'; /* More elegant quotes */
+            color: var(--secondary-color);
+            font-size: 3.5rem; /* Larger quotes */
+            line-height: 0;
+            position: relative;
+            top: 1.5rem; /* Adjusted position */
+            opacity: 0.8;
+        }
+
+        .footer-quote:before {
+            margin-right: 15px;
+            left: -15px; /* Slightly offset for effect */
+        }
+
+        .footer-quote:after {
+            content: '”'; /* Matching closing quote */
+            margin-left: 15px;
+            right: -15px; /* Slightly offset for effect */
+        }
+
+        .copyright {
+            margin-top: 50px;
+            font-size: 1.1rem;
+            letter-spacing: 1.2px;
+            color: var(--accent-color);
+        }
+
+        .back-to-home {
+            position: absolute;
+            top: 40px; /* Adjusted position */
+            right: 50px; /* Adjusted position */
+        }
+
+        .home-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px; /* Larger button */
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            font-size: 1.15rem;
+            transition: all 0.4s ease;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1.2px;
+            box-shadow: 0 8px 20px var(--shadow-light);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            text-transform: uppercase;
+        }
+
+        .home-link:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 30px var(--shadow-medium);
+            color: var(--primary-color);
+        }
+
+        .home-link i {
+            margin-right: 12px;
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .home-link:hover i {
+            transform: translateX(-3px);
+        }
+
+        /* Floating decoration elements */
+        .floating-element {
+            position: fixed;
+            opacity: 0.05; /* More subtle */
+            z-index: -1;
+            pointer-events: none;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .fe-1 {
+            top: 15%;
+            left: 3%;
+            font-size: 12rem; /* Larger */
+            color: var(--secondary-color);
+            transform: rotate(10deg);
+            animation: float 10s ease-in-out infinite;
+        }
+
+        .fe-2 {
+            bottom: 10%;
+            right: 3%;
+            font-size: 10rem; /* Larger */
+            color: var(--primary-color);
+            transform: rotate(-10deg);
+            animation: float 12s ease-in-out infinite reverse; /* Reversed animation */
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(5deg); }
+        }
+
+        /* Scroll indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px; /* Thicker bar */
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            z-index: 1000;
+            transition: width 0.1s linear; /* Smoother update */
+            box-shadow: 0 0 10px var(--secondary-color); /* Glow effect */
+        }
+
+        /* Additional Cool Effects */
+        /* Dynamic Background Texture for Header/Footer */
+        header:after, footer:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="p" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="1" height="1" fill="%23D4AF37"/><rect x="5" y="5" width="1" height="1" fill="%23D4AF37"/></pattern></defs><rect x="0" y="0" width="100" height="100" fill="url(%23p)"/></svg>') repeat;
+            background-size: 20px 20px;
+            opacity: 0.01; /* Very subtle */
+            pointer-events: none;
+            z-index: 0;
+            animation: subtlePan 60s linear infinite; /* Slow pan animation */
+        }
+        footer:after {
+            opacity: 0.005; /* Even more subtle for footer */
+        }
+
+        @keyframes subtlePan {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        /* Animated Title Glow */
+        h1 {
+            animation: textReveal 1.5s ease-out forwards, textGlow 3s ease-in-out infinite alternate;
+        }
+        @keyframes textGlow {
+            0% { text-shadow: 2px 2px 5px rgba(0,0,0,0.15), 0 0 5px var(--secondary-color); }
+            50% { text-shadow: 2px 2px 8px rgba(0,0,0,0.25), 0 0 20px var(--secondary-color), 0 0 30px rgba(212, 175, 55, 0.5); }
+            100% { text-shadow: 2px 2px 5px rgba(0,0,0,0.15), 0 0 5px var(--secondary-color); }
+        }
+
+        /* More Dynamic Project Card Hover */
+        .project:hover {
+            transform: translateY(-12px) rotateX(2deg) scale(1.005); /* Added slight rotation */
+            box-shadow: 0 35px 90px var(--shadow-heavy), 0 0 40px rgba(212, 175, 55, 0.3); /* Added golden glow */
+        }
+
+        /* Pulsing dot animation for Process Items */
+        .process-item:after {
+            animation: pulseDot 1.5s infinite alternate;
+        }
+        @keyframes pulseDot {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* Subtle ripple effect on Project Links */
+        .project-link:active {
+            transform: translateY(-5px) scale(0.98);
+        }
+        .project-link:active:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.4);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: ripple 0.6s linear forwards;
+        }
+        @keyframes ripple {
+            to {
+                width: 200%;
+                height: 200%;
+                opacity: 0;
+            }
+        }
+
+        /* Animated "News/Press" floating elements */
+        .floating-element {
+            animation: float 10s ease-in-out infinite, rotateFloat 20s linear infinite;
+        }
+
+        @keyframes rotateFloat {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fe-2 {
+            animation: float 12s ease-in-out infinite reverse, rotateFloat 22s linear infinite reverse;
+        }
+
+        /* More pronounced background gradients for body */
+        body {
+            background-image:
+                linear-gradient(to bottom, rgba(248,248,248,0.98) 0%, rgba(248,248,248,0.98) 100%),
+                linear-gradient(135deg, rgba(212, 175, 55, 0.01) 0%, transparent 20%),
+                linear-gradient(45deg, rgba(26, 46, 61, 0.01) 0%, transparent 20%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 100 100"><text x="10" y="50" font-family="Playfair Display" font-weight="700" font-size="12" fill="rgba(26,46,61,0.02)">DESIGN</text><text x="60" y="80" font-family="Playfair Display" font-weight="400" font-size="10" fill="rgba(26,46,61,0.01)">ART</text></svg>');
+            background-repeat: repeat, no-repeat, no-repeat, repeat;
+            background-attachment: fixed, fixed, fixed, fixed;
+            background-position: 0 0, top left, bottom right, 0 0;
+            background-size: auto, 100% 100%, 100% 100%, auto;
+        }
+        body:before {
+            background: radial-gradient(circle at 15% 25%, var(--gold-medium) 0%, transparent 35%),
+                        radial-gradient(circle at 85% 75%, var(--gold-light) 0%, transparent 30%),
+                        linear-gradient(to right, rgba(26,46,61,0.05) 0%, transparent 50%, rgba(26,46,61,0.05) 100%); /* Added subtle horizontal gradient */
+            background-blend-mode: multiply; /* Blends multiple gradients */
+            animation: backgroundShift 20s ease-in-out infinite alternate; /* Animates background */
+        }
+        @keyframes backgroundShift {
+            0% { background-position: 0% 0%, 0% 0%, 0% 0%; }
+            100% { background-position: 100% 100%, 10% 10%, -10% -10%; }
+        }
+
+        /* Improved Highlight Effect */
+        .highlight:after {
+            background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+        }
+        .project:hover .highlight:after {
+            transform: scaleX(1);
+            transform-origin: left;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); /* Added glow */
+        }
+
+        /* Back to Home button glow */
+        .home-link {
+            transition: all 0.5s ease;
+        }
+        .home-link:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4), 0 12px 30px var(--shadow-medium); /* Stronger glow */
+        }
+
+        /* Gallery styles */
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-row {
+            display: flex;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .gallery-item {
+            background-color: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .gallery-item.wide {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .gallery-item.square {
+            width: calc(33.333% - 20px);
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+
+        .gallery-item.wide .image-container {
+            padding-top: 25%; /* 适应横幅图片比例 */
+        }
+
+        .gallery-item.square .image-container {
+            padding-top: 100%; /* 保持方形比例 */
+        }
+
+        .image-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .gallery-caption {
+            padding: 15px;
+            background-color: white;
+        }
+
+        .gallery-caption h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .gallery-caption p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .page-container {
+                padding: 0 40px 40px;
+            }
+            h1 {
+                font-size: 4rem;
+            }
+            h2 {
+                font-size: 2.8rem;
+            }
+            .project {
+                padding: 50px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .page-container {
+                padding: 0 30px 30px;
+            }
+            h1 {
+                font-size: 3.5rem;
+                letter-spacing: 2px;
+            }
+            h1:after {
+                width: 100px;
+            }
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            h2 {
+                font-size: 2.5rem;
+                margin: 80px 0 50px;
+            }
+            h2:before {
+                font-size: 3rem;
+                top: -25px;
+            }
+            h3 {
+                font-size: 2.2rem;
+                padding-left: 40px;
+            }
+            .english-subtitle {
+                font-size: 1.4rem;
+            }
+            .project {
+                padding: 40px;
+                margin-bottom: 70px;
+            }
+            .project-intro p {
+                font-size: 1.1rem;
+            }
+            .process-item {
+                padding-left: 70px;
+            }
+            .process-title {
+                font-size: 1.5rem;
+            }
+            .english-translation {
+                font-size: 1.05rem;
+            }
+            .project-link {
+                padding: 16px 45px;
+                font-size: 1.2rem;
+            }
+            .back-to-home {
+                top: 30px;
+                right: 30px;
+            }
+            .home-link {
+                padding: 12px 25px;
+                font-size: 1.1rem;
+            }
+            .footer-quote {
+                font-size: 1.4rem;
+            }
+            .fe-1 {
+                font-size: 8rem;
+            }
+            .fe-2 {
+                font-size: 7rem;
+            }
+
+            .role ul {
+                padding-left: 25px;
+            }
+            .role li {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+                padding-left: 18px;
+            }
+            .role li:before {
+                font-size: 0.8rem;
+            }
+            .role-separator {
+                margin: 20px 0;
+            }
+            
+            .gallery-row {
+                flex-direction: column;
+            }
+            
+            .gallery-item.wide, 
+            .gallery-item.square {
+                width: 100%;
+            }
+            
+            .gallery-item.wide .image-container {
+                padding-top: 40%;
+            }
+            
+            .gallery-item.square .image-container {
+                padding-top: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 0;
+            }
+            .page-container {
+                padding: 0 25px 25px;
+            }
+            h1 {
+                font-size: 3rem;
+                letter-spacing: 1.5px;
+            }
+            h1:after {
+                width: 80px;
+                height: 4px;
+                bottom: -10px; /* Adjusted for smaller screens */
+            }
+            .subtitle {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+            .subtitle:before, .subtitle:after {
+                margin: 0 10px;
+            }
+            .design-badge {
+                padding: 8px 25px;
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 2.2rem;
+                margin: 70px 0 45px;
+                padding-bottom: 20px;
+                text-align: left; /* Align left on mobile */
+                padding-left: 20px; /* Add padding for mobile */
+            }
+            h2:before {
+                left: 0; /* Align left on mobile */
+                transform: translateX(0);
+                font-size: 2.8rem;
+                top: -20px;
+            }
+            h3 {
+                font-size: 1.9rem;
+                padding-left: 35px;
+                margin: 60px 0 35px;
+            }
+            h3:before {
+                width: 25px;
+                height: 4px;
+                top: 15px;
+            }
+            .english-subtitle {
+                font-size: 1.25rem;
+                margin-top: 10px;
+            }
+            .english-subtitle:after {
+                width: 90px;
+                height: 1px;
+                bottom: -6px;
+            }
+            .project {
+                padding: 35px;
+                margin-bottom: 60px;
+            }
+            .project-intro p {
+                font-size: 1.05rem;
+                line-height: 2;
+            }
+            .project-intro h4 {
+                font-size: 1.6rem;
+                margin: 40px 0 25px;
+            }
+            .project-intro:after {
+                bottom: -15px;
+                font-size: 1.6rem;
+                padding: 0 15px;
+            }
+            .highlight {
+                font-size: 1.1rem;
+                min-width: 80px;
+            }
+            .process {
+                padding-left: 40px;
+            }
+            .process-item {
+                padding-left: 60px;
+                margin-bottom: 40px;
+            }
+            .process-item:before {
+                left: 10px;
+                top: 8px;
+                width: 20px;
+                height: 20px;
+                border-width: 3px;
+                box-shadow: 0 0 0 4px white;
+            }
+            .process-item:after {
+                left: 20px;
+                top: 16px;
+                width: 6px;
+                height: 6px;
+            }
+            .process-title {
+                font-size: 1.4rem;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+            .process-title:before {
+                width: 50px;
+                height: 3px;
+            }
+            .process-item p {
+                font-size: 1rem;
+                line-height: 1.9;
+            }
+            .english-translation {
+                padding: 15px 0 15px 25px;
+                margin: 15px 0 25px;
+                font-size: 1rem;
+                line-height: 1.9;
+                border-left-width: 3px;
+            }
+            .role {
+                padding: 30px;
+            }
+            .role:before {
+                top: -14px;
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+            .role ul {
+                padding-left: 20px;
+            }
+            .role li {
+                font-size: 1.05rem;
+                padding-left: 15px;
+                margin-bottom: 10px;
+                line-height: 1.9;
+            }
+            .role li:before {
+                font-size: 0.8rem;
+                top: 2px;
+            }
+            .role-separator {
+                margin: 15px 0;
+            }
+            .project-image-container {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+            .project-image-container:before {
+        height: 15px; /* 从原来的40px减小到25px */
+    }
+    .project-image-container:after {
+        top: 4px; /* 从原来的12px减小到8px */
+        left: 12px;
+        width: 10px;
+        height: 10px;
+        box-shadow: 15px 0 0 #ffbd2e, 30px 0 0 #28ca42; /* 调整阴影位置 */
+    }
+            .project-link {
+                padding: 14px 35px;
+                font-size: 1.1rem;
+            }
+            footer {
+                margin-top: 100px;
+                padding: 50px 0;
+            }
+            footer:before {
+                top: -30px;
+                width: 80%;
+            }
+            .footer-quote {
+                font-size: 1.4rem;
+                margin: 0 auto 30px;
+            }
+            .footer-quote:before, .footer-quote:after {
+                font-size: 2.8rem;
+                top: 1rem;
+            }
+            .copyright {
+                margin-top: 40px;
+                font-size: 1rem;
+            }
+            .home-link {
+                padding: 10px 20px;
+                font-size: 1.1rem;
+            }
+            .home-link i {
+                font-size: 1.1rem;
+            }
+            .fe-1, .fe-2 {
+                display: none; /* Hide floating elements on smaller screens */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-container {
+                padding: 0 15px 15px;
+            }
+            header {
+                padding: 60px 0 40px;
+                margin-bottom: 50px;
+            }
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+            h1:after {
+                width: 60px;
+                height: 3px;
+                bottom: -10px;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+                letter-spacing: 0.8px;
+                margin-top: 20px;
+            }
+            .subtitle:before, .subtitle:after {
+                margin: 0 8px;
+                font-size: 1rem;
+            }
+            .design-badge {
+                padding: 7px 20px;
+                font-size: 0.9rem;
+                margin-top: 20px;
+            }
+            h2 {
+                font-size: 1.9rem;
+                margin: 50px 0 30px;
+                padding-bottom: 15px;
+                text-align: left; /* Align left on mobile */
+                padding-left: 20px; /* Add padding for mobile */
+            }
+            h2:before {
+                left: 0; /* Align left on mobile */
+                transform: translateX(0);
+                font-size: 2.2rem;
+                top: -15px;
+            }
+            h3 {
+                font-size: 1.7rem;
+                padding-left: 25px;
+                margin: 50px 0 30px;
+            }
+            h3:before {
+                width: 20px;
+                height: 3px;
+                top: 12px;
+            }
+            .english-subtitle {
+                font-size: 1.1rem;
+            }
+            .project {
+                padding: 25px 20px;
+                margin-bottom: 50px;
+            }
+            .project-intro p {
+                font-size: 0.95rem;
+                line-height: 1.8;
+            }
+            .project-intro h4 {
+                font-size: 1.4rem;
+                margin: 30px 0 20px;
+            }
+            .highlight {
+                font-size: 1rem;
+                min-width: 70px;
+            }
+            .process {
+                padding-left: 30px;
+            }
+            .process-item {
+                padding-left: 45px;
+                margin-bottom: 30px;
+            }
+            .process-item:before {
+                left: 8px;
+                top: 6px;
+                width: 18px;
+                height: 18px;
+                border-width: 2px;
+                box-shadow: 0 0 0 3px white;
+            }
+            .process-item:after {
+                left: 16px;
+                top: 14px;
+                width: 5px;
+                height: 5px;
+            }
+            .process-title {
+                font-size: 1.3rem;
+                padding-bottom: 8px;
+                margin-bottom: 15px;
+            }
+            .process-title:before {
+                width: 40px;
+                height: 2px;
+            }
+            .process-item p {
+                font-size: 0.95rem;
+                line-height: 1.8;
+            }
+            .english-translation {
+                padding: 12px 0 12px 20px;
+                margin: 12px 0 20px;
+                font-size: 0.95rem;
+                line-height: 1.8;
+                border-left-width: 2px;
+            }
+            .role {
+                padding: 25px;
+            }
+            .role:before {
+                top: -12px;
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+            .role ul {
+                padding-left: 15px;
+            }
+            .role li {
+                font-size: 1rem;
+                padding-left: 12px;
+                margin-bottom: 8px;
+                line-height: 1.8;
+            }
+            .role li:before {
+                font-size: 0.7rem;
+                top: 3px;
+            }
+            .role-separator {
+                margin: 10px 0;
+            }
+             .project-image-container:before {
+        height: 10px; /* 从原来的35px减小到20px */
+    }
+    .project-image-container:after {
+        top: 3px; /* 从原来的10px减小到6px */
+        left: 10px;
+        width: 8px;
+        height: 8px;
+        box-shadow: 12px 0 0 #ffbd2e, 24px 0 0 #28ca42; /* 调整阴影位置 */
+    }
+            .project-link {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            footer {
+                margin-top: 80px;
+                padding: 40px 0;
+            }
+            footer:before {
+                top: -20px;
+                width: 70%;
+            }
+            .footer-quote {
+                font-size: 1.1rem;
+                margin: 0 auto 25px;
+                line-height: 1.9;
+            }
+            .footer-quote:before, .footer-quote:after {
+                font-size: 2.2rem;
+                top: 0.8rem;
+            }
+            .copyright {
+                margin-top: 30px;
+                font-size: 0.9rem;
+            }
+            .back-to-home {
+                top: 15px;
+                right: 15px;
+            }
+            .home-link {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+            .home-link i {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="portfolio-refresh.css">
+</head>
+<body class="trend-page design-trend">
+    <div class="scroll-progress"></div>
+    <nav class="trend-nav" aria-label="作品分类导航">
+        <a class="brand" href="index.html"><i class="fas fa-magic"></i><span>CDL Portfolio</span></a>
+        <div class="links">
+            <a href="index.html">首页</a>
+            <a href="text.html">文字</a>
+            <a class="active" href="design.html">设计</a>
+            <a href="video.html">视频</a>
+        </div>
+    </nav>
+
+    <span class="floating-element fe-1">DESIGN</span>
+    <span class="floating-element fe-2">ART</span>
+
+    <div class="page-container">
+        <header>
+            <div class="back-to-home">
+                <a href="index.html" class="home-link">
+                    <i class="fas fa-home"></i> 返回首页 / Home
+                </a>
+            </div>
+            <h1>平面设计作品集</h1>
+            <div class="design-badge">DESIGN PORTFOLIO</div>
+            <p class="subtitle">平面承载创意梦想 · 设计塑造视觉美感<br>Graphics Carry Creative Dreams · Design Shapes Visual Beauty</p>
+        </header>
+
+        <section>
+            <h2>平面设计类作品 / Graphic Design Works</h2>
+
+            <!-- 项目1 -->
+            <div class="project fade-in">
+                <h3>项目 1：福上牛牛骨头小盘菜餐厅墙壁画设计<br><span class="english-subtitle">Project 1: Wall Mural Design for Fushang Niu Niu Bone Small Plate Restaurant</span></h3>
+                                <div class="project-showcase">
+                    <div class="gallery">
+                        <!-- 长横幅图片（图片1和2） -->
+                        <div class="gallery-row">
+                            <div class="gallery-item wide">
+                                <div class="image-container">
+                                    <img src="https://user4170.cn.imgto.link/public/20260311/0fe54b3358992dbe0d2e3da8e0346230.avif" alt="哈尔滨历史文化壁画1">
+                                </div>
+                                <div class="gallery-caption">
+                                    <h4>哈尔滨历史文化壁画1 / Harbin Historical Mural 1</h4>
+                                    <p>聚焦哈尔滨经典历史文化历史照片的视觉呈现，以中央大街、索菲亚教堂、俄式建筑等标志性元素为核心 / Focuses on visual presentation of Harbin's classic historical culture, featuring iconic elements like Central Street, Sophia Church, and Russian architecture</p>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item wide">
+                                <div class="image-container">
+                                    <img src="https://user4170.cn.imgto.link/public/20260311/image.avif" alt="哈尔滨历史文化壁画2">
+                                </div>
+                                <div class="gallery-caption">
+                                    <h4>哈尔滨历史文化壁画2 / Harbin Historical Mural 2</h4>
+                                    <p>以"哈尔滨地域文化+福上牛品牌"为双重内核，巧妙融入"牛骨头小盘菜"的美食关联 / With "Harbin regional culture + Fushang Niu brand" as dual core, cleverly incorporates associations with "beef bone small plate dishes"</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 方形图片（图片3、4、5） -->
+                        <div class="gallery-row">
+                            <div class="gallery-item square">
+                                <div class="image-container">
+                                    <img src="https://user4170.cn.imgto.link/public/20260311/8a991c8af6de2798a3675b7b52da9ee1.avif" alt="草原溜达身强壮">
+                                </div>
+                                <div class="gallery-caption">
+                                    <h4>草原溜达身强壮 / Free-range Grazing Makes Strong Cattle</h4>
+                                    <p>聚焦餐厅所用牛食材的来源与品质，展现草原散养的特点 / Focuses on source and quality of beef ingredients, showcasing free-range characteristics</p>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item square">
+                                <div class="image-container">
+                                    <img src="https://user4170.cn.imgto.link/public/20260311/76e0dabb8c371c234135e22bf64aaa71.avif" alt="现炖现炒 菜整挺好">
+                                </div>
+                                <div class="gallery-caption">
+                                    <h4>现炖现炒 菜整挺好 / Freshly Stewed, Freshly Stir-fried, Dishes Done Right</h4>
+                                    <p>展现食材的新鲜与烹饪的匠心，突出"现做"的新鲜质感 / Showcases ingredient freshness and cooking craftsmanship, highlighting "made fresh" quality</p>
+                                </div>
+                            </div>
+                            
+                            <div class="gallery-item square">
+                                <div class="image-container">
+                                    <img src="https://user4170.cn.imgto.link/public/20260311/cfa627b8f93d4b230e5995bd50b592c1.avif" alt="江河好味道 鲜掉你眉毛">
+                                </div>
+                                <div class="gallery-caption">
+                                    <h4>江河好味道 鲜掉你眉毛 / River's Good Flavor, Freshness That Astonishes</h4>
+                                    <p>强化食材带来的鲜美口感，结合哈尔滨江河元素 / Enhances delicious taste of ingredients, incorporating Harbin's river elements</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-intro">
+                    <h4>项目简介 / Project Introduction</h4>
+                    <p><span class="highlight">数量：</span>5个/套</p>
+                    <p class="english-translation">Quantity: 5 pieces/set</p>
+                    <p><span class="highlight">类型：</span>装饰型海报</p>
+                    <p class="english-translation">Type: Decorative Posters</p>
+                    <p><span class="highlight">技术工具：</span>手绘工具：sketchbook / 平面设计软件：Adobe illustrator / 调色与合成软件：Adobe photoshop</p>
+                    <p class="english-translation">Tools: Sketchbook / Adobe Illustrator / Adobe Photoshop</p>
+                    
+                    <h4>设计理念 / Design Concept</h4>
+                    <p><strong>哈尔滨历史文化壁画：</strong><br>
+                    1.第一张壁画聚焦哈尔滨经典历史文化历史照片的视觉呈现，以中央大街、索菲亚教堂、俄式建筑等标志性元素为核心，融入冰雪文化、地域民俗符号，通过场景化构图展现城市的历史底蕴与异域风情。画面弱化商业属性，侧重营造"沉浸式历史氛围"，让顾客在就餐时直观感受哈尔滨的城市记忆，同时通过色调与餐厅空间融合，成为传递地域文化的装饰载体。顾客反馈："照片墙能感受到老哈尔滨的气息"。</p>
+                    <p class="english-translation"><strong>Harbin Historical Culture Murals:</strong><br>
+                    1. The first mural focuses on the visual presentation of Harbin's classic historical culture, with iconic elements such as Central Street, Sophia Church, and Russian-style architecture at its core, incorporating ice and snow culture and regional folk symbols. Through scenographic composition, it showcases the city's historical heritage and exotic charm. The design downplays commercial attributes, emphasizing the creation of an "immersive historical atmosphere" that allows diners to directly experience Harbin's urban memory while dining. The color scheme integrates with the restaurant space, serving as a decorative medium for conveying regional culture. Customer feedback: "The photo wall evokes the essence of old Harbin."</p>
+                    
+                    <p>2.第二张壁画以"哈尔滨地域文化+福上牛品牌"为双重内核，在呈现城市历史元素的基础上，巧妙融入"牛骨头小盘菜"的美食关联——例如通过老哈尔滨市集里的牛骨摊位、传统烹饪场景等细节，呼应"一城一味"的概念，将城市历史与餐厅主打美食绑定。画面既保留历史厚重感，又通过"福上牛"品牌符号的隐性植入（如摊位幌子、餐具纹饰），实现"城市记忆"与"美食体验"的自然衔接，强化顾客对"哈尔滨味道在福上牛"的认知。</p>
+                    <p class="english-translation">2. The second mural takes "Harbin regional culture + Fushang Niu brand" as its dual core. While presenting urban historical elements, it cleverly incorporates associations with the "beef bone small plate dishes" - such as through details like beef bone stalls in old Harbin markets and traditional cooking scenes, echoing the concept of "one city, one flavor," binding the city's history with the restaurant's signature dishes. The design preserves historical gravitas while subtly embedding "Fushang Niu" brand symbols (like stall signs and utensil patterns), achieving a natural connection between "urban memory" and "culinary experience," reinforcing customers' perception of "Harbin flavors at Fushang Niu."</p>
+                    
+                    <p><strong>食材宣传海报：</strong><br>
+                    1.第一张装饰宣传海报：以"草原溜达身强壮"为核心卖点，聚焦餐厅所用牛食材的来源与品质。画面可呈现草原辽阔风光，点缀健硕的溜达牛群，搭配"福上牛牛骨头小盘菜"品牌名，直观传递食材来自草原散养、体格强健的特点，凸显食材原生态与优质，吸引注重食材品质的顾客。</p>
+                    <p class="english-translation"><strong>Ingredient Promotion Posters:</strong><br>
+                    1. The first decorative promotional poster: With "free-range grazing makes strong cattle" as the core selling point, it focuses on the source and quality of the beef ingredients used in the restaurant. The image presents vast grassland scenery dotted with robust free-range cattle, paired with the "Fushang Niu Beef Bone Small Plate Dishes" brand name, directly conveying the characteristics of pasture-raised, physically strong ingredients, highlighting their natural and premium quality to attract customers who value ingredient quality.</p>
+                    
+                    <p>2.第二张装饰宣传海报：紧扣"现炖现炒 菜整挺好"，展现食材的新鲜与烹饪的匠心。通过描绘现处理牛骨头、现炖煮或现炒制的动态场景，搭配冒着热气的菜品特写，突出"现做"的新鲜质感，传递餐厅对食材处理和烹饪过程的用心，让顾客感受到菜品的地道滋味与烟火气。</p>
+                    <p class="english-translation">2. The second decorative promotional poster: Closely tied to "freshly stewed, freshly stir-fried, dishes done right," it showcases the freshness of ingredients and the craftsmanship of cooking. By depicting dynamic scenes of freshly processed beef bones, current stewing or stir-frying, paired with steaming dish close-ups, it emphasizes the "made fresh" quality, conveying the restaurant's dedication to ingredient handling and cooking processes, allowing customers to experience the authentic flavors and lively atmosphere of the dishes.</p>
+                    
+                    <p>3.第三张装饰宣传海报：围绕"江河好味道 鲜掉你眉毛"展开，强化食材带来的鲜美口感。结合哈尔滨江河元素，画面可融入江河风光，搭配牛骨头菜品的诱人色泽，用生动的视觉效果和文案呼应"鲜掉眉毛"的味觉体验，激发顾客的食欲，吸引追求鲜美口感的食客。</p>
+                    <p class="english-translation">3. The third decorative promotional poster: Centered on "river's good flavor, freshness that astonishes," it enhances the delicious taste brought by the ingredients. Incorporating Harbin's river elements, the image blends river scenery with the appealing colors of beef bone dishes, using vivid visual effects and copy to echo the "astonishingly fresh" taste experience, stimulating customers' appetite and attracting diners who pursue exquisite flavors.</p>
+                    
+                    <h4>设计流程 / Design Process</h4>
+                    <div class="process">
+                        <div class="process-item">
+                            <div class="process-title">1、素材收集与梳理</div>
+                            <p>整理哈尔滨历史文化影像资料（建筑、民俗等）及草原牛群、烹饪场景、江河风光等食材相关素材，确保内容贴合主题。</p>
+                            <p class="english-translation">Collected and organized Harbin's historical and cultural visual materials (architecture, folk customs, etc.) and ingredient-related materials such as grassland cattle, cooking scenes, and river landscapes to ensure content relevance to the theme.</p>
+                        </div>
+                        
+                        <div class="process-item">
+                            <div class="process-title">2、初稿绘制</div>
+                            <p>使用sketchbook手绘工具，勾勒哈尔滨历史文化壁画的场景轮廓（如俄式建筑与冰雪元素结合）及食材海报的主体形象（草原牛、现炖炒锅、鲜味示意图形），形成初步视觉框架。</p>
+                            <p class="english-translation">Used Sketchbook hand-drawing tools to outline scene compositions for Harbin historical murals (such as combining Russian architecture with ice-snow elements) and main visuals for ingredient posters (grassland cattle, stewing woks, freshness indication graphics), establishing preliminary visual frameworks.</p>
+                        </div>
+                        
+                        <div class="process-item">
+                            <div class="process-title">3、矢量化与排版</div>
+                            <p>通过illustrator将手绘初稿转化为矢量图形，对壁画进行历史文化元素的细节填充（如建筑纹饰、民俗符号），对海报进行文字与图形排版（突出"福上牛牛骨头小盘菜"品牌名及食材卖点文案）。</p>
+                            <p class="english-translation">Used Illustrator to convert hand-drawn drafts into vector graphics, filling in details of historical and cultural elements for murals (such as architectural ornaments and folk symbols), and arranging typography and graphics for posters (highlighting the "Fushang Niu Beef Bone Small Plate Dishes" brand name and ingredient selling points copy).</p>
+                        </div>
+                        
+                        <div class="process-item">
+                            <div class="process-title">4、调色与合成</div>
+                            <p>运用photoshop进行调色，壁画采用厚重而富有历史感的色调（如暖棕、米白搭配俄式蓝），海报采用鲜活明快的色调（如草原绿、食材本味的暖黄、江河蓝），增强视觉吸引力，尽力表现出"风吹草低见牛羊"的草原苍茫，突出原生食材的品质；最终合成输出，确保5个作品风格统一且符合餐厅装饰需求。</p>
+                            <p class="english-translation">Used Photoshop for color grading: murals employed rich, historically evocative tones (like warm browns, off-whites paired with Russian blues), while posters used vibrant, lively tones (like grassland greens, ingredient-warm yellows, river blues) to enhance visual appeal, striving to express the vast "wind-swept grasslands revealing cattle" scenery and highlight the quality of natural ingredients; final compositing ensured stylistic consistency across all five works while meeting restaurant decoration requirements.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="role">
+                    <ul>
+                        <li>需求评审：负责与客户沟通需求，明确设计方向和目标</li>
+                        <li>主题策划：负责创意构思和视觉风格定位</li>
+                        <li>设计制作：负责从初稿到成品的完整设计流程</li>
+                        <li>客户沟通：负责向客户展示设计方案并收集反馈</li>
+                        <p class="role-separator"></p>
+                        <li>Requirements Review: Responsible for communicating with clients to clarify design direction and objectives</li>
+                        <li>Theme Planning: Responsible for creative conception and visual style positioning</li>
+                        <li>Design Production: Responsible for the complete design process from draft to final product</li>
+                        <li>Client Communication: Responsible for presenting design solutions to clients and collecting feedback</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 项目2 -->
+            <div class="project fade-in">
+                <h3>项目 2：凯里亚德酒店海报设计<br><span class="english-subtitle">Project 2: Kyriad Hotel Promotional Poster Design</span></h3>
+                <div class="project-showcase">
+                    <div class="project-image-container">
+                        <img src="https://user4170.cn.imgto.link/public/20260311/01.jpg" alt="凯里亚德酒店海报">
+                    </div>
+                    <div class="project-link-container">
+                        <a href="https://user4170.cn.imgto.link/public/20260311/01.jpg" class="project-link" target="_blank">
+                            <i class="fas fa-image"></i> 查看高清设计图 / View HD Design
+                        </a>
+                    </div>
+                </div>
+                <div class="project-intro">
+                    <h4>项目简介 / Project Introduction</h4>
+                    <p><span class="highlight">数量：</span>1个/套</p>
+                    <p class="english-translation">Quantity: 1 piece/set</p>
+                    <p><span class="highlight">类型：</span>宣传海报</p>
+                    <p class="english-translation">Type: Promotional Poster</p>
+                    <p><span class="highlight">技术工具：</span>平面设计软件：Adobe illustrator / 调色软件：Adobe photoshop</p>
+                    <p class="english-translation">Tools: Adobe Illustrator / Adobe Photoshop</p>
+                    
+                    <h4>设计理念 / Design Concept</h4>
+                    <p>聚焦凯里亚德酒店"中高端连锁+枢纽旅居"定位，以模块化版式串联品牌背书、交通、服务、配套、区位五大核心信息，通过品牌蓝金配色与场景化实拍图，构建"信任→便利→体验"的信息动线，助力酒店在深圳北站商圈精准传递"高效旅居解决方案"，强化品牌辨识度与客群吸引力。</p>
+                    <p class="english-translation">Focusing on Kyriad Hotel's "mid-to-high-end chain + hub accommodation" positioning, the design connects five core elements—brand endorsement, transportation, services, amenities, and location—through modular layout. Using brand blue-gold color schemes and contextual real-life photos, it constructs an information flow of "trust → convenience → experience," helping the hotel accurately convey its "efficient accommodation solution" in Shenzhen North Station business district while strengthening brand recognition and customer appeal.</p>
+                    
+                    <h4>设计流程 / Design Process</h4>
+                    <div class="process">
+                        <div class="process-item">
+                            <div class="process-title">1、需求评审</div>
+                            <p>深度对接酒店方，明确三大核心诉求：
+                            ① 强化"锦江集团+欧洲连锁品牌"的背书价值，建立信任感；
+                            ② 突出"深圳北站枢纽+多维交通网络"的区位优势，吸引中转/商务客群；
+                            ③ 展示"全房型+全配套+特色服务"的体验亮点，传递"中高端旅居"定位。同时调研场景：海报用于线下门店展示、周边商圈拓客，需兼顾"信息清晰"与"视觉吸引力"，适配快节奏浏览习惯。</p>
+                            <p class="english-translation">In-depth communication with hotel management to clarify three core requirements:
+                            ① Strengthen the endorsement value of "Jinjiang Group + European chain brand" to build trust;
+                            ② Highlight the locational advantage of "Shenzhen North Station hub + multi-dimensional transportation network" to attract transit/business clientele;
+                            ③ Showcase experiential highlights of "full room types + complete amenities + special services" to convey "mid-to-high-end accommodation" positioning. Also researched application scenarios: posters for in-store display and nearby business district promotion, requiring balance between "clear information" and "visual appeal" to suit fast-paced browsing habits.</p>
+                        </div>
+                        
+                        <div class="process-item">
+                            <div class="process-title">2、主题策划</div>
+                            <p>结合品牌主张"活在当下，尽享此刻"，提炼"枢纽旁的品质驿居——凯里亚德的深圳提案"主题：
+                            - 以"枢纽旁"锚定交通核心优势，"品质驿居"呼应中高端定位；
+                            - 串联"连锁品牌（信任）→交通便利（效率）→配套齐全（体验）→地理优越（潜力）"的价值逻辑，让"活在当下"的理念具象为"高效+舒适"的旅居解决方案。</p>
+                            <p class="english-translation">Aligned with brand proposition "Live in the moment, enjoy the now," refined the theme "Quality Hub-side Accommodation - Kyriad's Shenzhen Proposal":
+                            - "Hub-side" anchors transportation core advantage, "quality accommodation" echoes mid-to-high-end positioning;
+                            - Connects value logic of "chain brand (trust) → transportation convenience (efficiency) → complete amenities (experience) → geographical advantage (potential)," materializing the "live in the moment" concept into an "efficient + comfortable" accommodation solution.</p>
+                        </div>
+                        
+                        <div class="process-item">
+                            <div class="process-title">3、视觉体系构建</div>
+                            <p>▶ 色彩：沿用品牌标准蓝，搭配暖金色点缀，平衡"商务属性"与"温馨体验"；<br>
+                            ▶ 字体：标题采用厚重型衬线字体，正文用简洁无衬线体，通过字重对比强化信息层级；<br>
+                            ▶ 版式：采用"模块分区+视觉引导线"设计——顶部品牌信息区、中部核心卖点区、底部区位价值区，用蓝金分割线串联板块，引导视线流动。</p>
+                            <p class="english-translation"><strong>Visual System Construction:</strong><br>
+                            ▶ Colors: Maintained brand standard blue with warm gold accents, balancing "business attributes" and "cozy experience";<br>
+                            ▶ Typography: Used bold serif fonts for headlines and clean sans-serif for body text, strengthening information hierarchy through font weight contrast;<br>
+                            ▶ Layout: Employed "modular zoning + visual guide lines" design—top brand information zone, middle core selling points zone, bottom location value zone, connected by blue-gold dividing lines to guide visual flow.</p>
+                        </div>
+                        
+                        <div class="process-item">
+                            <div class="process-title">4、细节策略落地</div>
+                            <p>▶ 数据可视化：将"4公里15分钟""2.4米大床"等核心数据转化为图标+数字组合，降低理解成本；<br>
+                            ▶ 场景故事化：精选客房（温馨感）、公区（精致感）、健身房（专业感）实拍图，通过光影优化+氛围调色（如客房暖光、公区柔光）传递"舒适旅居"体验；<br>
+                            ▶ 品牌渗透：在大堂场景图中植入"Kyriad"标识，客房细节融入"晚安牛奶"等服务元素，让品牌理念自然渗透；<br>
+                            ▶ 在地化呼应：突出"华为/富士康园区""山姆会员店"等深圳在地符号，强化"区位红利"与"城市适配性"。</p>
+                            <p class="english-translation"><strong>Detail Strategy Implementation:</strong><br>
+                            ▶ Data Visualization: Transformed core data like "4km 15min" and "2.4m large bed" into icon+number combinations to reduce comprehension cost;<br>
+                            ▶ Scenario Storytelling: Selected actual photos of guest rooms (coziness), public areas (refinement), gym (professionalism), conveying "comfortable stay" experience through light/shadow optimization and ambient color grading (e.g., warm lighting for rooms, soft lighting for public areas);<br>
+                            ▶ Brand Integration: Embedded "Kyriad" logo in lobby scenes, incorporated service elements like "goodnight milk" in room details for natural brand concept permeation;<br>
+                            ▶ Localization: Highlighted Shenzhen landmarks like "Huawei/Foxconn campuses" and "Sam's Club" to strengthen "location benefits" and "city compatibility."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="role">
+                    <ul>
+                        <li>需求评审：负责与酒店方深度对接，明确核心诉求和应用场景</li>
+                        <li>主题策划：负责提炼设计主题和价值逻辑</li>
+                        <li>视觉设计：负责构建完整的视觉体系并执行细节设计</li>
+                        <li>品牌整合：负责确保所有元素符合品牌调性和定位</li>
+                        <p class="role-separator"></p>
+                        <li>Requirements Review: Responsible for in-depth communication with hotel to clarify core needs and application scenarios</li>
+                        <li>Theme Planning: Responsible for refining design theme and value logic</li>
+                        <li>Visual Design: Responsible for constructing complete visual system and executing detail design</li>
+                        <li>Brand Integration: Responsible for ensuring all elements align with brand tone and positioning</li>
+                    </ul>
+                </div>
+                
+            </div>
+
+            <!-- 项目3 -->
+            <div class="project fade-in">
+                <h3>项目3：万佳优鲜折扣批发超市品牌海报设计<br><span class="english-subtitle">Project 3: Wanjia Youxian Discount Wholesale Supermarket Brand Poster</span></h3>
+                <div class="project-showcase">
+                    <div class="project-image-container">
+                        <img src="https://user4170.cn.imgto.link/public/20260311/01-1.avif" alt="万佳优鲜折扣批发超市海报">
+                    </div>
+                    <div class="project-link-container">
+                        <a href="https://user4170.cn.imgto.link/public/20260311/01-1.avif" class="project-link" target="_blank">
+                            <i class="fas fa-image"></i> 查看高清设计图 / View HD Design
+                        </a>
+                    </div>
+                </div>
+                <div class="project-intro">
+                    <h4>项目简介 / Project Introduction</h4>
+                    <p><span class="highlight">数量：</span>1个/套</p>
+                    <p class="english-translation">Quantity: 1 piece/set</p>
+                    <p><span class="highlight">类型：</span>商业超市牌匾</p>
+                    <p class="english-translation">Type: Commercial Supermarket Signage</p>
+                    <p><span class="highlight">技术工具：</span>手绘工具：sketchbook / 平面设计软件：Adobe Illustrator / 调色软件：Adobe Photoshop</p>
+                    <p class="english-translation">Tools: Sketchbook / Adobe Illustrator / Adobe Photoshop</p>
+                    
+                    <h4>设计理念 / Design Concept</h4>
+                    <p>和老板娘闲聊时，她六岁的儿子正蹲在货架旁数罐头——这是万佳优鲜最日常的画面：老板娘系着磨白的围裙理货，孩子抱着零食罐在脚边打转，熟客总笑说"像逛亲戚家仓库"。设计时，我决定把这份"家庭式烟火"搬上画面：临摹老板娘和孩子的真实神态——她眼角笑出的细纹藏着守店的踏实，孩子拽着围裙角的依赖里，是无数个陪妈妈看店的午后。炸裂的黄色背景里，粗黑字体像老板娘拍着胸脯喊"谁敢跟我比价格"，但母子亲昵的姿态，又把"一件也是批发价"的硬气，柔化成"自家店不赚你差价"的恳切。从捕捉老板娘带娃守店的生活切片，到用手绘定格这份亲昵，再让犀利的价格主张和柔软的亲子互动碰撞——这张海报最终成了一面镜子：照见家庭小店的真诚，也让"实惠"二字，带着老板娘围裙上的温度。</p>
+                    <p class="english-translation">While chatting with the owner, her six-year-old son was squatting by the shelves counting cans—this was Wanjia Youxian's most ordinary scene: the owner wearing a faded apron organizing goods, her child spinning around with snack cans at her feet, regulars often joking it "feels like visiting a relative's warehouse." For the design, I decided to bring this "family-style daily life" onto the canvas: capturing the owner and child's authentic expressions—the owner's smile lines at her eyes holding the steadfastness of shopkeeping, the child's dependence shown by tugging her apron corner, embodying countless afternoons spent keeping mom company. Against a vibrant yellow background, bold black fonts resemble the owner thumping her chest declaring "Who dares compare prices with me?", while the mother-child intimacy softens the bold "wholesale prices even for single items" into the earnestness of "our shop won't overcharge you." From capturing this slice of shopkeeping-with-child life to freeze-framing this intimacy through hand-drawing, then colliding sharp price propositions with tender parent-child interaction—this poster ultimately became a mirror: reflecting the sincerity of a family-run store, and letting the word "affordable" carry the warmth from the owner's apron.</p>
+                    
+                    <h4>设计流程 / Design Process</h4>
+                    <div class="process">
+                        <div class="process-item">
+                            <div class="process-title">1、需求评审</div>
+                            <p>对接超市方，明确两大核心诉求：
+                            ① 突出"一件也是批发价"的价格竞争力，吸引社区家庭客群；
+                            ② 塑造"亲民、活力"的品牌人格，区别于传统批发业态。同时明确应用场景：门店招牌、商圈导视，需适配"远距离视觉抓取"与"品牌记忆点沉淀"。</p>
+                            <p class="english-translation">Communicated with supermarket management to clarify two core requirements:
+                            ① Highlight price competitiveness of "wholesale prices even for single items" to attract community family customers;
+                            ② Shape an "approachable, vibrant" brand personality distinct from traditional wholesale formats. Also defined application scenarios: store signage and business district wayfinding, requiring adaptation for both "long-distance visual capture" and "brand memory point retention."</p>
+                        </div>
+                        
+                        <div class="process-item">
+                            <div class="process-title">2、主题策划</div>
+                            <p>提炼"家庭式实惠：敢比价格的优鲜选择"主题，以卡通亲子形象传递"家庭消费"的场景关联，用"谁敢跟我比价格"的强冲突文案强化价格主张，搭建"视觉亲和力+价值冲击力"的双维传播逻辑。</p>
+                            <p class="english-translation">Refined the theme "Family-style Affordability: The Price-daring Youxian Choice," using cartoon parent-child imagery to convey "family consumption" scenario association, with bold conflict copy like "Who dares compare prices with me?" to strengthen price proposition, establishing a dual-dimensional communication logic of "visual approachability + value impact."</p>
+                        </div>
+                        
+                        <div class="process-item">
+                            <div class="process-title">3、风格锚定</div>
+                            <p>高饱和黄色背景（抢占注意力）+粗黑断裂字体（呼应"折扣"的灵活与"批发"的厚重）+圆润卡通形象（软化商业感，拉近与家庭客群距离）。</p>
+                            <p class="english-translation">High-saturation yellow background (attention-grabbing) + bold black fractured fonts (echoing "discount" flexibility and "wholesale" solidity) + rounded cartoon figures (softening commercial feel, bridging distance with family customers).</p>
+                        </div>
+                        
+                        <div class="process-item">
+                            <div class="process-title">4、细节落地</div>
+                            <p>字体设计通过笔画断裂、倾斜角度强化"活力感"，卡通人物以暖色调腮红、互动姿态传递"陪伴式消费"氛围，文案分区遵循"品牌名→促销语→门店信息"的视觉动线，确保信息高效触达。</p>
+                            <p class="english-translation">Font design strengthened "energy" through stroke breaks and slanted angles; cartoon characters conveyed "companionship consumption" atmosphere via warm-toned blush and interactive postures; copy zoning followed "brand name → promotion → store info" visual path to ensure efficient information delivery.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="role">
+                    <ul>
+                        <li>需求分析：负责理解超市定位和核心客户需求</li>
+                        <li>创意构思：负责将生活观察转化为设计概念</li>
+                        <li>手绘创作：负责捕捉人物神态和情感表达</li>
+                        <li>视觉设计：负责将手绘稿转化为专业设计作品</li>
+                        <li>品牌整合：负责确保设计符合超市品牌调性</li>
+                        <p class="role-separator"></p>
+                        <li>Requirements Analysis: Responsible for understanding supermarket positioning and core customer needs</li>
+                        <li>Creative Conception: Responsible for transforming life observations into design concepts</li>
+                        <li>Hand-drawing: Responsible for capturing character expressions and emotional portrayal</li>
+                        <li>Visual Design: Responsible for converting hand-drawn drafts into professional design works</li>
+                        <li>Brand Integration: Responsible for ensuring design aligns with supermarket brand tone</li>
+                    </ul>
+                </div>
+                
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-quote">
+                设计不仅是视觉的美化，更是信息的精准传达与情感的共鸣创造。<br>
+                Design is not just visual embellishment, but precise information delivery and emotional resonance creation.
+            </div>
+            <div class="copyright">© 2025 平面设计作品集 | 用创意诠释品牌价值<br>Graphic Design Portfolio | Interpreting Brand Value with Creativity</div>
+        </footer>
+    </div>
+    <script>
+        // Scroll progress indicator
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.querySelector(".scroll-progress").style.width = scrolled + "%";
+
+            // Fade-in on scroll for project cards
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                const projectTop = project.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (projectTop < windowHeight * 0.8) { // When 80% of the project is in view
+                    project.classList.add('appear');
+                } else {
+                    // Optional: remove 'appear' class if you want elements to re-animate on scroll up/down
+                    // project.classList.remove('appear');
+                }
+            });
+        };
+
+        // Initial check for fade-in elements on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => {
+                const projectTop = project.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (projectTop < windowHeight * 0.8) {
+                    project.classList.add('appear');
+                }
+            });
+
+            document.querySelectorAll('.project-showcase .gallery').forEach((gallery) => {
+                const showcase = gallery.parentElement;
+                showcase.classList.add('poster-showcase');
+                const works = Array.from(gallery.querySelectorAll('.gallery-item')).map((item, itemIndex) => {
+                    const image = item.querySelector('img');
+                    const title = item.querySelector('.gallery-caption h4');
+                    const description = item.querySelector('.gallery-caption p');
+                    return {
+                        src: image ? image.src : '',
+                        alt: image ? image.alt : '',
+                        title: title ? title.textContent.trim() : '',
+                        description: description ? description.textContent.trim() : '',
+                        type: item.classList.contains('wide') ? 'Mural Artwork' : 'Poster Artwork',
+                        shape: item.classList.contains('wide') ? 'wide' : 'square',
+                        index: itemIndex
+                    };
+                }).filter(work => work.src);
+
+                if (!works.length) return;
+
+                const viewer = document.createElement('div');
+                viewer.className = 'poster-viewer';
+                viewer.innerHTML = `
+                    <div class="poster-stage is-${works[0].shape}">
+                        <div class="poster-stage-top">
+                            <span class="poster-index">01</span>
+                            <span class="poster-type">${works[0].type}</span>
+                        </div>
+                        <div class="poster-artboard">
+                            <img class="poster-main-image" src="${works[0].src}" alt="${works[0].alt}">
+                        </div>
+                    </div>
+                    <aside class="poster-panel">
+                        <div>
+                            <span class="poster-kicker">Design Case</span>
+                            <h4 class="poster-title">${works[0].title}</h4>
+                            <p class="poster-description">${works[0].description}</p>
+                        </div>
+                        <div class="poster-actions">
+                            <button type="button" class="poster-prev" aria-label="上一张作品"><i class="fas fa-arrow-left"></i></button>
+                            <button type="button" class="poster-next" aria-label="下一张作品"><i class="fas fa-arrow-right"></i></button>
+                            <a class="poster-open" href="${works[0].src}" target="_blank"><i class="fas fa-expand-alt"></i> 查看高清</a>
+                        </div>
+                    </aside>
+                    <div class="poster-thumb-rail"></div>
+                `;
+
+                const mainImage = viewer.querySelector('.poster-main-image');
+                const stage = viewer.querySelector('.poster-stage');
+                const title = viewer.querySelector('.poster-title');
+                const description = viewer.querySelector('.poster-description');
+                const index = viewer.querySelector('.poster-index');
+                const type = viewer.querySelector('.poster-type');
+                const open = viewer.querySelector('.poster-open');
+                const rail = viewer.querySelector('.poster-thumb-rail');
+                let activeIndex = 0;
+
+                works.forEach((work, workIndex) => {
+                    const thumb = document.createElement('button');
+                    thumb.type = 'button';
+                    thumb.className = 'poster-thumb';
+                    thumb.innerHTML = `<img src="${work.src}" alt=""><span>${work.title}</span>`;
+                    thumb.addEventListener('click', () => setActive(workIndex));
+                    rail.appendChild(thumb);
+                });
+
+                const thumbs = Array.from(rail.querySelectorAll('.poster-thumb'));
+                const updateStageShape = () => {
+                    if (!mainImage.naturalWidth || !mainImage.naturalHeight) return;
+                    const ratio = mainImage.naturalWidth / mainImage.naturalHeight;
+                    stage.style.setProperty('--poster-ratio', ratio.toFixed(4));
+                    stage.classList.remove('is-wide', 'is-square', 'is-tall', 'is-ultrawide', 'is-mural-wide');
+                    if (works[activeIndex].shape === 'wide') {
+                        stage.classList.add('is-mural-wide');
+                    } else if (ratio > 2.35) {
+                        stage.classList.add('is-ultrawide');
+                    } else if (ratio > 1.35) {
+                        stage.classList.add('is-wide');
+                    } else if (ratio < 0.82) {
+                        stage.classList.add('is-tall');
+                    } else {
+                        stage.classList.add('is-square');
+                    }
+                };
+
+                const setActive = (nextIndex) => {
+                    activeIndex = (nextIndex + works.length) % works.length;
+                    const work = works[activeIndex];
+                    mainImage.src = work.src;
+                    mainImage.alt = work.alt;
+                    stage.classList.remove('is-wide', 'is-square', 'is-tall', 'is-ultrawide', 'is-mural-wide');
+                    stage.classList.add(`is-${work.shape}`);
+                    title.textContent = work.title;
+                    description.textContent = work.description;
+                    index.textContent = String(activeIndex + 1).padStart(2, '0');
+                    type.textContent = work.type;
+                    open.href = work.src;
+                    thumbs.forEach((thumb, thumbIndex) => {
+                        thumb.classList.toggle('is-active', thumbIndex === activeIndex);
+                    });
+                    if (mainImage.complete) updateStageShape();
+                };
+
+                mainImage.addEventListener('load', updateStageShape);
+
+                viewer.querySelector('.poster-prev').addEventListener('click', () => setActive(activeIndex - 1));
+                viewer.querySelector('.poster-next').addEventListener('click', () => setActive(activeIndex + 1));
+
+                gallery.replaceWith(viewer);
+                setActive(0);
+            });
+        });
+
+        // This fetch call seems specific to local testing with ngrok and might not be needed for general deployment.
+        // It's kept for consistency with previous user-provided code, but can be removed if not applicable.
+        fetch(location.href,{headers:{"ngrok-skip-browser-warning":"1"}});
+    </script>
+</body>
+</html>
