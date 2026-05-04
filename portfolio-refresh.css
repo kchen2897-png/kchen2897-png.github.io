@@ -802,11 +802,35 @@ body.design-trend .poster-panel p {
     line-height: 1.7;
     max-height: clamp(130px, 15vw, 220px);
     overflow: auto;
+    padding-right: 12px;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.34) rgba(255,255,255,0.05);
+}
+
+body.design-trend .poster-panel p::-webkit-scrollbar {
+    width: 8px;
+}
+
+body.design-trend .poster-panel p::-webkit-scrollbar-track {
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+}
+
+body.design-trend .poster-panel p::-webkit-scrollbar-thumb {
+    min-height: 48px;
+    border: 2px solid rgba(12,17,31,0.78);
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.58), rgba(255,255,255,0.18));
+}
+
+body.design-trend .poster-panel p::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.28));
 }
 
 body.design-trend .poster-actions {
     display: grid;
-    grid-template-columns: 44px 44px;
+    grid-template-columns: 44px 44px minmax(136px, 1fr);
     gap: 10px;
     justify-content: flex-start;
     margin-top: auto;
@@ -837,15 +861,23 @@ body.design-trend .poster-actions button {
 }
 
 body.design-trend .poster-actions a {
-    grid-column: 1 / -1;
+    grid-column: 3;
     color: #111318;
     border-color: transparent;
     background: linear-gradient(135deg, #ffffff, #eef2f7);
     width: 100%;
-    min-width: 0;
-    min-height: 54px;
+    min-width: 136px;
+    min-height: 44px;
+    padding-inline: 18px;
     white-space: nowrap;
     box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+body.design-trend .poster-actions a:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ffffff, #dfe8f5);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.28);
 }
 
 body.design-trend .poster-thumb-rail {
@@ -860,6 +892,27 @@ body.design-trend .poster-thumb-rail {
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.34) rgba(255,255,255,0.06);
+}
+
+body.design-trend .poster-thumb-rail::-webkit-scrollbar {
+    height: 8px;
+}
+
+body.design-trend .poster-thumb-rail::-webkit-scrollbar-track {
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+}
+
+body.design-trend .poster-thumb-rail::-webkit-scrollbar-thumb {
+    border: 2px solid rgba(8,12,24,0.78);
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.54), rgba(255,255,255,0.2));
+}
+
+body.design-trend .poster-thumb-rail::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, rgba(255,255,255,0.68), rgba(255,255,255,0.3));
 }
 
 body.design-trend .poster-thumb {
