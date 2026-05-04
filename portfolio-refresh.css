@@ -1442,3 +1442,237 @@ body.trend-page .emphasized-paragraph .english-translation {
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
 }
+
+/* Harmonized portfolio color pass only. */
+body.trend-page,
+body.text-trend,
+body.design-trend,
+body.video-trend {
+    --primary-color: #171B21;
+    --secondary-color: #BFA46A;
+    --accent-color: #73827A;
+    --light-color: #F3F1EA;
+    --highlight-color: #8C6257;
+    --text-color: #2D3238;
+    --text-light: #626A73;
+    --english-color: #68717A;
+    --gold-light: rgba(191, 164, 106, 0.06);
+    --gold-medium: rgba(191, 164, 106, 0.14);
+    --gold-dark: rgba(191, 164, 106, 0.34);
+    --accent-1: #244D4D;
+    --accent-2: #BFA46A;
+    --accent-3: #8C6257;
+    --trend-a: rgba(36,77,77,0.16);
+    --trend-b: rgba(191,164,106,0.16);
+    --trend-c: rgba(140,98,87,0.12);
+    color: #171B21;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.9), rgba(243,241,234,0.84)),
+        radial-gradient(circle at 8% 10%, var(--trend-a), transparent 30%),
+        radial-gradient(circle at 88% 2%, var(--trend-b), transparent 34%),
+        radial-gradient(circle at 74% 88%, var(--trend-c), transparent 30%),
+        #F3F1EA;
+}
+
+body.trend-page:before {
+    background:
+        linear-gradient(rgba(23,27,33,0.038) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23,27,33,0.038) 1px, transparent 1px);
+}
+
+.trend-nav {
+    border-color: rgba(191,164,106,0.28);
+    background: rgba(250,248,242,0.78);
+    box-shadow: 0 18px 46px rgba(20,25,31,0.1);
+}
+
+.trend-nav .brand,
+body.trend-page h2,
+body.trend-page h3,
+body.trend-page .process-title,
+body.trend-page h4,
+body.trend-page h5,
+body.trend-page h6,
+body.trend-page .official-content h4,
+body.trend-page .official-clipping {
+    color: #171B21;
+}
+
+.trend-nav .brand i,
+body.trend-page .project:after,
+body.trend-page h3:before,
+body.trend-page .project-link:hover,
+body.trend-page .image-view-original-link:hover,
+body.video-trend .video-container .project-link:hover,
+body.design-trend .poster-kicker {
+    background: linear-gradient(135deg, #244D4D, #BFA46A);
+}
+
+.trend-nav a {
+    color: #626A73;
+}
+
+.trend-nav a:hover,
+.trend-nav a.active,
+body.trend-page .role:before,
+body.trend-page th,
+body.trend-page footer,
+body.trend-page .video-container,
+body.trend-page .official-thumb,
+body.trend-page .official-clipping .clip-kicker,
+body.design-trend .poster-stage-top span:first-child {
+    background: #171B21;
+}
+
+body.trend-page header {
+    background:
+        linear-gradient(135deg, rgba(23,27,33,0.94), rgba(35,45,52,0.92)),
+        radial-gradient(circle at 86% 20%, rgba(191,164,106,0.34), transparent 28%);
+    box-shadow: 0 30px 90px rgba(20,25,31,0.18);
+}
+
+body.trend-page header:before,
+body.trend-page h1:after,
+body.trend-page h2:after,
+body.trend-page .process:before,
+body.trend-page .process-title:before,
+body.trend-page .project-intro h4:after,
+body.trend-page h4:after,
+body.trend-page .official-clipping:before {
+    background: linear-gradient(90deg, #244D4D, #BFA46A, #8C6257);
+}
+
+body.trend-page .project,
+body.trend-page .emphasized-paragraph,
+body.trend-page .official-article-card,
+body.trend-page table {
+    border-color: rgba(191,164,106,0.22);
+    background: rgba(255,255,255,0.78);
+    box-shadow: 0 24px 60px rgba(20,25,31,0.1);
+}
+
+body.trend-page .project:hover,
+body.trend-page .emphasized-paragraph:hover,
+body.trend-page .official-article-card:hover {
+    box-shadow: 0 32px 90px rgba(20,25,31,0.14);
+}
+
+body.trend-page .english-subtitle,
+body.trend-page .project-intro p,
+body.trend-page .project p,
+body.trend-page .process-item p,
+body.trend-page .role li,
+body.trend-page li,
+body.trend-page td,
+body.trend-page .official-note,
+body.trend-page .official-clipping p {
+    color: #626A73;
+}
+
+body.trend-page .project-showcase,
+body.design-trend .project-showcase {
+    background:
+        radial-gradient(circle at 10% 12%, rgba(36,77,77,0.28), transparent 26%),
+        radial-gradient(circle at 92% 10%, rgba(191,164,106,0.26), transparent 30%),
+        linear-gradient(135deg, #171B21, #202936 56%, #11161D);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 28px 72px rgba(20,25,31,0.16);
+}
+
+body.trend-page .project-image-container:before {
+    background:
+        radial-gradient(circle at 20px 17px, #8C6257 0 6px, transparent 7px),
+        radial-gradient(circle at 42px 17px, #BFA46A 0 6px, transparent 7px),
+        radial-gradient(circle at 64px 17px, #73827A 0 6px, transparent 7px),
+        linear-gradient(90deg, #28323A, #46525A);
+}
+
+body.trend-page .project-link,
+body.trend-page .image-view-original-link,
+body.video-trend .video-container .project-link,
+body.design-trend .project-link,
+body.design-trend .poster-actions a {
+    color: #171B21;
+    background: linear-gradient(135deg, #FFFFFF, #F1EDE4);
+    box-shadow: 0 16px 34px rgba(20,25,31,0.2);
+}
+
+body.trend-page .official-published,
+body.trend-page .official-clipping,
+body.video-trend .video-container,
+body.design-trend .poster-stage {
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(243,241,234,0.86)),
+        linear-gradient(rgba(23,27,33,0.038) 1px, transparent 1px);
+}
+
+body.trend-page .official-clipping em,
+body.trend-page .official-date,
+body.trend-page .highlight {
+    color: #8C6257;
+}
+
+body.trend-page .official-date,
+body.trend-page .role {
+    background: rgba(191,164,106,0.12);
+}
+
+body.trend-page .official-meta span {
+    color: #626A73;
+    background: rgba(23,27,33,0.06);
+}
+
+body.trend-page .official-actions a {
+    color: white;
+    background: #171B21;
+    box-shadow: 0 12px 26px rgba(20,25,31,0.14);
+}
+
+body.trend-page .official-actions a.secondary {
+    color: #171B21;
+    background: rgba(191,164,106,0.14);
+    box-shadow: none;
+}
+
+body.trend-page .project p > .english-translation,
+body.trend-page .project li > .english-translation,
+body.trend-page .process-item .english-translation,
+body.trend-page .role .english-translation,
+body.trend-page .emphasized-paragraph .english-translation,
+body.trend-page .english-translation {
+    border-left-color: #BFA46A !important;
+    background: rgba(191,164,106,0.1) !important;
+    color: #68717A;
+}
+
+body.design-trend .poster-panel {
+    border-color: rgba(191,164,106,0.2);
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.045)),
+        rgba(17,22,29,0.78);
+}
+
+body.design-trend .poster-stage-top {
+    color: #5E6F7D;
+}
+
+body.design-trend .poster-panel p,
+body.design-trend .poster-thumb span,
+body.trend-page .footer-quote,
+body.trend-page .copyright,
+body.trend-page footer p {
+    color: rgba(255,255,255,0.72);
+}
+
+body.design-trend .poster-panel p,
+body.design-trend .poster-thumb-rail {
+    scrollbar-color: rgba(191,164,106,0.44) rgba(255,255,255,0.06);
+}
+
+body.design-trend .poster-panel p::-webkit-scrollbar-thumb,
+body.design-trend .poster-thumb-rail::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(191,164,106,0.58), rgba(255,255,255,0.18));
+}
+
+body.video-trend .video-container iframe {
+    background: #11161D;
+}

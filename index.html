@@ -705,6 +705,56 @@
                 min-height: 330px;
             }
         }
+
+        /* Harmonized color pass only; layout rules above stay untouched. */
+        :root {
+            --ink: #171B21;
+            --muted: #626A73;
+            --paper: #F3F1EA;
+            --surface: rgba(255, 255, 255, 0.84);
+            --line: rgba(23, 27, 33, 0.12);
+            --gold: #BFA46A;
+            --red: #8C6257;
+            --teal: #244D4D;
+            --blue: #5E6F7D;
+            --shadow: 0 24px 70px rgba(20, 25, 31, 0.14);
+        }
+
+        body {
+            background:
+                linear-gradient(115deg, rgba(255,255,255,0.82), rgba(243,241,234,0.9)),
+                radial-gradient(circle at 10% 16%, rgba(140,98,87,0.14), transparent 28%),
+                radial-gradient(circle at 85% 8%, rgba(36,77,77,0.16), transparent 30%),
+                radial-gradient(circle at 76% 78%, rgba(191,164,106,0.12), transparent 34%),
+                var(--paper);
+        }
+
+        body::before {
+            background-image:
+                linear-gradient(rgba(23,27,33,0.038) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(23,27,33,0.038) 1px, transparent 1px);
+        }
+
+        .brand-mark span:first-child,
+        .info-item i,
+        .work-link {
+            background: linear-gradient(135deg, var(--ink), var(--teal));
+        }
+
+        .button.primary,
+        .quote-band {
+            background: var(--ink);
+        }
+
+        .work-card:nth-child(2) .work-link,
+        .work-card:nth-child(2) .info-item i {
+            background: var(--teal);
+        }
+
+        .work-card:nth-child(3) .work-link,
+        .work-card:nth-child(3) .info-item i {
+            background: var(--red);
+        }
     </style>
 </head>
 <body>
