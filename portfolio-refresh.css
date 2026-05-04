@@ -1663,6 +1663,18 @@ body.trend-page footer p {
     color: rgba(255,255,255,0.72);
 }
 
+body.video-trend footer .footer-quote .english-translation {
+    display: inline !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: inherit;
+}
+
 body.design-trend .poster-panel p,
 body.design-trend .poster-thumb-rail {
     scrollbar-color: rgba(191,164,106,0.44) rgba(255,255,255,0.06);
