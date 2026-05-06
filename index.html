@@ -253,7 +253,7 @@
 
         .profile-stats {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
             padding: 14px;
         }
@@ -496,6 +496,11 @@
             background: var(--red);
         }
 
+        .work-card:nth-child(4) .work-link,
+        .work-card:nth-child(4) .info-item i {
+            background: var(--blue);
+        }
+
         .quote-band {
             display: grid;
             grid-template-columns: 1fr auto;
@@ -570,7 +575,7 @@
             .nav-links {
                 width: 100%;
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
             }
 
             .nav-links a {
@@ -645,7 +650,13 @@
                 display: flex;
                 gap: 10px;
                 justify-content: flex-start;
-                overflow: hidden;
+                overflow-x: auto;
+                overflow-y: hidden;
+                scrollbar-width: none;
+            }
+
+            .nav-links::-webkit-scrollbar {
+                display: none;
             }
 
             .nav-links a {
@@ -755,6 +766,11 @@
         .work-card:nth-child(3) .info-item i {
             background: var(--red);
         }
+
+        .work-card:nth-child(4) .work-link,
+        .work-card:nth-child(4) .info-item i {
+            background: var(--blue);
+        }
     </style>
 </head>
 <body>
@@ -770,6 +786,7 @@
                 <a href="text.html">文字</a>
                 <a href="design.html">设计</a>
                 <a href="video.html">视频</a>
+                <a href="ai.html">AI</a>
             </div>
         </nav>
 
@@ -788,8 +805,8 @@
             <aside class="profile-panel" aria-label="个人信息概览">
                 <div class="portrait-card">
                     <div class="profile-stats">
-                        <div class="stat"><strong>03</strong><span>作品类别</span></div>
-                        <div class="stat"><strong>09+</strong><span>项目呈现</span></div>
+                        <div class="stat"><strong>04</strong><span>作品类别</span></div>
+                        <div class="stat"><strong>11+</strong><span>项目呈现</span></div>
                         <div class="stat"><strong>2025</strong><span>Portfolio</span></div>
                     </div>
                     <div class="profile-info">
@@ -874,12 +891,30 @@
                         <a class="work-link" href="video.html">查看视频作品 <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
+
+                <article class="work-card">
+                    <div class="work-media">
+                        <img src="assets/ai-clipmind-preview.png" alt="AI 作品预览">
+                        <div class="work-tag">AI PRODUCTS</div>
+                        <div class="work-title">
+                            <h3>AI 作品集</h3>
+                            <span>视频剪辑 · 内容排版 · 工作流应用</span>
+                        </div>
+                    </div>
+                    <div class="work-body">
+                        <p>集中展示从需求拆解、前端交互、后端流程到线上部署的 AI 工具型网站。</p>
+                        <div class="mini-list">
+                            <span>OpenRouter</span><span>Whisper</span><span>FFmpeg</span>
+                        </div>
+                        <a class="work-link" href="ai.html">查看 AI 作品 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
             </section>
         </main>
 
         <footer>
             <span>© 2025 程栋梁 | CHENG DONGLIANG</span>
-            <span>Journalism · Visual Design · Video Editing</span>
+            <span>Journalism · Visual Design · Video Editing · AI Tools</span>
         </footer>
     </div>
 
