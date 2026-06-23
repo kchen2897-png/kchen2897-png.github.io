@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="portfolio-refresh.css">
     <style>
+        html {
+            overflow-x: hidden;
+        }
+
         body.ai-trend {
             --accent-1: #00a878;
             --accent-2: #3d6fba;
@@ -17,6 +21,8 @@
             --trend-a: rgba(0,168,120,0.22);
             --trend-b: rgba(61,111,186,0.22);
             --trend-c: rgba(201,151,58,0.18);
+            margin: 0;
+            overflow-x: hidden;
         }
 
         body.ai-trend .trend-nav .brand i,
@@ -307,6 +313,107 @@
             font-weight: 900;
         }
 
+        .ai-video-project {
+            overflow: hidden;
+        }
+
+        .ai-video-intro {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(260px, 0.34fr);
+            gap: clamp(18px, 3vw, 30px);
+            align-items: end;
+            margin-bottom: 24px;
+        }
+
+        .ai-video-intro p {
+            margin: 0;
+            max-width: 860px;
+            color: #535b68;
+            line-height: 1.9;
+        }
+
+        .ai-video-role {
+            padding: 16px 18px;
+            border-radius: 22px;
+            color: white;
+            background:
+                radial-gradient(circle at 12% 12%, rgba(0,168,120,0.34), transparent 34%),
+                linear-gradient(135deg, #111318, #203040);
+            box-shadow: 0 18px 42px rgba(17,19,24,0.15);
+        }
+
+        .ai-video-role strong,
+        .ai-video-role span {
+            display: block;
+        }
+
+        .ai-video-role strong {
+            font-size: 1.2rem;
+            line-height: 1.35;
+        }
+
+        .ai-video-role span {
+            margin-top: 8px;
+            color: rgba(255,255,255,0.68);
+            font-size: 0.88rem;
+            font-weight: 800;
+        }
+
+        .ai-video-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: clamp(14px, 2.4vw, 24px);
+            margin: 20px 0 26px;
+        }
+
+        .ai-video-card {
+            min-width: 0;
+        }
+
+        .ai-video-frame {
+            position: relative;
+            display: block;
+            aspect-ratio: 9 / 16;
+            overflow: hidden;
+            border-radius: 24px;
+            background: #111318;
+            box-shadow: 0 22px 54px rgba(17,19,24,0.16);
+        }
+
+        .ai-video-frame img,
+        .ai-video-frame video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .ai-video-frame:hover img,
+        .ai-video-frame:hover video {
+            transform: scale(1.04);
+        }
+
+        .ai-video-frame video {
+            display: block;
+            cursor: pointer;
+        }
+
+        .ai-video-frame video::-webkit-media-controls {
+            z-index: 2;
+        }
+
+
+        .ai-process-title {
+            margin: 6px 0 14px;
+            color: #111318;
+            font-size: 1.15rem;
+            font-weight: 900;
+        }
+
+        .ai-process-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
         .ai-actions {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -376,12 +483,25 @@
             .ai-actions {
                 grid-template-columns: 1fr;
             }
+
+            .ai-video-intro,
+            .ai-process-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 640px) {
             .ai-preview,
             .ai-preview img {
                 min-height: 280px;
+            }
+
+            .ai-video-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .ai-video-frame {
+                max-height: 560px;
             }
 
             .workflow-step {
@@ -428,7 +548,7 @@
             </div>
 
             <div class="ai-hero-metrics" aria-label="AI 作品概览">
-                <div><strong>02</strong><span>已上线 AI 网站</span></div>
+                <div><strong>03</strong><span>AI 项目与视频样本</span></div>
                 <div><strong>Live</strong><span>可直接访问体验</span></div>
                 <div><strong>Workflow</strong><span>覆盖真实使用流程</span></div>
             </div>
@@ -443,33 +563,30 @@
 
         <section aria-label="AI 项目列表">
             <div class="project fade-in">
-                <h3>项目 1：ClipMind AI 视频剪辑助手<br><span class="english-subtitle">Project 1: ClipMind AI Video Editing Assistant</span></h3>
+                <h3>项目 1：AI 简历工具箱<br><span class="english-subtitle">Project 1: AI Resume Optimizer & Builder</span></h3>
                 <div class="ai-project-layout">
                     <div class="ai-preview">
-                        <img src="assets/ai-clipmind-preview.png" alt="ClipMind AI 视频剪辑助手网页预览">
+                        <img src="assets/ai-resume-preview.png" alt="AI 简历工具箱网页预览">
                         <div class="ai-preview-label">
-                            <span>AI VIDEO WORKFLOW</span>
-                            <h4>上传视频，识别字幕，生成并下载短视频片段</h4>
+                            <span>AI RESUME TOOLKIT</span>
+                            <h4>上传简历 → AI 优化比对 → 制作器逐字段润色 → 导出 PDF</h4>
                         </div>
                     </div>
                     <div class="ai-detail">
                         <p>
-                            这是一个可运行的视频剪辑工作流网站。用户上传 mp4 后，后端保存视频，使用 FFmpeg 提取音频，本地 Whisper 生成字幕，再由 OpenRouter 生成剪辑建议，最后通过 FFmpeg 裁剪真实片段并提供下载。
+                            这是一套面向求职场景的 AI 简历工具，分为两个核心模块：优化器上传简历后逐段对比 AI 优化建议，制作器提供逐字段 AI 润色、智能排版适配和 PDF 服务端渲染导出。
                         </p>
                         <div class="workflow-grid">
-                            <div class="workflow-step"><i class="fas fa-upload"></i><span>上传 mp4 并保存到后端 uploads 目录</span></div>
-                            <div class="workflow-step"><i class="fas fa-wave-square"></i><span>FFmpeg 提取音频，本地 Whisper 识别字幕</span></div>
-                            <div class="workflow-step"><i class="fas fa-cut"></i><span>OpenRouter 生成建议，FFmpeg 裁剪真实片段</span></div>
+                            <div class="workflow-step"><i class="fas fa-upload"></i><span>上传简历，AI 逐段对比并给出优化建议</span></div>
+                            <div class="workflow-step"><i class="fas fa-magic"></i><span>制作器 AI 逐字段润色 + 全局建议侧栏</span></div>
+                            <div class="workflow-step"><i class="fas fa-file-pdf"></i><span>AI 排版适配 + Puppeteer 服务端 PDF 导出</span></div>
                         </div>
                         <div class="tool-list">
-                            <span>Next.js</span><span>TypeScript</span><span>Tailwind CSS</span><span>OpenRouter</span><span>Whisper</span><span>FFmpeg</span><span>Railway</span>
+                            <span>Next.js 15</span><span>React 19</span><span>TypeScript</span><span>Tailwind CSS</span><span>DeepSeek API</span><span>Puppeteer</span><span>Railway</span>
                         </div>
                         <div class="ai-actions">
-                            <a class="project-link" href="https://clipmind-ai-production.up.railway.app" target="_blank" rel="noopener noreferrer">
+                            <a class="project-link" href="https://powerful-mercy-production-82dc.up.railway.app" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> 访问可运行网站
-                            </a>
-                            <a class="project-link secondary" href="assets/ai-clipmind-preview.png" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-image"></i> 查看页面截图
                             </a>
                         </div>
                     </div>
@@ -502,12 +619,53 @@
                             <a class="project-link" href="https://kchen2897-png.github.io/wechat-publisher-studio/" target="_blank" rel="noopener noreferrer">
                                 <i class="fas fa-external-link-alt"></i> 访问可运行网站
                             </a>
-                            <a class="project-link secondary" href="assets/ai-wechat-preview.png" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-image"></i> 查看页面截图
-                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="project fade-in ai-video-project">
+                <h3>项目 3：凯迪仕实习 AI 视频样本<br><span class="english-subtitle">Project 3: AI Video Samples for Kaadas Internship</span></h3>
+                <div class="ai-video-intro">
+                    <p>
+                        这组三条竖屏样本来自我在深圳凯迪仕智能科技公司实习期间参与制作的 AI 视频内容。项目围绕智能门锁的海外家庭使用场景展开，用更接近日常短视频的方式切入产品卖点，把“门口突发状况”“屋主开门”“双手提物”等生活片段转化为可传播的开场画面。
+                    </p>
+                    <div class="ai-video-role">
+                        <strong>负责创意构思、脚本提示词、AI 生成与剪辑成片</strong>
+                        <span>Creative opening, prompting, AI generation, CapCut editing</span>
+                    </div>
+                </div>
+
+                <div class="ai-video-showcase" aria-label="凯迪仕实习 AI 视频样本">
+                    <div class="ai-video-card">
+                        <div class="ai-video-frame">
+                            <video src="assets/kadish-ai-video-01.mp4" poster="assets/kadish-ai-video-sample-01.webp" controls preload="metadata" playsinline></video>
+                        </div>
+                    </div>
+                    <div class="ai-video-card">
+                        <div class="ai-video-frame">
+                            <video src="assets/kadish-ai-video-02.mp4" poster="assets/kadish-ai-video-sample-02.webp" controls preload="metadata" playsinline></video>
+                        </div>
+                    </div>
+                    <div class="ai-video-card">
+                        <div class="ai-video-frame">
+                            <video src="assets/kadish-ai-video-03.mp4" poster="assets/kadish-ai-video-sample-03.webp" controls preload="metadata" playsinline></video>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="ai-process-title">制作流程 / Production Workflow</p>
+                    <div class="workflow-grid ai-process-grid">
+                        <div class="workflow-step"><i class="fas fa-lightbulb"></i><span>构思开头创意，确定智能门锁短视频的第一眼吸引点</span></div>
+                        <div class="workflow-step"><i class="fas fa-image"></i><span>使用 Flow 生成关键画面，建立人物、门口环境和产品场景</span></div>
+                        <div class="workflow-step"><i class="fas fa-magic"></i><span>用 ChatGPT 辅助提升画面清晰度与细节表现方向</span></div>
+                        <div class="workflow-step"><i class="fas fa-scroll"></i><span>构思脚本结构，并制作适合视频生成模型理解的提示词</span></div>
+                        <div class="workflow-step"><i class="fas fa-film"></i><span>通过即梦生成视频片段，筛选动作自然、情绪明确的版本</span></div>
+                        <div class="workflow-step"><i class="fas fa-cut"></i><span>使用 CapCut 完成节奏剪辑、字幕处理与样片输出</span></div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -522,6 +680,18 @@
     </div>
 
     <script>
+        /* 一次只允许播放一个视频 */
+        (() => {
+            const videos = document.querySelectorAll('.ai-video-showcase video');
+            videos.forEach(v => {
+                v.addEventListener('play', () => {
+                    videos.forEach(other => {
+                        if (other !== v && !other.paused) other.pause();
+                    });
+                });
+            });
+        })();
+
         const progress = document.querySelector(".scroll-progress");
         const updateProgress = () => {
             const scrollTop = window.scrollY;
