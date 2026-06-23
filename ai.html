@@ -65,16 +65,14 @@
         }
 
         .fade-in,
-        .ai-overview,
-        .ai-note {
+        .ai-overview {
             opacity: 0;
             transform: translateY(22px);
             transition: opacity 0.65s ease, transform 0.65s cubic-bezier(.2,.8,.2,1);
         }
 
         .fade-in.is-visible,
-        .ai-overview.is-visible,
-        .ai-note.is-visible {
+        .ai-overview.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -82,7 +80,7 @@
         body.ai-trend header {
             position: relative;
             display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+            grid-template-columns: minmax(0, 1fr);
             align-items: end;
             gap: clamp(22px, 4vw, 44px);
         }
@@ -140,37 +138,6 @@
             line-height: 1.85;
         }
 
-        .ai-hero-metrics {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            gap: 12px;
-        }
-
-        .ai-hero-metrics div {
-            min-height: 92px;
-            padding: 16px;
-            border: 1px solid rgba(255,255,255,0.16);
-            border-radius: 22px;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(18px);
-        }
-
-        .ai-hero-metrics strong {
-            display: block;
-            color: white;
-            font-size: 1.7rem;
-            line-height: 1;
-        }
-
-        .ai-hero-metrics span {
-            display: block;
-            margin-top: 9px;
-            color: rgba(255,255,255,0.72);
-            font-size: 0.9rem;
-            font-weight: 700;
-        }
-
         .ai-overview {
             margin-bottom: 34px;
         }
@@ -215,40 +182,6 @@
 
         .ai-preview:hover img {
             transform: scale(1.04);
-        }
-
-        .ai-preview:after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent 46%, rgba(17,19,24,0.82));
-        }
-
-        .ai-preview-label {
-            position: absolute;
-            left: 18px;
-            right: 18px;
-            bottom: 18px;
-            z-index: 1;
-            color: white;
-        }
-
-        .ai-preview-label span {
-            display: inline-flex;
-            margin-bottom: 10px;
-            padding: 7px 11px;
-            border-radius: 999px;
-            background: rgba(255,255,255,0.16);
-            backdrop-filter: blur(14px);
-            font-size: 0.78rem;
-            font-weight: 900;
-        }
-
-        .ai-preview-label h4 {
-            margin: 0;
-            color: white;
-            font-size: clamp(1.45rem, 2.4vw, 2.1rem);
-            line-height: 1.2;
         }
 
         .ai-detail {
@@ -296,21 +229,6 @@
             color: #171B21;
             font-weight: 800;
             line-height: 1.45;
-        }
-
-        .tool-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tool-list span {
-            padding: 8px 11px;
-            border-radius: 999px;
-            color: rgba(17,19,24,0.78);
-            background: rgba(17,19,24,0.07);
-            font-size: 0.84rem;
-            font-weight: 900;
         }
 
         .ai-video-project {
@@ -416,7 +334,7 @@
 
         .ai-actions {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: minmax(0, 1fr);
             gap: 12px;
         }
 
@@ -439,44 +357,13 @@
             color: white;
         }
 
-        .ai-note {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
-            align-items: center;
-            gap: 22px;
-            margin: 10px 0 74px;
-            padding: clamp(22px, 3vw, 32px);
-            border-radius: 28px;
-            color: white;
-            background:
-                linear-gradient(135deg, rgba(17,19,24,0.94), rgba(31,50,62,0.92)),
-                radial-gradient(circle at 86% 20%, rgba(0,168,120,0.36), transparent 32%);
-            box-shadow: 0 24px 70px rgba(17,19,24,0.18);
-        }
-
-        .ai-note p {
-            margin: 0;
-            font-size: clamp(1.12rem, 2vw, 1.55rem);
-            line-height: 1.75;
-            font-weight: 800;
-        }
-
-        .ai-note span {
-            color: rgba(255,255,255,0.24);
-            font-family: "Playfair Display", serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 700;
-            line-height: 1;
-        }
-
         body.ai-trend footer {
             margin-bottom: 28px;
         }
 
         @media (max-width: 980px) {
             body.ai-trend header,
-            .ai-project-layout,
-            .ai-note {
+            .ai-project-layout {
                 grid-template-columns: 1fr;
             }
 
@@ -546,12 +433,6 @@
                     AI tools built for practical publishing and video workflow scenarios.
                 </p>
             </div>
-
-            <div class="ai-hero-metrics" aria-label="AI 作品概览">
-                <div><strong>03</strong><span>AI 项目与视频样本</span></div>
-                <div><strong>Live</strong><span>可直接访问体验</span></div>
-                <div><strong>Workflow</strong><span>覆盖真实使用流程</span></div>
-            </div>
         </header>
 
         <section class="ai-overview">
@@ -567,10 +448,6 @@
                 <div class="ai-project-layout">
                     <div class="ai-preview">
                         <img src="assets/ai-resume-preview.png" alt="AI 简历工具箱网页预览">
-                        <div class="ai-preview-label">
-                            <span>AI RESUME TOOLKIT</span>
-                            <h4>上传简历 → AI 优化比对 → 制作器逐字段润色 → 导出 PDF</h4>
-                        </div>
                     </div>
                     <div class="ai-detail">
                         <p>
@@ -580,9 +457,6 @@
                             <div class="workflow-step"><i class="fas fa-upload"></i><span>上传简历，AI 逐段对比并给出优化建议</span></div>
                             <div class="workflow-step"><i class="fas fa-magic"></i><span>制作器 AI 逐字段润色 + 全局建议侧栏</span></div>
                             <div class="workflow-step"><i class="fas fa-file-pdf"></i><span>AI 排版适配 + Puppeteer 服务端 PDF 导出</span></div>
-                        </div>
-                        <div class="tool-list">
-                            <span>Next.js 15</span><span>React 19</span><span>TypeScript</span><span>Tailwind CSS</span><span>DeepSeek API</span><span>Puppeteer</span><span>Railway</span>
                         </div>
                         <div class="ai-actions">
                             <a class="project-link" href="https://powerful-mercy-production-82dc.up.railway.app" target="_blank" rel="noopener noreferrer">
@@ -598,10 +472,6 @@
                 <div class="ai-project-layout">
                     <div class="ai-preview">
                         <img src="assets/ai-wechat-preview.png" alt="公众号富文本转换器网页预览">
-                        <div class="ai-preview-label">
-                            <span>AI PUBLISHING TOOL</span>
-                            <h4>面向公众号发布的内容排版与富文本转换工具</h4>
-                        </div>
                     </div>
                     <div class="ai-detail">
                         <p>
@@ -611,9 +481,6 @@
                             <div class="workflow-step"><i class="fas fa-pen-nib"></i><span>输入或整理公众号文章内容</span></div>
                             <div class="workflow-step"><i class="fas fa-palette"></i><span>生成适合微信阅读的排版样式</span></div>
                             <div class="workflow-step"><i class="fas fa-copy"></i><span>转换为可复制到公众号后台的富文本</span></div>
-                        </div>
-                        <div class="tool-list">
-                            <span>内容工具</span><span>富文本转换</span><span>排版预览</span><span>GitHub Pages</span><span>前端交互</span>
                         </div>
                         <div class="ai-actions">
                             <a class="project-link" href="https://kchen2897-png.github.io/wechat-publisher-studio/" target="_blank" rel="noopener noreferrer">
@@ -639,23 +506,23 @@
                 <div class="ai-video-showcase" aria-label="凯迪仕实习 AI 视频样本">
                     <div class="ai-video-card">
                         <div class="ai-video-frame">
-                            <video src="assets/kadish-ai-video-01.mp4" poster="assets/kadish-ai-video-sample-01.webp" controls preload="metadata" playsinline></video>
+                            <video src="assets/kadish-ai-video-01.mp4" controls preload="metadata" playsinline></video>
                         </div>
                     </div>
                     <div class="ai-video-card">
                         <div class="ai-video-frame">
-                            <video src="assets/kadish-ai-video-02.mp4" poster="assets/kadish-ai-video-sample-02.webp" controls preload="metadata" playsinline></video>
+                            <video src="assets/kadish-ai-video-02.mp4" controls preload="metadata" playsinline></video>
                         </div>
                     </div>
                     <div class="ai-video-card">
                         <div class="ai-video-frame">
-                            <video src="assets/kadish-ai-video-03.mp4" poster="assets/kadish-ai-video-sample-03.webp" controls preload="metadata" playsinline></video>
+                            <video src="assets/kadish-ai-video-03.mp4" controls preload="metadata" playsinline></video>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <p class="ai-process-title">制作流程 / Production Workflow</p>
+                    <p class="ai-process-title">制作流程</p>
                     <div class="workflow-grid ai-process-grid">
                         <div class="workflow-step"><i class="fas fa-lightbulb"></i><span>构思开头创意，确定智能门锁短视频的第一眼吸引点</span></div>
                         <div class="workflow-step"><i class="fas fa-image"></i><span>使用 Flow 生成关键画面，建立人物、门口环境和产品场景</span></div>
@@ -668,12 +535,6 @@
 
             </div>
         </section>
-
-        <section class="ai-note" aria-label="AI 作品定位说明">
-            <p>AI 作品页的作用，是把“能做页面”进一步展示为“能把模型、内容流程和真实部署串起来”。</p>
-            <span>AI</span>
-        </section>
-
         <footer>
             <p>© 2025 传媒人作品集. <span class="english-text">All Rights Reserved.</span></p>
         </footer>
@@ -700,7 +561,7 @@
             progress.style.width = `${progressWidth}%`;
         };
 
-        const fadeEls = document.querySelectorAll(".fade-in, .ai-overview, .ai-note");
+        const fadeEls = document.querySelectorAll(".fade-in, .ai-overview");
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
