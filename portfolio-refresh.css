@@ -624,18 +624,18 @@ body.design-trend .poster-viewer {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1.72fr) minmax(300px, 0.48fr);
+    grid-template-columns: 1fr;
     align-items: stretch;
-    gap: clamp(18px, 2.6vw, 28px);
+    gap: clamp(14px, 1.8vw, 22px);
 }
 
 body.design-trend .poster-stage {
     position: relative;
     display: grid;
-    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
     align-content: center;
     min-height: auto;
-    padding: clamp(14px, 2vw, 22px);
+    padding: clamp(8px, 1.2vw, 14px);
     overflow: hidden;
     border-radius: 28px;
     background:
@@ -651,7 +651,7 @@ body.design-trend .poster-stage.is-wide {
 }
 
 body.design-trend .poster-stage.is-mural-wide {
-    grid-template-rows: auto auto;
+    grid-template-rows: minmax(0, 1fr);
     align-content: center;
     align-self: center;
     min-height: auto;
@@ -665,7 +665,7 @@ body.design-trend .poster-stage.is-square {
 body.design-trend .poster-stage:before {
     content: "";
     position: absolute;
-    inset: 12px;
+    inset: 8px;
     border: 1px solid rgba(17,19,24,0.08);
     border-radius: 22px;
     pointer-events: none;
@@ -674,7 +674,7 @@ body.design-trend .poster-stage:before {
 body.design-trend .poster-stage-top {
     position: relative;
     z-index: 2;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     gap: 14px;
@@ -702,10 +702,10 @@ body.design-trend .poster-artboard {
     justify-self: center;
     width: 100%;
     min-height: 0;
-    padding: clamp(10px, 1.8vw, 18px);
-    border-radius: 22px;
-    background: rgba(255,255,255,0.52);
-    box-shadow: inset 0 0 0 1px rgba(17,19,24,0.06);
+    padding: clamp(4px, 0.8vw, 10px);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.28);
+    box-shadow: inset 0 0 0 1px rgba(17,19,24,0.04);
 }
 
 body.design-trend .poster-stage.is-wide .poster-artboard {
@@ -723,12 +723,12 @@ body.design-trend .poster-stage.is-mural-wide .poster-artboard {
 }
 
 body.design-trend .poster-stage.is-square .poster-artboard {
-    width: min(100%, 680px);
+    width: min(100%, 760px);
     aspect-ratio: var(--poster-ratio, 1 / 1);
 }
 
 body.design-trend .poster-stage.is-tall .poster-artboard {
-    width: min(100%, 540px);
+    width: min(100%, 620px);
     aspect-ratio: var(--poster-ratio, 4 / 5);
 }
 
@@ -753,13 +753,13 @@ body.design-trend .poster-stage.is-mural-wide .poster-artboard img {
 }
 
 body.design-trend .poster-panel {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
     align-self: stretch;
-    gap: 18px;
+    gap: clamp(14px, 2vw, 22px);
     min-height: 0;
-    padding: clamp(18px, 2.3vw, 26px);
+    padding: clamp(14px, 1.8vw, 20px);
     text-align: left;
     border: 1px solid rgba(255,255,255,0.18);
     border-radius: 28px;
@@ -782,7 +782,7 @@ body.design-trend .poster-kicker {
 }
 
 body.design-trend .poster-panel h4 {
-    margin: clamp(18px, 3vw, 34px) 0 14px;
+    margin: 12px 0 10px;
     padding: 0;
     border: 0;
     color: white;
@@ -800,7 +800,7 @@ body.design-trend .poster-panel p {
     color: rgba(255,255,255,0.66);
     font-size: 0.9rem;
     line-height: 1.7;
-    max-height: clamp(130px, 15vw, 220px);
+    max-height: clamp(88px, 9vw, 132px);
     overflow: auto;
     padding-right: 12px;
     scrollbar-gutter: stable;
@@ -833,9 +833,10 @@ body.design-trend .poster-actions {
     grid-template-columns: 44px 44px minmax(136px, 1fr);
     gap: 10px;
     justify-content: flex-start;
-    margin-top: auto;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255,255,255,0.12);
+    min-width: min(100%, 300px);
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
 }
 
 body.design-trend .poster-actions button,
@@ -1197,6 +1198,10 @@ body.trend-page footer p {
 
     body.design-trend .poster-stage {
         min-height: 420px;
+    }
+
+    body.design-trend .poster-panel {
+        grid-template-columns: 1fr;
     }
 
     body.design-trend .poster-thumb-rail {

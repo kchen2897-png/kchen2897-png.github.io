@@ -1983,10 +1983,6 @@
                 viewer.className = 'poster-viewer';
                 viewer.innerHTML = `
                     <div class="poster-stage is-${works[0].shape}">
-                        <div class="poster-stage-top">
-                            <span class="poster-index">01</span>
-                            <span class="poster-type">${works[0].type}</span>
-                        </div>
                         <div class="poster-artboard">
                             <img class="poster-main-image" src="${works[0].src}" alt="${works[0].alt}">
                         </div>
@@ -2010,8 +2006,6 @@
                 const stage = viewer.querySelector('.poster-stage');
                 const title = viewer.querySelector('.poster-title');
                 const description = viewer.querySelector('.poster-description');
-                const index = viewer.querySelector('.poster-index');
-                const type = viewer.querySelector('.poster-type');
                 const open = viewer.querySelector('.poster-open');
                 const rail = viewer.querySelector('.poster-thumb-rail');
                 let activeIndex = 0;
@@ -2053,8 +2047,6 @@
                     stage.classList.add(`is-${work.shape}`);
                     title.textContent = work.title;
                     description.textContent = work.description;
-                    index.textContent = String(activeIndex + 1).padStart(2, '0');
-                    type.textContent = work.type;
                     open.href = work.src;
                     thumbs.forEach((thumb, thumbIndex) => {
                         thumb.classList.toggle('is-active', thumbIndex === activeIndex);
