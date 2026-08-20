@@ -320,6 +320,41 @@
             z-index: 2;
         }
 
+        .video-placeholder {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            gap: 14px;
+            padding: 22px;
+            border: 0;
+            color: white;
+            background:
+                radial-gradient(circle at 25% 18%, rgba(0,168,120,0.34), transparent 34%),
+                radial-gradient(circle at 76% 78%, rgba(61,111,186,0.3), transparent 34%),
+                linear-gradient(150deg, #111318, #233240);
+            cursor: pointer;
+            font: inherit;
+            text-align: center;
+        }
+
+        .video-placeholder span {
+            display: grid;
+            place-items: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            color: #111318;
+            background: white;
+            box-shadow: 0 16px 34px rgba(0,0,0,0.2);
+        }
+
+        .video-placeholder strong {
+            max-width: 11em;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
 
         .ai-process-title {
             margin: 6px 0 14px;
@@ -547,17 +582,26 @@
                 <div class="ai-video-showcase" aria-label="tiktokAI营销视频样本">
                     <div class="ai-video-card">
                         <div class="ai-video-frame">
-                            <video src="assets/optimized-video/kadish-ai-video-01-web.mp4" controls preload="metadata" playsinline></video>
+                            <button class="video-placeholder" type="button" data-video-src="assets/optimized-video/kadish-ai-video-01-web.mp4" aria-label="播放 AI 营销视频样本 1">
+                                <span><i class="fas fa-play"></i></span>
+                                <strong>播放样本 1</strong>
+                            </button>
                         </div>
                     </div>
                     <div class="ai-video-card">
                         <div class="ai-video-frame">
-                            <video src="assets/optimized-video/kadish-ai-video-02-web.mp4" controls preload="metadata" playsinline></video>
+                            <button class="video-placeholder" type="button" data-video-src="assets/optimized-video/kadish-ai-video-02-web.mp4" aria-label="播放 AI 营销视频样本 2">
+                                <span><i class="fas fa-play"></i></span>
+                                <strong>播放样本 2</strong>
+                            </button>
                         </div>
                     </div>
                     <div class="ai-video-card">
                         <div class="ai-video-frame">
-                            <video src="assets/optimized-video/kadish-ai-video-03-web.mp4" controls preload="metadata" playsinline></video>
+                            <button class="video-placeholder" type="button" data-video-src="assets/optimized-video/kadish-ai-video-03-web.mp4" aria-label="播放 AI 营销视频样本 3">
+                                <span><i class="fas fa-play"></i></span>
+                                <strong>播放样本 3</strong>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -565,17 +609,26 @@
                 <div class="ai-video-showcase" aria-label="补充AI营销视频样本">
                     <div class="ai-video-card">
                         <div class="ai-video-frame">
-                            <video src="assets/optimized-video/ai-video-messi-web.mp4" controls preload="metadata" playsinline></video>
+                            <button class="video-placeholder" type="button" data-video-src="assets/optimized-video/ai-video-messi-web.mp4" aria-label="播放 AI 营销视频样本 4">
+                                <span><i class="fas fa-play"></i></span>
+                                <strong>播放样本 4</strong>
+                            </button>
                         </div>
                     </div>
                     <div class="ai-video-card">
                         <div class="ai-video-frame">
-                            <video src="assets/optimized-video/ai-video-mbappe-web.mp4" controls preload="metadata" playsinline></video>
+                            <button class="video-placeholder" type="button" data-video-src="assets/optimized-video/ai-video-mbappe-web.mp4" aria-label="播放 AI 营销视频样本 5">
+                                <span><i class="fas fa-play"></i></span>
+                                <strong>播放样本 5</strong>
+                            </button>
                         </div>
                     </div>
                     <div class="ai-video-card">
                         <div class="ai-video-frame">
-                            <video src="assets/optimized-video/ai-video-temu-web.mp4" controls preload="metadata" playsinline></video>
+                            <button class="video-placeholder" type="button" data-video-src="assets/optimized-video/ai-video-temu-web.mp4" aria-label="播放 AI 营销视频样本 6">
+                                <span><i class="fas fa-play"></i></span>
+                                <strong>播放样本 6</strong>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -597,15 +650,24 @@
     </div>
 
     <script>
-        /* 一次只允许播放一个视频 */
         (() => {
-            const videos = document.querySelectorAll('.ai-video-showcase video');
-            videos.forEach(v => {
-                v.addEventListener('play', () => {
-                    videos.forEach(other => {
-                        if (other !== v && !other.paused) other.pause();
-                    });
+            const pauseOtherVideos = (activeVideo) => {
+                document.querySelectorAll('.ai-video-showcase video').forEach((video) => {
+                    if (video !== activeVideo && !video.paused) video.pause();
                 });
+            };
+
+            document.querySelectorAll('.video-placeholder').forEach((button) => {
+                button.addEventListener('click', () => {
+                    const video = document.createElement('video');
+                    video.src = button.dataset.videoSrc;
+                    video.controls = true;
+                    video.preload = 'metadata';
+                    video.playsInline = true;
+                    video.addEventListener('play', () => pauseOtherVideos(video));
+                    button.replaceWith(video);
+                    video.play().catch(() => {});
+                }, { once: true });
             });
         })();
 
